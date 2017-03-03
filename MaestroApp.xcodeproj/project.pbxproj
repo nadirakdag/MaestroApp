@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		142CD1D01E69662900CA935D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142CD1CE1E69662900CA935D /* Main.storyboard */; };
+		14F4399E1E68E13000F36686 /* MaestroPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399B1E68E13000F36686 /* MaestroPanel.swift */; };
+		14F4399F1E68E13000F36686 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399C1E68E13000F36686 /* NSDate.swift */; };
+		14F439A01E68E13000F36686 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399D1E68E13000F36686 /* SwiftyJSON.swift */; };
+		14F439AE1E68E13A00F36686 /* AliasListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A21E68E13A00F36686 /* AliasListItemModel.swift */; };
+		14F439AF1E68E13A00F36686 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A31E68E13A00F36686 /* BaseModel.swift */; };
+		14F439B01E68E13A00F36686 /* DatabaseListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A41E68E13A00F36686 /* DatabaseListItemModel.swift */; };
+		14F439B11E68E13A00F36686 /* DNSRecordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A51E68E13A00F36686 /* DNSRecordsModel.swift */; };
+		14F439B21E68E13A00F36686 /* DomainListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A61E68E13A00F36686 /* DomainListItemModel.swift */; };
+		14F439B31E68E13A00F36686 /* FtpListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A71E68E13A00F36686 /* FtpListItemModel.swift */; };
+		14F439B41E68E13A00F36686 /* MailListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A81E68E13A00F36686 /* MailListModel.swift */; };
+		14F439B51E68E13A00F36686 /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A91E68E13A00F36686 /* OperationResult.swift */; };
+		14F439B61E68E13A00F36686 /* ResellerListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439AA1E68E13A00F36686 /* ResellerListItemModel.swift */; };
+		14F439B71E68E13A00F36686 /* ServerListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439AB1E68E13A00F36686 /* ServerListItemModel.swift */; };
+		14F439B81E68E13A00F36686 /* ServerResourceItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439AC1E68E13A00F36686 /* ServerResourceItemModel.swift */; };
+		14F439B91E68E13A00F36686 /* SubdomainListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439AD1E68E13A00F36686 /* SubdomainListItemModel.swift */; };
+		14F439C61E68E14100F36686 /* AliasListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439BC1E68E14100F36686 /* AliasListTableViewCell.swift */; };
+		14F439C71E68E14100F36686 /* DatabaseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439BD1E68E14100F36686 /* DatabaseListTableViewCell.swift */; };
+		14F439C81E68E14100F36686 /* DNSListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439BE1E68E14100F36686 /* DNSListTableViewCell.swift */; };
+		14F439C91E68E14100F36686 /* DomainListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439BF1E68E14100F36686 /* DomainListTableViewCell.swift */; };
+		14F439CA1E68E14100F36686 /* FTPListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439C01E68E14100F36686 /* FTPListTableViewCell.swift */; };
+		14F439CB1E68E14100F36686 /* MailListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439C11E68E14100F36686 /* MailListTableViewCell.swift */; };
+		14F439CC1E68E14100F36686 /* ResellerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439C21E68E14100F36686 /* ResellerListTableViewCell.swift */; };
+		14F439CD1E68E14100F36686 /* ResourceListItemTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439C31E68E14100F36686 /* ResourceListItemTableCell.swift */; };
+		14F439CE1E68E14100F36686 /* ServerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439C41E68E14100F36686 /* ServerListTableViewCell.swift */; };
+		14F439CF1E68E14100F36686 /* SubdomainListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439C51E68E14100F36686 /* SubdomainListTableViewCell.swift */; };
+		14F439E51E68E14D00F36686 /* AddDatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D11E68E14C00F36686 /* AddDatabaseViewController.swift */; };
+		14F439E61E68E14D00F36686 /* AddDomainAliasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D21E68E14C00F36686 /* AddDomainAliasViewController.swift */; };
+		14F439E71E68E14D00F36686 /* AddDomainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D31E68E14C00F36686 /* AddDomainViewController.swift */; };
+		14F439E81E68E14D00F36686 /* AddFtpUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */; };
+		14F439E91E68E14D00F36686 /* AddMailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */; };
+		14F439EA1E68E14D00F36686 /* AddSubdomainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D61E68E14C00F36686 /* AddSubdomainViewController.swift */; };
+		14F439EB1E68E14D00F36686 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D71E68E14C00F36686 /* AlertViewController.swift */; };
+		14F439EC1E68E14D00F36686 /* AliasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D81E68E14C00F36686 /* AliasTableViewController.swift */; };
+		14F439ED1E68E14D00F36686 /* ChangeDomainPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D91E68E14C00F36686 /* ChangeDomainPasswordViewController.swift */; };
+		14F439EE1E68E14D00F36686 /* DatabaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439DA1E68E14C00F36686 /* DatabaseTableViewController.swift */; };
+		14F439EF1E68E14D00F36686 /* DNSListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439DB1E68E14C00F36686 /* DNSListTableViewController.swift */; };
+		14F439F01E68E14D00F36686 /* DomainDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439DC1E68E14D00F36686 /* DomainDetailTableViewController.swift */; };
+		14F439F11E68E14D00F36686 /* DomainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439DD1E68E14D00F36686 /* DomainTableViewController.swift */; };
+		14F439F21E68E14D00F36686 /* FTPListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439DE1E68E14D00F36686 /* FTPListTableViewController.swift */; };
+		14F439F31E68E14D00F36686 /* MailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439DF1E68E14D00F36686 /* MailTableViewController.swift */; };
+		14F439F41E68E14D00F36686 /* ResellerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E01E68E14D00F36686 /* ResellerTableViewController.swift */; };
+		14F439F51E68E14D00F36686 /* ServerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E11E68E14D00F36686 /* ServerDetailTableViewController.swift */; };
+		14F439F61E68E14D00F36686 /* ServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E21E68E14D00F36686 /* ServerTableViewController.swift */; };
+		14F439F71E68E14D00F36686 /* SubdomainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E31E68E14D00F36686 /* SubdomainTableViewController.swift */; };
+		14F439F81E68E14D00F36686 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E41E68E14D00F36686 /* ViewController.swift */; };
+		4E77E7D71C79FF380047A018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77E7D61C79FF380047A018 /* AppDelegate.swift */; };
+		4E77E7E11C79FF380047A018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E77E7DF1C79FF380047A018 /* LaunchScreen.storyboard */; };
+		A09E06120EAE82C0DF2C5A34 /* Pods_MaestroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8DAA92AB1634A11979B452 /* Pods_MaestroApp.framework */; };
+		CF6DFE8A1CF969C700673626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6DFE891CF969C700673626 /* Assets.xcassets */; };
+		CF8EA79B1CF0AA0E0002FC0E /* overflowshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8EA79A1CF0AA0E0002FC0E /* overflowshadow.png */; };
+		CF8EA79E1CF0B2810002FC0E /* stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8EA79C1CF0B2810002FC0E /* stopped.png */; };
+		CF8EA79F1CF0B2810002FC0E /* working.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8EA79D1CF0B2810002FC0E /* working.png */; };
+		CF8EA7A11CF11AC70002FC0E /* logo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8EA7A01CF11AC70002FC0E /* logo_120.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		142CD1CF1E69662900CA935D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14F4399B1E68E13000F36686 /* MaestroPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaestroPanel.swift; sourceTree = "<group>"; };
+		14F4399C1E68E13000F36686 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		14F4399D1E68E13000F36686 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		14F439A21E68E13A00F36686 /* AliasListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasListItemModel.swift; sourceTree = "<group>"; };
+		14F439A31E68E13A00F36686 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		14F439A41E68E13A00F36686 /* DatabaseListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseListItemModel.swift; sourceTree = "<group>"; };
+		14F439A51E68E13A00F36686 /* DNSRecordsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSRecordsModel.swift; sourceTree = "<group>"; };
+		14F439A61E68E13A00F36686 /* DomainListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainListItemModel.swift; sourceTree = "<group>"; };
+		14F439A71E68E13A00F36686 /* FtpListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FtpListItemModel.swift; sourceTree = "<group>"; };
+		14F439A81E68E13A00F36686 /* MailListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailListModel.swift; sourceTree = "<group>"; };
+		14F439A91E68E13A00F36686 /* OperationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationResult.swift; sourceTree = "<group>"; };
+		14F439AA1E68E13A00F36686 /* ResellerListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResellerListItemModel.swift; sourceTree = "<group>"; };
+		14F439AB1E68E13A00F36686 /* ServerListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerListItemModel.swift; sourceTree = "<group>"; };
+		14F439AC1E68E13A00F36686 /* ServerResourceItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResourceItemModel.swift; sourceTree = "<group>"; };
+		14F439AD1E68E13A00F36686 /* SubdomainListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubdomainListItemModel.swift; sourceTree = "<group>"; };
+		14F439BC1E68E14100F36686 /* AliasListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439BD1E68E14100F36686 /* DatabaseListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439BE1E68E14100F36686 /* DNSListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439BF1E68E14100F36686 /* DomainListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439C01E68E14100F36686 /* FTPListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTPListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439C11E68E14100F36686 /* MailListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439C21E68E14100F36686 /* ResellerListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResellerListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439C31E68E14100F36686 /* ResourceListItemTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceListItemTableCell.swift; sourceTree = "<group>"; };
+		14F439C41E68E14100F36686 /* ServerListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439C51E68E14100F36686 /* SubdomainListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubdomainListTableViewCell.swift; sourceTree = "<group>"; };
+		14F439D11E68E14C00F36686 /* AddDatabaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDatabaseViewController.swift; sourceTree = "<group>"; };
+		14F439D21E68E14C00F36686 /* AddDomainAliasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDomainAliasViewController.swift; sourceTree = "<group>"; };
+		14F439D31E68E14C00F36686 /* AddDomainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDomainViewController.swift; sourceTree = "<group>"; };
+		14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFtpUserViewController.swift; sourceTree = "<group>"; };
+		14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMailboxViewController.swift; sourceTree = "<group>"; };
+		14F439D61E68E14C00F36686 /* AddSubdomainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubdomainViewController.swift; sourceTree = "<group>"; };
+		14F439D71E68E14C00F36686 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		14F439D81E68E14C00F36686 /* AliasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasTableViewController.swift; sourceTree = "<group>"; };
+		14F439D91E68E14C00F36686 /* ChangeDomainPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeDomainPasswordViewController.swift; sourceTree = "<group>"; };
+		14F439DA1E68E14C00F36686 /* DatabaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTableViewController.swift; sourceTree = "<group>"; };
+		14F439DB1E68E14C00F36686 /* DNSListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSListTableViewController.swift; sourceTree = "<group>"; };
+		14F439DC1E68E14D00F36686 /* DomainDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainDetailTableViewController.swift; sourceTree = "<group>"; };
+		14F439DD1E68E14D00F36686 /* DomainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainTableViewController.swift; sourceTree = "<group>"; };
+		14F439DE1E68E14D00F36686 /* FTPListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTPListTableViewController.swift; sourceTree = "<group>"; };
+		14F439DF1E68E14D00F36686 /* MailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailTableViewController.swift; sourceTree = "<group>"; };
+		14F439E01E68E14D00F36686 /* ResellerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResellerTableViewController.swift; sourceTree = "<group>"; };
+		14F439E11E68E14D00F36686 /* ServerDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerDetailTableViewController.swift; sourceTree = "<group>"; };
+		14F439E21E68E14D00F36686 /* ServerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTableViewController.swift; sourceTree = "<group>"; };
+		14F439E31E68E14D00F36686 /* SubdomainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubdomainTableViewController.swift; sourceTree = "<group>"; };
+		14F439E41E68E14D00F36686 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1E0E548FF40DD44399CE78E0 /* Pods-MaestroApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaestroApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaestroApp/Pods-MaestroApp.release.xcconfig"; sourceTree = "<group>"; };
+		2B8DAA92AB1634A11979B452 /* Pods_MaestroApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaestroApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F75001653735B867C192A66 /* Pods-MaestroPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaestroPanel.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaestroPanel/Pods-MaestroPanel.release.xcconfig"; sourceTree = "<group>"; };
+		4E32971AA15B5DEC229C9874 /* Pods-MaestroApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaestroApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaestroApp/Pods-MaestroApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4E77E7D31C79FF380047A018 /* MaestroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaestroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E77E7D61C79FF380047A018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E77E7E01C79FF380047A018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E77E7E21C79FF380047A018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FC8A2C9BF634197E5D42209 /* Pods-MaestroPanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaestroPanel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaestroPanel/Pods-MaestroPanel.debug.xcconfig"; sourceTree = "<group>"; };
+		956DB0DC3BFBE0A9276EAD4F /* Pods_MaestroPanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaestroPanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF6DFE891CF969C700673626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF8EA79A1CF0AA0E0002FC0E /* overflowshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overflowshadow.png; path = Assets.xcassets/AppIcon.appiconset/img/overflowshadow.png; sourceTree = "<group>"; };
+		CF8EA79C1CF0B2810002FC0E /* stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stopped.png; path = Assets.xcassets/AppIcon.appiconset/img/stopped.png; sourceTree = "<group>"; };
+		CF8EA79D1CF0B2810002FC0E /* working.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = working.png; path = Assets.xcassets/AppIcon.appiconset/img/working.png; sourceTree = "<group>"; };
+		CF8EA7A01CF11AC70002FC0E /* logo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_120.png; path = Assets.xcassets/AppIcon.appiconset/logo/logo_120.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E77E7D01C79FF380047A018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A09E06120EAE82C0DF2C5A34 /* Pods_MaestroApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14F4399A1E68E13000F36686 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				14F4399B1E68E13000F36686 /* MaestroPanel.swift */,
+				14F4399C1E68E13000F36686 /* NSDate.swift */,
+				14F4399D1E68E13000F36686 /* SwiftyJSON.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		14F439A11E68E13A00F36686 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14F439A21E68E13A00F36686 /* AliasListItemModel.swift */,
+				14F439A31E68E13A00F36686 /* BaseModel.swift */,
+				14F439A41E68E13A00F36686 /* DatabaseListItemModel.swift */,
+				14F439A51E68E13A00F36686 /* DNSRecordsModel.swift */,
+				14F439A61E68E13A00F36686 /* DomainListItemModel.swift */,
+				14F439A71E68E13A00F36686 /* FtpListItemModel.swift */,
+				14F439A81E68E13A00F36686 /* MailListModel.swift */,
+				14F439A91E68E13A00F36686 /* OperationResult.swift */,
+				14F439AA1E68E13A00F36686 /* ResellerListItemModel.swift */,
+				14F439AB1E68E13A00F36686 /* ServerListItemModel.swift */,
+				14F439AC1E68E13A00F36686 /* ServerResourceItemModel.swift */,
+				14F439AD1E68E13A00F36686 /* SubdomainListItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		14F439BA1E68E14100F36686 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14F439BB1E68E14100F36686 /* TableCells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14F439BB1E68E14100F36686 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				14F439BC1E68E14100F36686 /* AliasListTableViewCell.swift */,
+				14F439BD1E68E14100F36686 /* DatabaseListTableViewCell.swift */,
+				14F439BE1E68E14100F36686 /* DNSListTableViewCell.swift */,
+				14F439BF1E68E14100F36686 /* DomainListTableViewCell.swift */,
+				14F439C01E68E14100F36686 /* FTPListTableViewCell.swift */,
+				14F439C11E68E14100F36686 /* MailListTableViewCell.swift */,
+				14F439C21E68E14100F36686 /* ResellerListTableViewCell.swift */,
+				14F439C31E68E14100F36686 /* ResourceListItemTableCell.swift */,
+				14F439C41E68E14100F36686 /* ServerListTableViewCell.swift */,
+				14F439C51E68E14100F36686 /* SubdomainListTableViewCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		14F439D01E68E14C00F36686 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				14F439D11E68E14C00F36686 /* AddDatabaseViewController.swift */,
+				14F439D21E68E14C00F36686 /* AddDomainAliasViewController.swift */,
+				14F439D31E68E14C00F36686 /* AddDomainViewController.swift */,
+				14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */,
+				14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */,
+				14F439D61E68E14C00F36686 /* AddSubdomainViewController.swift */,
+				14F439D71E68E14C00F36686 /* AlertViewController.swift */,
+				14F439D81E68E14C00F36686 /* AliasTableViewController.swift */,
+				14F439D91E68E14C00F36686 /* ChangeDomainPasswordViewController.swift */,
+				14F439DA1E68E14C00F36686 /* DatabaseTableViewController.swift */,
+				14F439DB1E68E14C00F36686 /* DNSListTableViewController.swift */,
+				14F439DC1E68E14D00F36686 /* DomainDetailTableViewController.swift */,
+				14F439DD1E68E14D00F36686 /* DomainTableViewController.swift */,
+				14F439DE1E68E14D00F36686 /* FTPListTableViewController.swift */,
+				14F439DF1E68E14D00F36686 /* MailTableViewController.swift */,
+				14F439E01E68E14D00F36686 /* ResellerTableViewController.swift */,
+				14F439E11E68E14D00F36686 /* ServerDetailTableViewController.swift */,
+				14F439E21E68E14D00F36686 /* ServerTableViewController.swift */,
+				14F439E31E68E14D00F36686 /* SubdomainTableViewController.swift */,
+				14F439E41E68E14D00F36686 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4E77E7CA1C79FF380047A018 = {
+			isa = PBXGroup;
+			children = (
+				4E77E7D51C79FF380047A018 /* MaestroApp */,
+				4E77E7D41C79FF380047A018 /* Products */,
+				ABD5980E6CADBB38490698F3 /* Pods */,
+				CA261D5BB4808EACA26A22FD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4E77E7D41C79FF380047A018 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E77E7D31C79FF380047A018 /* MaestroApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E77E7D51C79FF380047A018 /* MaestroApp */ = {
+			isa = PBXGroup;
+			children = (
+				142CD1CE1E69662900CA935D /* Main.storyboard */,
+				14F439D01E68E14C00F36686 /* ViewControllers */,
+				14F439BA1E68E14100F36686 /* View */,
+				14F439A11E68E13A00F36686 /* Models */,
+				14F4399A1E68E13000F36686 /* Helpers */,
+				CF8EA7981CF0A9E80002FC0E /* images */,
+				4E77E7D61C79FF380047A018 /* AppDelegate.swift */,
+				4E77E7DF1C79FF380047A018 /* LaunchScreen.storyboard */,
+				4E77E7E21C79FF380047A018 /* Info.plist */,
+				CF6DFE891CF969C700673626 /* Assets.xcassets */,
+			);
+			path = MaestroApp;
+			sourceTree = "<group>";
+		};
+		ABD5980E6CADBB38490698F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FC8A2C9BF634197E5D42209 /* Pods-MaestroPanel.debug.xcconfig */,
+				2F75001653735B867C192A66 /* Pods-MaestroPanel.release.xcconfig */,
+				4E32971AA15B5DEC229C9874 /* Pods-MaestroApp.debug.xcconfig */,
+				1E0E548FF40DD44399CE78E0 /* Pods-MaestroApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA261D5BB4808EACA26A22FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				956DB0DC3BFBE0A9276EAD4F /* Pods_MaestroPanel.framework */,
+				2B8DAA92AB1634A11979B452 /* Pods_MaestroApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF8EA7981CF0A9E80002FC0E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CF8EA7991CF0A9F30002FC0E /* Table View */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		CF8EA7991CF0A9F30002FC0E /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				CF8EA79A1CF0AA0E0002FC0E /* overflowshadow.png */,
+				CF8EA79C1CF0B2810002FC0E /* stopped.png */,
+				CF8EA79D1CF0B2810002FC0E /* working.png */,
+				CF8EA7A01CF11AC70002FC0E /* logo_120.png */,
+			);
+			name = "Table View";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E77E7D21C79FF380047A018 /* MaestroApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E77E7E51C79FF380047A018 /* Build configuration list for PBXNativeTarget "MaestroApp" */;
+			buildPhases = (
+				76A26A38CE2EAD9E91077C55 /* [CP] Check Pods Manifest.lock */,
+				4E77E7CF1C79FF380047A018 /* Sources */,
+				4E77E7D01C79FF380047A018 /* Frameworks */,
+				4E77E7D11C79FF380047A018 /* Resources */,
+				B5344CFCCFB9D688774623F3 /* [CP] Embed Pods Frameworks */,
+				6134D3A6C5937E8639F4B4DD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaestroApp;
+			productName = MaestroPanel;
+			productReference = 4E77E7D31C79FF380047A018 /* MaestroApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E77E7CB1C79FF380047A018 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "nadir akdag";
+				TargetAttributes = {
+					4E77E7D21C79FF380047A018 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6E2YS3TKXQ;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4E77E7CE1C79FF380047A018 /* Build configuration list for PBXProject "MaestroApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E77E7CA1C79FF380047A018;
+			productRefGroup = 4E77E7D41C79FF380047A018 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E77E7D21C79FF380047A018 /* MaestroApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E77E7D11C79FF380047A018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				142CD1D01E69662900CA935D /* Main.storyboard in Resources */,
+				4E77E7E11C79FF380047A018 /* LaunchScreen.storyboard in Resources */,
+				CF6DFE8A1CF969C700673626 /* Assets.xcassets in Resources */,
+				CF8EA7A11CF11AC70002FC0E /* logo_120.png in Resources */,
+				CF8EA79F1CF0B2810002FC0E /* working.png in Resources */,
+				CF8EA79E1CF0B2810002FC0E /* stopped.png in Resources */,
+				CF8EA79B1CF0AA0E0002FC0E /* overflowshadow.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6134D3A6C5937E8639F4B4DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaestroApp/Pods-MaestroApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76A26A38CE2EAD9E91077C55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B5344CFCCFB9D688774623F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaestroApp/Pods-MaestroApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E77E7CF1C79FF380047A018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14F439F21E68E14D00F36686 /* FTPListTableViewController.swift in Sources */,
+				14F439B11E68E13A00F36686 /* DNSRecordsModel.swift in Sources */,
+				14F439ED1E68E14D00F36686 /* ChangeDomainPasswordViewController.swift in Sources */,
+				14F439AF1E68E13A00F36686 /* BaseModel.swift in Sources */,
+				14F439F11E68E14D00F36686 /* DomainTableViewController.swift in Sources */,
+				14F439B21E68E13A00F36686 /* DomainListItemModel.swift in Sources */,
+				14F439AE1E68E13A00F36686 /* AliasListItemModel.swift in Sources */,
+				14F439CE1E68E14100F36686 /* ServerListTableViewCell.swift in Sources */,
+				14F439C61E68E14100F36686 /* AliasListTableViewCell.swift in Sources */,
+				14F439CD1E68E14100F36686 /* ResourceListItemTableCell.swift in Sources */,
+				14F439EB1E68E14D00F36686 /* AlertViewController.swift in Sources */,
+				14F439F41E68E14D00F36686 /* ResellerTableViewController.swift in Sources */,
+				14F439CA1E68E14100F36686 /* FTPListTableViewCell.swift in Sources */,
+				14F439B51E68E13A00F36686 /* OperationResult.swift in Sources */,
+				14F439C81E68E14100F36686 /* DNSListTableViewCell.swift in Sources */,
+				14F439EA1E68E14D00F36686 /* AddSubdomainViewController.swift in Sources */,
+				14F439B91E68E13A00F36686 /* SubdomainListItemModel.swift in Sources */,
+				14F439E61E68E14D00F36686 /* AddDomainAliasViewController.swift in Sources */,
+				14F4399E1E68E13000F36686 /* MaestroPanel.swift in Sources */,
+				14F439CB1E68E14100F36686 /* MailListTableViewCell.swift in Sources */,
+				14F439C71E68E14100F36686 /* DatabaseListTableViewCell.swift in Sources */,
+				14F4399F1E68E13000F36686 /* NSDate.swift in Sources */,
+				14F439B71E68E13A00F36686 /* ServerListItemModel.swift in Sources */,
+				14F439E51E68E14D00F36686 /* AddDatabaseViewController.swift in Sources */,
+				14F439E81E68E14D00F36686 /* AddFtpUserViewController.swift in Sources */,
+				14F439F01E68E14D00F36686 /* DomainDetailTableViewController.swift in Sources */,
+				14F439B61E68E13A00F36686 /* ResellerListItemModel.swift in Sources */,
+				14F439CC1E68E14100F36686 /* ResellerListTableViewCell.swift in Sources */,
+				14F439CF1E68E14100F36686 /* SubdomainListTableViewCell.swift in Sources */,
+				14F439F71E68E14D00F36686 /* SubdomainTableViewController.swift in Sources */,
+				14F439F81E68E14D00F36686 /* ViewController.swift in Sources */,
+				14F439B01E68E13A00F36686 /* DatabaseListItemModel.swift in Sources */,
+				14F439F51E68E14D00F36686 /* ServerDetailTableViewController.swift in Sources */,
+				14F439E71E68E14D00F36686 /* AddDomainViewController.swift in Sources */,
+				14F439B31E68E13A00F36686 /* FtpListItemModel.swift in Sources */,
+				14F439EE1E68E14D00F36686 /* DatabaseTableViewController.swift in Sources */,
+				14F439C91E68E14100F36686 /* DomainListTableViewCell.swift in Sources */,
+				14F439EC1E68E14D00F36686 /* AliasTableViewController.swift in Sources */,
+				14F439F61E68E14D00F36686 /* ServerTableViewController.swift in Sources */,
+				14F439E91E68E14D00F36686 /* AddMailboxViewController.swift in Sources */,
+				14F439B81E68E13A00F36686 /* ServerResourceItemModel.swift in Sources */,
+				4E77E7D71C79FF380047A018 /* AppDelegate.swift in Sources */,
+				14F439F31E68E14D00F36686 /* MailTableViewController.swift in Sources */,
+				14F439EF1E68E14D00F36686 /* DNSListTableViewController.swift in Sources */,
+				14F439A01E68E13000F36686 /* SwiftyJSON.swift in Sources */,
+				14F439B41E68E13A00F36686 /* MailListModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		142CD1CE1E69662900CA935D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				142CD1CF1E69662900CA935D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4E77E7DF1C79FF380047A018 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E77E7E01C79FF380047A018 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E77E7E31C79FF380047A018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4E77E7E41C79FF380047A018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E77E7E61C79FF380047A018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E32971AA15B5DEC229C9874 /* Pods-MaestroApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6E2YS3TKXQ;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				INFOPLIST_FILE = MaestroApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadirakdag.MaestroApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4E77E7E71C79FF380047A018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E0E548FF40DD44399CE78E0 /* Pods-MaestroApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6E2YS3TKXQ;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				INFOPLIST_FILE = MaestroApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadirakdag.MaestroApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E77E7CE1C79FF380047A018 /* Build configuration list for PBXProject "MaestroApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E77E7E31C79FF380047A018 /* Debug */,
+				4E77E7E41C79FF380047A018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E77E7E51C79FF380047A018 /* Build configuration list for PBXNativeTarget "MaestroApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E77E7E61C79FF380047A018 /* Debug */,
+				4E77E7E71C79FF380047A018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E77E7CB1C79FF380047A018 /* Project object */;
+}
