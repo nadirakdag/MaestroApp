@@ -34,7 +34,6 @@
 		14F439CE1E68E14100F36686 /* ServerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439C41E68E14100F36686 /* ServerListTableViewCell.swift */; };
 		14F439CF1E68E14100F36686 /* SubdomainListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439C51E68E14100F36686 /* SubdomainListTableViewCell.swift */; };
 		14F439E51E68E14D00F36686 /* AddDatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D11E68E14C00F36686 /* AddDatabaseViewController.swift */; };
-		14F439E61E68E14D00F36686 /* AddDomainAliasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D21E68E14C00F36686 /* AddDomainAliasViewController.swift */; };
 		14F439E71E68E14D00F36686 /* AddDomainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D31E68E14C00F36686 /* AddDomainViewController.swift */; };
 		14F439E81E68E14D00F36686 /* AddFtpUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */; };
 		14F439E91E68E14D00F36686 /* AddMailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */; };
@@ -91,7 +90,6 @@
 		14F439C41E68E14100F36686 /* ServerListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerListTableViewCell.swift; sourceTree = "<group>"; };
 		14F439C51E68E14100F36686 /* SubdomainListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubdomainListTableViewCell.swift; sourceTree = "<group>"; };
 		14F439D11E68E14C00F36686 /* AddDatabaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDatabaseViewController.swift; sourceTree = "<group>"; };
-		14F439D21E68E14C00F36686 /* AddDomainAliasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDomainAliasViewController.swift; sourceTree = "<group>"; };
 		14F439D31E68E14C00F36686 /* AddDomainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDomainViewController.swift; sourceTree = "<group>"; };
 		14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFtpUserViewController.swift; sourceTree = "<group>"; };
 		14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMailboxViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				14F439D11E68E14C00F36686 /* AddDatabaseViewController.swift */,
-				14F439D21E68E14C00F36686 /* AddDomainAliasViewController.swift */,
 				14F439D31E68E14C00F36686 /* AddDomainViewController.swift */,
 				14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */,
 				14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */,
@@ -440,7 +437,6 @@
 				14F439C81E68E14100F36686 /* DNSListTableViewCell.swift in Sources */,
 				14F439EA1E68E14D00F36686 /* AddSubdomainViewController.swift in Sources */,
 				14F439B91E68E13A00F36686 /* SubdomainListItemModel.swift in Sources */,
-				14F439E61E68E14D00F36686 /* AddDomainAliasViewController.swift in Sources */,
 				14F4399E1E68E13000F36686 /* MaestroPanel.swift in Sources */,
 				14F439CB1E68E14100F36686 /* MailListTableViewCell.swift in Sources */,
 				14F439C71E68E14100F36686 /* DatabaseListTableViewCell.swift in Sources */,

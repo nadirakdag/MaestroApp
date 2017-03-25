@@ -149,7 +149,7 @@ class DatabaseTableViewController: UITableViewController {
             
             let dbType : String
             
-            if database.DbType == nil {
+            if database.DbType == "mysql" {
                 dbType="mysql"
             }else {
                 dbType="mssql"

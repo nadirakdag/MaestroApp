@@ -7,7 +7,6 @@ import UIKit
 
 class AddDomainViewController: UIViewController {
     
-    @IBOutlet weak var LblDomainKullanicisi: UILabel!
     @IBOutlet weak var LblDname: UITextField!
     @IBOutlet weak var LblPassword: UITextField!
     @IBOutlet weak var LblFtpUserName: UITextField!

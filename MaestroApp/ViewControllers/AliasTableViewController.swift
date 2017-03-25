@@ -19,16 +19,14 @@ class AliasTableViewController: UITableViewController {
         tableView.contentInset.top = UIApplication.shared.statusBarFrame.height
 
         self.navigationItem.title = "Alias Yönetimi"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+       navigationItem.rightBarButtonItem  = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(AddAlias(sender:))
+        )
         
         loadAliases()
-        
-
-        
         
     }
     
@@ -38,6 +36,7 @@ class AliasTableViewController: UITableViewController {
 
     func loadAliases() {
         self.present(AlertViewController.getUIAlertLoding("Aliaslar yükleniyor..."), animated: true, completion: nil)
+        
         aliasManager.getAliasList(dname) {result in
             self.aliasList = result
             self.tableView.reloadData()
@@ -51,10 +50,39 @@ class AliasTableViewController: UITableViewController {
                 self.tableView.backgroundView = info
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
             }
-            self.dismiss(animated: false, completion: nil)
-
             
+            self.dismiss(animated: false, completion: nil)        }
+    }
+    
+    func AddAlias(sender: UIBarButtonItem){
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Alias Ekle", message: "Eklenecek Alias Alan Adını giriniz!", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.placeholder = "Alias"
         }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Ekle", style: .default, handler: { [weak alert] (_) in
+            let alias = alert?.textFields![0].text
+            self.present(AlertViewController.getUIAlertLoding("Alias Ekleniyor"), animated: true, completion: nil)
+            self.aliasManager.addAlias(self.dname, alias: alias!){
+                result in
+                if result.Code == -1 {
+                    self.dismiss(animated: false, completion: nil)
+                    self.present(AlertViewController.getUIAlertInfo(result.Message!), animated: true, completion:nil)
+                    
+                }
+                else {
+                    self.dismiss(animated: false, completion: nil)
+                }
+            }
+
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -126,35 +154,5 @@ class AliasTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        let domainDetailView = segue.destination as! AddDomainAliasViewController
-        domainDetailView.dname = dname
-
-    }
-    
 
 }
