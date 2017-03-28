@@ -56,7 +56,7 @@ Geliştirdiğimiz bu uygulama kullanıcılar MaestroPanel arayüzü giriş yapma
     -   [x] Sunucuların Listelenmesi  
 
 
-##Başlangıç
+## Başlangıç
 
 ``` git clone https://github.com/nadirakdag/maestroapp.git ```
 
