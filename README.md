@@ -1,55 +1,73 @@
 # MaestroApp
-Geliştirdiğimiz bu uygulama kullanıcılar MaestroPanel arayüzü giriş yapmadan aşağıda yer alan işlemleri yapabilmektdir.
+Bu proje İstanbul Aydın Üniversitesi Yazılım Mühendisliği Bölümü Öğrencileri @nadirakdag ve @caliskansinan tarafından mezuniyet projesi olarak geliştirilmektedir.
+Geliştirdiğimiz bu uygulama kullanıcılar MaestroPanel arayüzü giriş yapmadan aşağıda yer alan işlemleri yapabilmesini sağlayacaktır. 
 
 1.  Domain İşlemleri
     -   Web
-        *   Yeni Domain Oluşturma &#10003;
-        *   Domain Başlatma, Durdurma, Silme
-        *   Domain Kullanıcısı Şifre Değiştirme
-        *   Domainleri Listeleme &#10003;
+        *  [x] Yeni Domain Oluşturma 
+        *  [] Domain Başlatma, Durdurma, Silme
+        *  [] Domain Kullanıcısı Şifre Değiştirme
+        *  [x] Domainleri Listeleme 
     -   Dosya İşlemleri
-        *   Klasor ve Dosya Listemele
-        *   Yeni Klasor oluşturma
-        *   Klasor ve Dosya Silme
-        *   Yazma İzni Verme ve Kaldırma
+        *  [] Klasor ve Dosya Listemele
+        *  [] Yeni Klasor oluşturma
+        *  [] Klasor ve Dosya Silme
+        *  [] Yazma İzni Verme ve Kaldırma
     -   Alias Yönetimi
-        *   Alias Oluşturma &#10003;
-        *   Aliasları Listeleme &#10003;
-        *   Alias Silme &#10003;
+        *  [x] Alias Oluşturma 
+        *  [x] Aliasları Listeleme 
+        *  [x] Alias Silme 
     -   E-Posta Adres Yönetimi
-        *   Yeni E-Posta Adresi Oluşturma &#10003;
-        *   E-Posta Adreslerini Listeleme &#10003;
-        *   E-Posta Adresi Silme &#10003;
-        *   E-Posta Adresinin Şifresini ve Kotasını Değiştirme
+        *   [x] Yeni E-Posta Adresi Oluşturma 
+        *   [x] E-Posta Adreslerini Listeleme 
+        *   [x] E-Posta Adresi Silme 
+        *   []  E-Posta Adresinin Şifresini ve Kotasını Değiştirme
     -   Veritabanı Yönetimi
-        *   Yeni Veritabanı Oluşturma  &#10003;
-        *   Veritabanlarını Listeleme  &#10003;
-        *   Veritabanı Silme  &#10003;
-        *   Veritabanı Kotası Değiştirme
-        *   Veritabanı Kullanıcı Yönetimi
-            *   Yeni Kullanıcı Oluşturma
-            *   Kullanıcı Silme
-            *   Kullanıcı Şifresini Değiştirme
-            *   Kullanıcı İzinlerini Yönetme
+        *   [x] Yeni Veritabanı Oluşturma  
+        *   [x] Veritabanlarını Listeleme  
+        *   [x] Veritabanı Silme  
+        *   [] Veritabanı Kotası Değiştirme
+        *   [] Veritabanı Kullanıcı Yönetimi
+            *  [] Yeni Kullanıcı Oluşturma
+            *  [] Kullanıcı Silme
+            *  [] Kullanıcı Şifresini Değiştirme
+            *  [] Kullanıcı İzinlerini Yönetme
     -   FTP Kullanıcı Yönetimi
-        *   Yeni FTP Kullanıcısı Oluşturma  &#10003;
-        *   FTP Kullanıcılarını Listeleme  &#10003;
-        *   FTP Kullanıcısının Şifresini Değiştirme 
-        *   FTP Kullanıcısını Silme  &#10003;
+        *   [x] Yeni FTP Kullanıcısı Oluşturma  
+        *   [x] FTP Kullanıcılarını Listeleme  
+        *   [] FTP Kullanıcısının Şifresini Değiştirme 
+        *   [x] FTP Kullanıcısını Silme  
     -   DNS Yönetimi
-        *   DNS Kayıtlarını Listelenmesi  &#10003;
-        *   Yeni DNS Kaydı Ekleme
-        *   DNS Kaydı Silme  &#10003;
-        *   DNS Zone Ayarlanması
+        *   [x] DNS Kayıtlarını Listelenmesi  
+        *   [] Yeni DNS Kaydı Ekleme
+        *   [x] DNS Kaydı Silme  
+        *   [] DNS Zone Ayarlanması
 2.  Bayi Yönetimi
     -   Bayi Kullanıcı Yönetimi
-        *   Yeni Bayi Kullanıcısı Oluşturma
-        *   Bayi Kullanısını Başlatma, Durdurma ve Silme İşlemleri
-        *   Bayi Kullanıcısının Şifresini Değiştirme
-        *   Bayi Kullanıcılarının Listelemesi  &#10003;
-        *   Bayi Kullanıcısına ait Domain Yönetimi
-        *   Bayi Kullanıcısına ait IP Adreslerinin Yönetimi
+        *   [] Yeni Bayi Kullanıcısı Oluşturma
+        *   [] Bayi Kullanısını Başlatma, Durdurma ve Silme İşlemleri
+        *   [] Bayi Kullanıcısının Şifresini Değiştirme
+        *   [x] Bayi Kullanıcılarının Listelemesi  
+        *   [] Bayi Kullanıcısına ait Domain Yönetimi
+        *   [] Bayi Kullanıcısına ait IP Adreslerinin Yönetimi
 3. Sunucu Yönetimi
-    -   IP Adresi Yönetimi
-    -   Sunucunun Kaynak Durumlarının Listelenmesi  &#10003;
-    -   Sunucuların Listelenmesi  &#10003;
+    -   [] IP Adresi Yönetimi
+    -   [x] Sunucunun Kaynak Durumlarının Listelenmesi  
+    -   [x] Sunucuların Listelenmesi  
+
+
+##Başlangıç
+
+``` git clone https://github.com/nadirakdag/maestroapp.git ```
+
+Uygulama paket yöneticisi olarak [cocoapods](https://cocoapods.org/) kullanmaktadır. Gerekli paketleri yükleye bilmeniz için cocoapods'un bilgisayarınızda yüklü olması gerekmektedir. Yüklemek için [https://cocoapods.org/](https://cocoapods.org/#install) adresinden yardım alabilirsiniz. 
+
+cocoapods'u yükledikten sonra 
+
+``` cd MaestroApp ```
+
+``` pod install ```
+
+demeniz yeterli olacaktır.
+
+cocoapods'un oluşturacağı "MaestroApp.xcworkspace" açıp derlediğiniz takdirde projenin başarılı bir şekilde derleniyor olması gerekmektedir.
