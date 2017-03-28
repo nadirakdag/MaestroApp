@@ -1,6 +1,6 @@
 # MaestroApp
 Bu proje İstanbul Aydın Üniversitesi Yazılım Mühendisliği Bölümü Öğrencileri @nadirakdag ve @caliskansinan tarafından mezuniyet projesi olarak geliştirilmektedir.
-Geliştirdiğimiz bu uygulama kullanıcılar MaestroPanel arayüzü giriş yapmadan aşağıda yer alan işlemleri yapabilmesini sağlayacaktır. 
+Geliştirdiğimiz bu uygulama ile kullanıcılar MaestroPanel arayüzüne giriş yapmadan aşağıda yer alan işlemleri yapabilmesini sağlayacaktır. 
 
 1.  Domain İşlemleri
     -   Web
