@@ -5,6 +5,8 @@
 
 
 import Foundation
+import SwiftyJSON
+
 class DNSRecordsModel : Initable {
     
     var ZoneType : Int32?

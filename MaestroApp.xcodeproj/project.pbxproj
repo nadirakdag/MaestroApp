@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		142CD1D01E69662900CA935D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142CD1CE1E69662900CA935D /* Main.storyboard */; };
-		14F4399E1E68E13000F36686 /* MaestroPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399B1E68E13000F36686 /* MaestroPanel.swift */; };
+		14F4399E1E68E13000F36686 /* MaestroAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399B1E68E13000F36686 /* MaestroAPI.swift */; };
 		14F4399F1E68E13000F36686 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399C1E68E13000F36686 /* NSDate.swift */; };
-		14F439A01E68E13000F36686 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399D1E68E13000F36686 /* SwiftyJSON.swift */; };
 		14F439AE1E68E13A00F36686 /* AliasListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A21E68E13A00F36686 /* AliasListItemModel.swift */; };
 		14F439AF1E68E13A00F36686 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A31E68E13A00F36686 /* BaseModel.swift */; };
 		14F439B01E68E13A00F36686 /* DatabaseListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A41E68E13A00F36686 /* DatabaseListItemModel.swift */; };
@@ -64,9 +63,8 @@
 
 /* Begin PBXFileReference section */
 		142CD1CF1E69662900CA935D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		14F4399B1E68E13000F36686 /* MaestroPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaestroPanel.swift; sourceTree = "<group>"; };
+		14F4399B1E68E13000F36686 /* MaestroAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaestroAPI.swift; sourceTree = "<group>"; };
 		14F4399C1E68E13000F36686 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
-		14F4399D1E68E13000F36686 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		14F439A21E68E13A00F36686 /* AliasListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasListItemModel.swift; sourceTree = "<group>"; };
 		14F439A31E68E13A00F36686 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		14F439A41E68E13A00F36686 /* DatabaseListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseListItemModel.swift; sourceTree = "<group>"; };
@@ -140,9 +138,8 @@
 		14F4399A1E68E13000F36686 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				14F4399B1E68E13000F36686 /* MaestroPanel.swift */,
+				14F4399B1E68E13000F36686 /* MaestroAPI.swift */,
 				14F4399C1E68E13000F36686 /* NSDate.swift */,
-				14F4399D1E68E13000F36686 /* SwiftyJSON.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -437,7 +434,7 @@
 				14F439C81E68E14100F36686 /* DNSListTableViewCell.swift in Sources */,
 				14F439EA1E68E14D00F36686 /* AddSubdomainViewController.swift in Sources */,
 				14F439B91E68E13A00F36686 /* SubdomainListItemModel.swift in Sources */,
-				14F4399E1E68E13000F36686 /* MaestroPanel.swift in Sources */,
+				14F4399E1E68E13000F36686 /* MaestroAPI.swift in Sources */,
 				14F439CB1E68E14100F36686 /* MailListTableViewCell.swift in Sources */,
 				14F439C71E68E14100F36686 /* DatabaseListTableViewCell.swift in Sources */,
 				14F4399F1E68E13000F36686 /* NSDate.swift in Sources */,
@@ -463,7 +460,6 @@
 				4E77E7D71C79FF380047A018 /* AppDelegate.swift in Sources */,
 				14F439F31E68E14D00F36686 /* MailTableViewController.swift in Sources */,
 				14F439EF1E68E14D00F36686 /* DNSListTableViewController.swift in Sources */,
-				14F439A01E68E13000F36686 /* SwiftyJSON.swift in Sources */,
 				14F439B41E68E13A00F36686 /* MailListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

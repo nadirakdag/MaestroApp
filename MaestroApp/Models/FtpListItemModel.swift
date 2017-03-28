@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import SwiftyJSON
+
 class FtpListItemModel: Initable {
     var UserName : String?
     var HomePath : String?

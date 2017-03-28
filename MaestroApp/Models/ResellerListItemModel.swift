@@ -3,7 +3,8 @@
 //  MaestroPanel
 //
 
-import Foundation
+import SwiftyJSON
+
 class ResellerListItemModel: Initable {
     var LastName : String?
     var Email : Int32?

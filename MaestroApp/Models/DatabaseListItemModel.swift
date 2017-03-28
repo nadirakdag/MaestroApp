@@ -3,7 +3,8 @@
 //  MaestroPanel
 //
 
-import Foundation
+import SwiftyJSON
+
 class DatabaseListItemModel: Initable {
     var Name : String?
     var DiskQuota : Int64?

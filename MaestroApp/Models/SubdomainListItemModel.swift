@@ -3,7 +3,8 @@
 //  MaestroPanel
 //
 
-import Foundation
+import SwiftyJSON
+
 class SubdomainListItemModel: Initable {
     var Name : String?
     var FtpUser : String?

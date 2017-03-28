@@ -3,6 +3,8 @@
 //  MaestroPanel
 //
 
+import SwiftyJSON
+
 class ServerResourceItemModel : Initable {
     var ResourceType : String
     var ResourceName : String

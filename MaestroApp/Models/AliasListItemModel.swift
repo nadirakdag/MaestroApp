@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import SwiftyJSON
+
 class AliasListItemModel: Initable {
     var Name : String?
     

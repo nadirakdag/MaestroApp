@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 protocol Initable {
     init(opt1: JSON)

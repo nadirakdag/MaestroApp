@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import SwiftyJSON
+
 class DomainListItemModel: Initable {
     var Disk : Int32?
     var Email : Int32?

@@ -3,7 +3,7 @@
 //  MaestroPanel
 //
 
-import UIKit
+import SwiftyJSON
 
 class ServerListItemModel: Initable {
     

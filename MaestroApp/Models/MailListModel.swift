@@ -4,7 +4,8 @@
 //
 
 
-import Foundation
+import SwiftyJSON
+
 class MailListModel: Initable {
 
     var Quota : Int32?

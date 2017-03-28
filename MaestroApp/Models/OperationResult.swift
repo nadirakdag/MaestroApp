@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import SwiftyJSON
+
 class OperationResult: Initable {
     var Code : Int32?
     var Message : String?
