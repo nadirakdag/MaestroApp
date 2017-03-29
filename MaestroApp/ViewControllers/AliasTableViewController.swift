@@ -51,7 +51,8 @@ class AliasTableViewController: UITableViewController {
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
             }
             
-            self.dismiss(animated: false, completion: nil)        }
+            self.dismiss(animated: false, completion: nil)
+        }
     }
     
     func AddAlias(sender: UIBarButtonItem){
@@ -63,23 +64,30 @@ class AliasTableViewController: UITableViewController {
             textField.placeholder = "Alias"
         }
         
-        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        // 3. Grab the value from the text field, and print it when the user clicks
         alert.addAction(UIAlertAction(title: "Ekle", style: .default, handler: { [weak alert] (_) in
             let alias = alert?.textFields![0].text
-            self.present(AlertViewController.getUIAlertLoding("Alias Ekleniyor"), animated: true, completion: nil)
-            self.aliasManager.addAlias(self.dname, alias: alias!){
-                result in
-                if result.Code == -1 {
-                    self.dismiss(animated: false, completion: nil)
-                    self.present(AlertViewController.getUIAlertInfo(result.Message!), animated: true, completion:nil)
-                    
-                }
-                else {
-                    self.dismiss(animated: false, completion: nil)
+            
+            if alias == nil || alias == "" {
+                self.present(AlertViewController.getUIAlertInfo("Alias alanı boş geçilemez!!"), animated: true, completion: nil)
+            }
+            else {
+                self.present(AlertViewController.getUIAlertLoding("Alias Ekleniyor"), animated: true, completion: nil)
+                self.aliasManager.addAlias(self.dname, alias: alias!){
+                    result in
+                    if result.Code == -1 {
+                        self.dismiss(animated: false, completion: nil)
+                        self.present(AlertViewController.getUIAlertInfo(result.Message!), animated: true, completion:nil)
+                    }
+                    else {
+                        self.dismiss(animated: false, completion: nil)
+                        self.loadAliases()
+                    }
                 }
             }
-
         }))
+        
+        alert.addAction(UIAlertAction(title: "İptal", style: .default, handler: nil))
         
         // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
