@@ -46,6 +46,11 @@ class DatabaseTableViewController: UITableViewController {
                 self.tableView.backgroundView = info
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
             }
+            else {
+                if self.tableView.backgroundView != nil {
+                    self.tableView.backgroundView = nil
+                }
+            }
             
         })
     }

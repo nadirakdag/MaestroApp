@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		142CD1D01E69662900CA935D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142CD1CE1E69662900CA935D /* Main.storyboard */; };
+		148FF3281E910C5900292334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148FF3271E910C5900292334 /* Assets.xcassets */; };
+		148FF3381E91185D00292334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 148FF33A1E91185D00292334 /* Localizable.strings */; };
 		14F4399E1E68E13000F36686 /* MaestroAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399B1E68E13000F36686 /* MaestroAPI.swift */; };
 		14F4399F1E68E13000F36686 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399C1E68E13000F36686 /* NSDate.swift */; };
 		14F439AE1E68E13A00F36686 /* AliasListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A21E68E13A00F36686 /* AliasListItemModel.swift */; };
@@ -54,7 +56,6 @@
 		4E77E7D71C79FF380047A018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77E7D61C79FF380047A018 /* AppDelegate.swift */; };
 		4E77E7E11C79FF380047A018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E77E7DF1C79FF380047A018 /* LaunchScreen.storyboard */; };
 		A09E06120EAE82C0DF2C5A34 /* Pods_MaestroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8DAA92AB1634A11979B452 /* Pods_MaestroApp.framework */; };
-		CF6DFE8A1CF969C700673626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6DFE891CF969C700673626 /* Assets.xcassets */; };
 		CF8EA79B1CF0AA0E0002FC0E /* overflowshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8EA79A1CF0AA0E0002FC0E /* overflowshadow.png */; };
 		CF8EA79E1CF0B2810002FC0E /* stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8EA79C1CF0B2810002FC0E /* stopped.png */; };
 		CF8EA79F1CF0B2810002FC0E /* working.png in Resources */ = {isa = PBXBuildFile; fileRef = CF8EA79D1CF0B2810002FC0E /* working.png */; };
@@ -62,7 +63,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		142CD1CF1E69662900CA935D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		148FF3271E910C5900292334 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		148FF3331E91179600292334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		148FF3361E91183C00292334 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		148FF3371E91183C00292334 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		148FF3391E91185D00292334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		148FF33B1E91186500292334 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		148FF33D1E91188100292334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		14F4399B1E68E13000F36686 /* MaestroAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaestroAPI.swift; sourceTree = "<group>"; };
 		14F4399C1E68E13000F36686 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		14F439A21E68E13A00F36686 /* AliasListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasListItemModel.swift; sourceTree = "<group>"; };
@@ -116,7 +123,6 @@
 		4E77E7E21C79FF380047A018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FC8A2C9BF634197E5D42209 /* Pods-MaestroPanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaestroPanel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaestroPanel/Pods-MaestroPanel.debug.xcconfig"; sourceTree = "<group>"; };
 		956DB0DC3BFBE0A9276EAD4F /* Pods_MaestroPanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaestroPanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF6DFE891CF969C700673626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF8EA79A1CF0AA0E0002FC0E /* overflowshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overflowshadow.png; path = Assets.xcassets/AppIcon.appiconset/img/overflowshadow.png; sourceTree = "<group>"; };
 		CF8EA79C1CF0B2810002FC0E /* stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stopped.png; path = Assets.xcassets/AppIcon.appiconset/img/stopped.png; sourceTree = "<group>"; };
 		CF8EA79D1CF0B2810002FC0E /* working.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = working.png; path = Assets.xcassets/AppIcon.appiconset/img/working.png; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 		4E77E7D51C79FF380047A018 /* MaestroApp */ = {
 			isa = PBXGroup;
 			children = (
+				148FF3271E910C5900292334 /* Assets.xcassets */,
 				142CD1CE1E69662900CA935D /* Main.storyboard */,
 				14F439D01E68E14C00F36686 /* ViewControllers */,
 				14F439BA1E68E14100F36686 /* View */,
@@ -244,7 +251,7 @@
 				4E77E7D61C79FF380047A018 /* AppDelegate.swift */,
 				4E77E7DF1C79FF380047A018 /* LaunchScreen.storyboard */,
 				4E77E7E21C79FF380047A018 /* Info.plist */,
-				CF6DFE891CF969C700673626 /* Assets.xcassets */,
+				148FF33A1E91185D00292334 /* Localizable.strings */,
 			);
 			path = MaestroApp;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 4E77E7CA1C79FF380047A018;
 			productRefGroup = 4E77E7D41C79FF380047A018 /* Products */;
@@ -354,9 +362,10 @@
 			files = (
 				142CD1D01E69662900CA935D /* Main.storyboard in Resources */,
 				4E77E7E11C79FF380047A018 /* LaunchScreen.storyboard in Resources */,
-				CF6DFE8A1CF969C700673626 /* Assets.xcassets in Resources */,
 				CF8EA7A11CF11AC70002FC0E /* logo_120.png in Resources */,
 				CF8EA79F1CF0B2810002FC0E /* working.png in Resources */,
+				148FF3281E910C5900292334 /* Assets.xcassets in Resources */,
+				148FF3381E91185D00292334 /* Localizable.strings in Resources */,
 				CF8EA79E1CF0B2810002FC0E /* stopped.png in Resources */,
 				CF8EA79B1CF0AA0E0002FC0E /* overflowshadow.png in Resources */,
 			);
@@ -470,15 +479,27 @@
 		142CD1CE1E69662900CA935D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				142CD1CF1E69662900CA935D /* Base */,
+				148FF3331E91179600292334 /* Base */,
+				148FF3361E91183C00292334 /* tr */,
+				148FF33D1E91188100292334 /* en */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		148FF33A1E91185D00292334 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				148FF3391E91185D00292334 /* en */,
+				148FF33B1E91186500292334 /* tr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		4E77E7DF1C79FF380047A018 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4E77E7E01C79FF380047A018 /* Base */,
+				148FF3371E91183C00292334 /* tr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -490,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -536,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

@@ -36,6 +36,7 @@ class MailTableViewController: UITableViewController {
             self.mail = result
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
+            
             if self.mail?.Accounts.count == 0
             {
                 let info : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
@@ -44,6 +45,11 @@ class MailTableViewController: UITableViewController {
                 info.textAlignment = NSTextAlignment.center
                 self.tableView.backgroundView = info
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+            }
+            else {
+                if self.tableView.backgroundView != nil {
+                    self.tableView.backgroundView = nil
+                }
             }
 
             

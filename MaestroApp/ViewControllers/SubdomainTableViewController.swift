@@ -42,7 +42,7 @@ class SubdomainTableViewController: UITableViewController {
             if result.count == 0
             {
                 let info : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
-                info.text = "Henüz herhangi bir alt alanadı açılmış değil."
+                info.text = "Henüz kayıt bulunmuyor."
                 info.textColor = UIColor.black
                 info.textAlignment = NSTextAlignment.center
                 self.tableView.backgroundView = info

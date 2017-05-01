@@ -34,10 +34,6 @@ class MaestroAPI {
         print(parameters)
         print(url)
         let headers: HTTPHeaders = [ "Accept-Language": "tr-tr" ]
-//        var _parameters = parameters
-//        _parameters["format"] = "json" as AnyObject
-//        _parameters["key"] = apiKey as AnyObject
-        
         Alamofire.request(url, method: .get, parameters: parameters, headers: headers)
             .responseJSON { response in
             
