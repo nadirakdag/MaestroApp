@@ -146,7 +146,7 @@ class DomainManager : MaestroAPI{
                 "planAlias": "default" as AnyObject,
                 "username": username as AnyObject,
                 "password":password as AnyObject,
-                "activedomainuser":activiteDomainUser as AnyObject,
+                "activedomainuser":(activiteDomainUser as Bool) as AnyObject,
                 "firstname": firstName as AnyObject,
                 "lastname": lastName as AnyObject,
                 "email": email as AnyObject
@@ -174,6 +174,32 @@ class DomainManager : MaestroAPI{
         let parameters : [String:AnyObject] = ["key":apiKey as AnyObject, "name": dname as AnyObject,"format":"json" as AnyObject]
         
         deleteRequestObject(url, parameters: parameters){
+            (result: OperationResult) -> Void in
+            completion(result)
+        }
+    }
+    
+    func startDomain(_ dname: String, completion: @escaping (_ result: OperationResult)-> Void){
+        
+        let url : String = "\(apiUrl)Domain/start?format=JSON"
+        let parameters : [String:AnyObject] = [
+            "key":apiKey as AnyObject,
+            "name": dname as AnyObject]
+        
+        postRequestObject(url, paramters: parameters){
+            (result: OperationResult) -> Void in
+            completion(result)
+        }
+    }
+    
+    func stopDomain(_ dname: String, completion: @escaping (_ result: OperationResult)-> Void){
+        
+        let url : String = "\(apiUrl)Domain/stop?format=JSON"
+        let parameters : [String:AnyObject] = [
+            "key":apiKey as AnyObject,
+            "name": dname as AnyObject]
+        
+        postRequestObject(url, paramters: parameters){
             (result: OperationResult) -> Void in
             completion(result)
         }
@@ -331,6 +357,23 @@ class FtpManager : MaestroAPI{
         
         let url : String = "\(apiUrl)Domain/AddFtpAccount?format=json"
         let parameters: [String:AnyObject] = ["key":apiKey as AnyObject, "name":dname as AnyObject, "account":account as AnyObject,"password":password as AnyObject,"homePath":"\\" as AnyObject,"ronly":String(readOnly) as AnyObject]
+        
+        postRequestObject(url, paramters: parameters){ (result: OperationResult) in
+            completion(result)
+        }
+        
+    }
+    
+    func ChangePasswordOfFtpAccount(_ dname: String, account: String, password: String, completion: @escaping (_ result: OperationResult)->Void){
+        
+        let url : String = "\(apiUrl)Domain/ChangeFtpPassword?format=json"
+        let parameters: [String:AnyObject] = [
+            "key":apiKey as AnyObject,
+            "name":dname as AnyObject,
+            "account":account as AnyObject,
+            "newpassword":password as AnyObject,
+            "suppress_password_policy": true as AnyObject
+        ]
         
         postRequestObject(url, paramters: parameters){ (result: OperationResult) in
             completion(result)

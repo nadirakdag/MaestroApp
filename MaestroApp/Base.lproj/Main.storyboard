@@ -1544,6 +1544,7 @@
                                     <outlet property="LblReadOnly" destination="L2e-pa-ZYg" id="8V6-bY-2lt"/>
                                     <outlet property="LblStatusImage" destination="DSL-j1-OZC" id="a2Z-W6-JbV"/>
                                     <outlet property="LblUserName" destination="vca-Yt-kwv" id="Cki-Dx-Zgz"/>
+                                    <segue destination="Sm5-CA-Na9" kind="show" id="RUf-NF-0RP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1626,7 +1627,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYP-Mn-AGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5655" y="1142.9577464788733"/>
+            <point key="canvasLocation" x="5655" y="823"/>
+        </scene>
+        <!--FTP Şifre Değişimi-->
+        <scene sceneID="vxf-rF-MZf">
+            <objects>
+                <viewController id="Sm5-CA-Na9" customClass="FTPUserPasswordChangeViewController" customModule="MaestroApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pqy-lG-BhP"/>
+                        <viewControllerLayoutGuide type="bottom" id="RdT-Bx-XEk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ySP-H4-2Ve">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yeni Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHD-Yw-y6U">
+                                <rect key="frame" x="20" y="85" width="284" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jHD-Yw-y6U" firstAttribute="top" secondItem="Pqy-lG-BhP" secondAttribute="bottom" constant="21" id="prA-0U-IIz"/>
+                            <constraint firstItem="jHD-Yw-y6U" firstAttribute="width" secondItem="ySP-H4-2Ve" secondAttribute="width" constant="-36" id="q8g-f6-A9P"/>
+                            <constraint firstItem="jHD-Yw-y6U" firstAttribute="trailing" secondItem="ySP-H4-2Ve" secondAttribute="trailingMargin" id="rk1-n8-3sH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FTP Şifre Değişimi" id="hoj-O6-0Dt">
+                        <barButtonItem key="rightBarButtonItem" title="Kaydet" id="co4-21-EIL">
+                            <connections>
+                                <action selector="changeUserPassword:" destination="Sm5-CA-Na9" id="MJC-UI-Bdm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="TxtNewPassword" destination="jHD-Yw-y6U" id="uvT-Fq-N2Z"/>
+                        <outlet property="txtNewPassword" destination="jHD-Yw-y6U" id="Pu7-pi-MI3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTe-Bm-c37" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5655" y="1556"/>
         </scene>
     </scenes>
     <resources>

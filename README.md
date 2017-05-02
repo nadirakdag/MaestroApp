@@ -5,8 +5,8 @@ Geliştirdiğimiz bu uygulama ile kullanıcılar MaestroPanel arayüzüne giriş
 1.  Domain İşlemleri
     -   Web
         *  [x] Yeni Domain Oluşturma 
-        *  [ ] Domain Başlatma, Durdurma, Silme
-        *  [ ] Domain Kullanıcısı Şifre Değiştirme
+        *  [x] Domain Başlatma, Durdurma, Silme
+        *  [x] Domain Kullanıcısı Şifre Değiştirme
         *  [x] Domainleri Listeleme 
     -   Dosya İşlemleri
         *  [ ] Klasor ve Dosya Listemele
@@ -21,7 +21,7 @@ Geliştirdiğimiz bu uygulama ile kullanıcılar MaestroPanel arayüzüne giriş
         *   [x] Yeni E-Posta Adresi Oluşturma 
         *   [x] E-Posta Adreslerini Listeleme 
         *   [x] E-Posta Adresi Silme 
-        *   [ ]  E-Posta Adresinin Şifresini ve Kotasını Değiştirme
+        *   [ ] E-Posta Adresinin Şifresini ve Kotasını Değiştirme
     -   Veritabanı Yönetimi
         *   [x] Yeni Veritabanı Oluşturma  
         *   [x] Veritabanlarını Listeleme  
@@ -35,7 +35,7 @@ Geliştirdiğimiz bu uygulama ile kullanıcılar MaestroPanel arayüzüne giriş
     -   FTP Kullanıcı Yönetimi
         *   [x] Yeni FTP Kullanıcısı Oluşturma  
         *   [x] FTP Kullanıcılarını Listeleme  
-        *   [ ] FTP Kullanıcısının Şifresini Değiştirme 
+        *   [x] FTP Kullanıcısının Şifresini Değiştirme 
         *   [x] FTP Kullanıcısını Silme  
     -   DNS Yönetimi
         *   [x] DNS Kayıtlarını Listelenmesi  

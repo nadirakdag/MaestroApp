@@ -180,8 +180,17 @@ class FTPListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let addFtpUserViewController = segue.destination as! AddFtpUserViewController
-        addFtpUserViewController.dname = dname
+        
+        
+        if (sender as? FTPListTableViewCell) != nil{
+            let ftpUserPasswordChangeView = segue.destination as! FTPUserPasswordChangeViewController
+            ftpUserPasswordChangeView.dname = dname
+            ftpUserPasswordChangeView.accountName = (sender as! FTPListTableViewCell).LblUserName.text!
+        }
+        else{
+            let addFtpUserViewController = segue.destination as! AddFtpUserViewController
+            addFtpUserViewController.dname = dname
+        }
     }
     
 

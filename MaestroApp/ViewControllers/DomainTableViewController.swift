@@ -87,6 +87,7 @@ class DomainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+       
         let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
@@ -99,16 +100,42 @@ class DomainTableViewController: UITableViewController {
         
         deleteButton.backgroundColor = UIColor.red
         
-        return [deleteButton]
+        var statusChangeButtonTitle : String
+        var statusChangeButtonColor : UIColor
+        
+        let domain = DomainList[(indexPath as NSIndexPath).row] as! DomainListItemModel
+        if domain.Status! == 1 {
+            statusChangeButtonTitle = "Başlat"
+            statusChangeButtonColor = UIColor.green
+        }
+        else{
+            statusChangeButtonTitle="Durdur"
+            statusChangeButtonColor = UIColor.blue
+        }
+        
+        let statusButton = UITableViewRowAction(style: .default, title: statusChangeButtonTitle, handler: { (action, indexPath) in
+            self.tableView.dataSource?.tableView?(
+                self.tableView,
+                commit: .none,
+                forRowAt: indexPath
+            )
+            
+            return
+        })
+        
+        statusButton.backgroundColor = statusChangeButtonColor
+//
+        return [deleteButton,statusButton]
     }
     
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let domain = DomainList[(indexPath as NSIndexPath).row] as! DomainListItemModel
+        
         if editingStyle == .delete {
             
-            
-            let domain = DomainList[(indexPath as NSIndexPath).row] as! DomainListItemModel
             self.present(AlertViewController.getUIAlertLoding("\(domain.Name!) siliniyor"), animated: true, completion: nil)
             
             maestro.deleteDomain(domain.Name!){
@@ -118,8 +145,26 @@ class DomainTableViewController: UITableViewController {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        } else if editingStyle == .none {
+            
+            self.present(AlertViewController.getUIAlertLoding("\(domain.Name!) durumu değiştiriliyor"), animated: true, completion: nil)
+            
+            if domain.Status! == 0 {
+                maestro.stopDomain(domain.Name!){
+                    result in
+                    self.dismiss(animated: false, completion: nil)
+                    self.loadDomains()
+                }
+            }
+            else {
+                maestro.startDomain(domain.Name!){
+                    result in
+                    self.dismiss(animated: false, completion: nil)
+                    self.loadDomains()
+                }
+            }
+            
+           
         }
     }
     
