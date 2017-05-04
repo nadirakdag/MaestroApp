@@ -26,7 +26,7 @@ class AddMailboxViewController: UIViewController {
         }
         else {
             self.dismiss(animated: false, completion: nil)
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController!.popViewController(animated: true)
         }
     }
     

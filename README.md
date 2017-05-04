@@ -39,7 +39,7 @@ Geliştirdiğimiz bu uygulama ile kullanıcılar MaestroPanel arayüzüne giriş
         *   [x] FTP Kullanıcısını Silme  
     -   DNS Yönetimi
         *   [x] DNS Kayıtlarını Listelenmesi  
-        *   [ ] Yeni DNS Kaydı Ekleme
+        *   [x] Yeni DNS Kaydı Ekleme
         *   [x] DNS Kaydı Silme  
         *   [ ] DNS Zone Ayarlanması
 2.  Bayi Yönetimi

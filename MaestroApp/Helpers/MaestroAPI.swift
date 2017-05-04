@@ -235,6 +235,60 @@ class DatabaseManager : MaestroAPI{
                 completion(result)
         }
     }
+    
+    func addDatabaseUser(_ dname: String, dbType: String, database: String, userName: String, password: String, completion: @escaping (_ result: OperationResult) -> Void){
+        
+        let url : String = "\(apiUrl)Domain/AddDatabaseUser?format=json"
+        
+        let parameters : [String:AnyObject] = [
+            "key": apiKey as AnyObject,
+            "name":dname as AnyObject,
+            "dbtype": dbType as AnyObject,
+            "database":database as AnyObject,
+            "username":userName as AnyObject,
+            "password": password as AnyObject]
+        
+        postRequestObject(url, paramters: parameters){
+            (result: OperationResult) -> Void in
+            completion(result)
+        }
+    }
+    
+    func deleteDatabaseUser(_ dname: String, dbType: String, database: String, userName: String, completion: @escaping (_ result: OperationResult) -> Void){
+        
+        let url : String = "\(apiUrl)Domain/DeleteDatabaseUser?format=json"
+        
+        let parameters : [String:AnyObject] = [
+            "key": apiKey as AnyObject,
+            "name":dname as AnyObject,
+            "dbtype": dbType as AnyObject,
+            "database":database as AnyObject,
+            "username":userName as AnyObject]
+        
+        deleteRequestObject(url, parameters: parameters){
+            (result: OperationResult) -> Void in
+            completion(result)
+        }
+    }
+    
+    func changeDatabaseUserPassword(_ dname: String, dbType: String, database: String, userName: String, password: String, completion: @escaping (_ result: OperationResult) -> Void){
+        
+        let url : String = "\(apiUrl)Domain/ChangeDatabaseUserPassword?format=json"
+        
+        let parameters : [String:AnyObject] = [
+            "key": apiKey as AnyObject,
+            "name":dname as AnyObject,
+            "dbtype": dbType as AnyObject,
+            "database":database as AnyObject,
+            "username":userName as AnyObject,
+            "newpassword": password as AnyObject]
+        
+        postRequestObject(url, paramters: parameters){
+            (result: OperationResult) -> Void in
+            completion(result)
+        }
+    }
+    
 }
 
 class AliasManager : MaestroAPI{
@@ -292,7 +346,15 @@ class MailManager : MaestroAPI{
     func addMailbox(_ dname: String, account: String, password: String, quota: Int, completion: @escaping (_ result: OperationResult)-> Void){
         
         let url: String = "\(apiUrl)Domain/AddMailBox?format=json"
-        let parameters : [String:AnyObject] = ["key":apiKey as AnyObject,"name":dname as AnyObject, "account": account as AnyObject, "password": password as AnyObject, "quota": quota as AnyObject,"redirect":false as AnyObject,"remail":"" as AnyObject]
+        
+        let parameters : [String:AnyObject] = [
+            "key":apiKey as AnyObject,
+            "name":dname as AnyObject,
+            "account": account as AnyObject,
+            "password": password as AnyObject,
+            "quota": quota as AnyObject,
+            "redirect":false as AnyObject,
+            "remail":"" as AnyObject]
         
         postRequestObject(url, paramters: parameters){
             (result:OperationResult) in
@@ -300,6 +362,42 @@ class MailManager : MaestroAPI{
         }
         
     }
+    
+    func changeQuota(_ dname: String, account: String, quota: Int, completion: @escaping (_ result: OperationResult)-> Void){
+        
+        let url: String = "\(apiUrl)Domain/ChangeMailBoxQuota?format=json"
+        
+        let parameters : [String:AnyObject] = [
+            "key":apiKey as AnyObject,
+            "name":dname as AnyObject,
+            "account": account as AnyObject,
+            "quota": quota as AnyObject]
+        
+        postRequestObject(url, paramters: parameters){
+            (result:OperationResult) in
+            completion(result)
+        }
+        
+    }
+
+    
+    func changePassword(_ dname: String, account: String, password: String,  completion: @escaping (_ result: OperationResult)-> Void){
+        
+        let url: String = "\(apiUrl)Domain/ChangeMailBoxPassword?format=json"
+        
+        let parameters : [String:AnyObject] = [
+            "key":apiKey as AnyObject,
+            "name":dname as AnyObject,
+            "account": account as AnyObject,
+            "password": password as AnyObject]
+        
+        postRequestObject(url, paramters: parameters){
+            (result:OperationResult) in
+            completion(result)
+        }
+        
+    }
+
 }
 
 
@@ -397,6 +495,24 @@ class DNSManager: MaestroAPI {
         
         let url : String = "\(apiUrl)Domain/DeleteDnsRecord?format=json"
         postRequestObject(url, paramters: ["key":apiKey as AnyObject, "name": dname as AnyObject,"rec_type":rectype as AnyObject,"rec_name":recname as AnyObject,"rec_value":recvalue as AnyObject,"priority":Int(priority) as AnyObject]){
+            (result: OperationResult) -> Void in
+            completion(result)
+        }
+    }
+    
+    func addDnsRecord(_ dname: String, rectype: String, recname: String, recvalue: String, priority: Int64, completion: @escaping (_ result: OperationResult)->Void){
+        
+        let url : String = "\(apiUrl)Domain/AddDnsRecord?format=json"
+        
+        let parameters : [String:AnyObject] = [
+        "key":apiKey as AnyObject,
+        "name": dname as AnyObject,
+        "rec_type":rectype as AnyObject,
+        "rec_name":recname as AnyObject,
+        "rec_value":recvalue as AnyObject,
+        "priority":Int(priority) as AnyObject]
+        
+        postRequestObject(url, paramters: parameters){
             (result: OperationResult) -> Void in
             completion(result)
         }

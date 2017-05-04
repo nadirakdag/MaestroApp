@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		142CD1D01E69662900CA935D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142CD1CE1E69662900CA935D /* Main.storyboard */; };
+		1449C6C41EBBC37900BBD825 /* AddDnsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449C6C31EBBC37900BBD825 /* AddDnsViewController.swift */; };
 		148550F41EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148550F31EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift */; };
 		148FF3281E910C5900292334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148FF3271E910C5900292334 /* Assets.xcassets */; };
 		148FF3381E91185D00292334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 148FF33A1E91185D00292334 /* Localizable.strings */; };
@@ -64,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1449C6C31EBBC37900BBD825 /* AddDnsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDnsViewController.swift; sourceTree = "<group>"; };
 		148550F31EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTPUserPasswordChangeViewController.swift; sourceTree = "<group>"; };
 		148FF3271E910C5900292334 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		148FF3331E91179600292334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				14F439E31E68E14D00F36686 /* SubdomainTableViewController.swift */,
 				14F439E41E68E14D00F36686 /* ViewController.swift */,
 				148550F31EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift */,
+				1449C6C31EBBC37900BBD825 /* AddDnsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				14F439C71E68E14100F36686 /* DatabaseListTableViewCell.swift in Sources */,
 				14F4399F1E68E13000F36686 /* NSDate.swift in Sources */,
 				14F439B71E68E13A00F36686 /* ServerListItemModel.swift in Sources */,
+				1449C6C41EBBC37900BBD825 /* AddDnsViewController.swift in Sources */,
 				14F439E51E68E14D00F36686 /* AddDatabaseViewController.swift in Sources */,
 				14F439E81E68E14D00F36686 /* AddFtpUserViewController.swift in Sources */,
 				14F439F01E68E14D00F36686 /* DomainDetailTableViewController.swift in Sources */,

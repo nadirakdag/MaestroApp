@@ -18,12 +18,10 @@ class DNSListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title="DNS Yönetimi"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+        reloadDnsRecords()
+    }
+    
+    func reloadDnsRecords(){
         alert.view.tintColor = UIColor.black
         let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
         loadingIndicator.hidesWhenStopped = true
@@ -108,18 +106,10 @@ class DNSListTableViewController: UITableViewController {
             cell.LblTypeImage.backgroundColor = UIColor(red:0.0, green:0.55, blue:0.73, alpha:1.0)
         }
         
-        cell.LblIsim.text = "İsim : "
-        cell.LblIsim.font = UIFont(name: "HelveticaNeue", size: 11)
-
-        
         cell.LblName.text = record.Name
         cell.LblName.font = UIFont(name: "HelveticaNeue-light", size: 11)
 
-        
-        cell.LblHost.text = "Host/Değer : "
-        cell.LblHost.font = UIFont(name: "HelveticaNeue", size: 11)
-
-        cell.LblValue.sizeToFit()
+//        cell.LblValue.sizeToFit()
         cell.LblValue.text = record.Value
         cell.LblValue.font = UIFont(name: "HelveticaNeue-light", size: 11)
 
@@ -190,14 +180,17 @@ class DNSListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let addSubdomainViewController = segue.destination as! AddDnsViewController
+        addSubdomainViewController.dname = dname
     }
-    */
+ 
 
 }
