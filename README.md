@@ -28,8 +28,9 @@ Geliştirdiğimiz bu uygulama ile kullanıcılar MaestroPanel arayüzüne giriş
         *   [x] Veritabanı Silme  
         *   [ ] Veritabanı Kotası Değiştirme
         *   [ ] Veritabanı Kullanıcı Yönetimi
-            *  [ ] Yeni Kullanıcı Oluşturma
-            *  [ ] Kullanıcı Silme
+            *  [x] Yeni Kullanıcı Oluşturma
+            *  [x] Kullanıcı Listeleme
+            *  [x] Kullanıcı Silme
             *  [ ] Kullanıcı Şifresini Değiştirme
             *  [ ] Kullanıcı İzinlerini Yönetme
     -   FTP Kullanıcı Yönetimi

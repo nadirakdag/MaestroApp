@@ -532,6 +532,7 @@
                                     <outlet property="LblLimit" destination="lTM-1p-FNq" id="XI5-Vi-L53"/>
                                     <outlet property="LblName" destination="LCf-Vi-Lgn" id="YMo-nY-xq6"/>
                                     <outlet property="LblTur" destination="OLC-6v-Ukq" id="Bpu-7J-eeL"/>
+                                    <segue destination="DtQ-Fr-Qwg" kind="show" id="1go-bp-iV6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -551,6 +552,111 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USJ-wk-fqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4665" y="172"/>
+        </scene>
+        <!--Veri Tabanı Kullanıcıları-->
+        <scene sceneID="Bgk-dt-oW1">
+            <objects>
+                <tableViewController id="DtQ-Fr-Qwg" customClass="DatabaseUserTableViewController" customModule="MaestroApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EdX-Hj-WPt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" id="VgD-5l-Fg6">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VgD-5l-Fg6" id="23E-rN-wd9">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DtQ-Fr-Qwg" id="mR9-uG-LHP"/>
+                            <outlet property="delegate" destination="DtQ-Fr-Qwg" id="gUy-CH-aQb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Veri Tabanı Kullanıcıları" id="saV-2J-Z0h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tOa-9j-Oq7">
+                            <connections>
+                                <segue destination="3bU-3f-wtN" kind="show" id="8e0-yt-CRk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCy-Y4-4Jy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5655" y="-580"/>
+        </scene>
+        <!--Add DB User-->
+        <scene sceneID="k7x-J5-MHB">
+            <objects>
+                <viewController id="3bU-3f-wtN" customClass="AddDbUserViewController" customModule="MaestroApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eRR-aq-Dsv"/>
+                        <viewControllerLayoutGuide type="bottom" id="wOC-YK-5lN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N2I-0V-bTN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="domain" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="166-Ou-ZnD">
+                                <rect key="frame" x="16" y="72" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="dbname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yj8-zA-m6z">
+                                <rect key="frame" x="16" y="110" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OR5-x5-Zb1">
+                                <rect key="frame" x="16" y="148" width="288" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="MS SQL"/>
+                                    <segment title="MYSQL"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Db User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-Q8-Luf">
+                                <rect key="frame" x="16" y="184" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Db User Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lna-D9-tgD">
+                                <rect key="frame" x="16" y="222" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add DB User" id="aYX-Gs-cPV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="s1T-jH-TGC">
+                            <connections>
+                                <action selector="addDbUser:" destination="3bU-3f-wtN" id="r0j-iR-t3f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentDbType" destination="OR5-x5-Zb1" id="JlZ-Tr-Kkm"/>
+                        <outlet property="txtDbName" destination="yj8-zA-m6z" id="6Sf-Td-Qdy"/>
+                        <outlet property="txtDbUserName" destination="ICd-Q8-Luf" id="PNY-ge-uUu"/>
+                        <outlet property="txtDbUserPassword" destination="Lna-D9-tgD" id="FKb-Ih-kpo"/>
+                        <outlet property="txtDomainName" destination="166-Ou-ZnD" id="PkM-O2-dCL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlo-3R-lAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6536.25" y="-580"/>
         </scene>
         <!--Veritabanı Ekle-->
         <scene sceneID="0bY-oZ-eLQ">

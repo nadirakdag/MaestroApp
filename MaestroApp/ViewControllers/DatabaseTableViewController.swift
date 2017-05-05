@@ -143,14 +143,11 @@ class DatabaseTableViewController: UITableViewController {
 
     
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle:
-        
-        UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
             let database = databaseList[(indexPath as NSIndexPath).row] as! DatabaseListItemModel
             self.present(AlertViewController.getUIAlertLoding("Veri tabanı siliniyor..."), animated: true, completion: nil)
-
             
             let dbType : String
             
@@ -193,10 +190,25 @@ class DatabaseTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        let addDatabaseViewController = segue.destination as! AddDatabaseViewController
-        addDatabaseViewController.dname = dname
+        
+        if (sender as? DatabaseListTableViewCell) != nil{
+            
+            let dbname: String = (sender as! DatabaseListTableViewCell).LblName.text!
+            let predicate : NSPredicate = NSPredicate(format: "Name = %@", dbname)
+            databaseList.filter(using: predicate)
+            let result : DatabaseListItemModel = databaseList[0] as! DatabaseListItemModel
+            
+            let dbUserListView = segue.destination as! DatabaseUserTableViewController
+            dbUserListView.dname = dname
+            dbUserListView.dbType = result.DbType!
+            dbUserListView.dbName = result.Name!
+            dbUserListView.dbUserList = NSMutableArray(array: result.Users)
+            
+        }
+        else{
+            let addDatabaseViewController = segue.destination as! AddDatabaseViewController
+            addDatabaseViewController.dname = dname
+        }
     }
     
 

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		142CD1D01E69662900CA935D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142CD1CE1E69662900CA935D /* Main.storyboard */; };
 		1449C6C41EBBC37900BBD825 /* AddDnsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449C6C31EBBC37900BBD825 /* AddDnsViewController.swift */; };
+		1449C6C61EBC787200BBD825 /* DatabaseUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449C6C51EBC787200BBD825 /* DatabaseUserTableViewController.swift */; };
+		1449C6C81EBC875C00BBD825 /* AddDbUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449C6C71EBC875C00BBD825 /* AddDbUserViewController.swift */; };
+		1449C6CB1EBC8B6100BBD825 /* DbUserListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449C6CA1EBC8B6100BBD825 /* DbUserListItem.swift */; };
 		148550F41EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148550F31EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift */; };
 		148FF3281E910C5900292334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148FF3271E910C5900292334 /* Assets.xcassets */; };
 		148FF3381E91185D00292334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 148FF33A1E91185D00292334 /* Localizable.strings */; };
@@ -66,6 +69,9 @@
 
 /* Begin PBXFileReference section */
 		1449C6C31EBBC37900BBD825 /* AddDnsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDnsViewController.swift; sourceTree = "<group>"; };
+		1449C6C51EBC787200BBD825 /* DatabaseUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseUserTableViewController.swift; sourceTree = "<group>"; };
+		1449C6C71EBC875C00BBD825 /* AddDbUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDbUserViewController.swift; sourceTree = "<group>"; };
+		1449C6CA1EBC8B6100BBD825 /* DbUserListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbUserListItem.swift; sourceTree = "<group>"; };
 		148550F31EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTPUserPasswordChangeViewController.swift; sourceTree = "<group>"; };
 		148FF3271E910C5900292334 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		148FF3331E91179600292334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				14F439AB1E68E13A00F36686 /* ServerListItemModel.swift */,
 				14F439AC1E68E13A00F36686 /* ServerResourceItemModel.swift */,
 				14F439AD1E68E13A00F36686 /* SubdomainListItemModel.swift */,
+				1449C6CA1EBC8B6100BBD825 /* DbUserListItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,6 +229,8 @@
 				14F439E41E68E14D00F36686 /* ViewController.swift */,
 				148550F31EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift */,
 				1449C6C31EBBC37900BBD825 /* AddDnsViewController.swift */,
+				1449C6C51EBC787200BBD825 /* DatabaseUserTableViewController.swift */,
+				1449C6C71EBC875C00BBD825 /* AddDbUserViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -433,10 +442,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F439F21E68E14D00F36686 /* FTPListTableViewController.swift in Sources */,
+				1449C6CB1EBC8B6100BBD825 /* DbUserListItem.swift in Sources */,
 				14F439B11E68E13A00F36686 /* DNSRecordsModel.swift in Sources */,
 				14F439ED1E68E14D00F36686 /* ChangeDomainPasswordViewController.swift in Sources */,
 				14F439AF1E68E13A00F36686 /* BaseModel.swift in Sources */,
 				14F439F11E68E14D00F36686 /* DomainTableViewController.swift in Sources */,
+				1449C6C81EBC875C00BBD825 /* AddDbUserViewController.swift in Sources */,
 				14F439B21E68E13A00F36686 /* DomainListItemModel.swift in Sources */,
 				14F439AE1E68E13A00F36686 /* AliasListItemModel.swift in Sources */,
 				14F439CE1E68E14100F36686 /* ServerListTableViewCell.swift in Sources */,
@@ -445,6 +456,7 @@
 				14F439EB1E68E14D00F36686 /* AlertViewController.swift in Sources */,
 				14F439F41E68E14D00F36686 /* ResellerTableViewController.swift in Sources */,
 				14F439CA1E68E14100F36686 /* FTPListTableViewCell.swift in Sources */,
+				1449C6C61EBC787200BBD825 /* DatabaseUserTableViewController.swift in Sources */,
 				14F439B51E68E13A00F36686 /* OperationResult.swift in Sources */,
 				14F439C81E68E14100F36686 /* DNSListTableViewCell.swift in Sources */,
 				14F439EA1E68E14D00F36686 /* AddSubdomainViewController.swift in Sources */,
