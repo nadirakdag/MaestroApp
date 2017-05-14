@@ -46,10 +46,10 @@ Geliştirdiğimiz bu uygulama ile kullanıcılar MaestroPanel arayüzüne giriş
 2.  Bayi Yönetimi
     -   Bayi Kullanıcı Yönetimi
         *   [ ] Yeni Bayi Kullanıcısı Oluşturma
-        *   [ ] Bayi Kullanısını Başlatma, Durdurma ve Silme İşlemleri
-        *   [ ] Bayi Kullanıcısının Şifresini Değiştirme
+        *   [x] Bayi Kullanısını Başlatma, Durdurma ve Silme İşlemleri
+        *   [x] Bayi Kullanıcısının Şifresini Değiştirme
         *   [x] Bayi Kullanıcılarının Listelemesi  
-        *   [ ] Bayi Kullanıcısına ait Domain Yönetimi
+        *   [x] Bayi Kullanıcısına ait Domain Yönetimi
         *   [ ] Bayi Kullanıcısına ait IP Adreslerinin Yönetimi
 3. Sunucu Yönetimi
     -   [ ] IP Adresi Yönetimi

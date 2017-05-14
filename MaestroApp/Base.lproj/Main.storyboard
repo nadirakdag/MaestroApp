@@ -24,6 +24,7 @@
                         <segue destination="ag6-Xc-apG" kind="relationship" relationship="viewControllers" id="2dU-oG-PhZ"/>
                         <segue destination="KKs-0X-g18" kind="relationship" relationship="viewControllers" id="yd8-Go-G6a"/>
                         <segue destination="06Q-fb-Cfw" kind="relationship" relationship="viewControllers" id="7Vz-c2-3z0"/>
+                        <segue destination="1co-OW-8Hu" kind="relationship" relationship="viewControllers" id="w2q-7w-NEz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2e-nA-0bS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1000,6 +1001,52 @@
             </objects>
             <point key="canvasLocation" x="4600" y="-715"/>
         </scene>
+        <!--Root View Controller-->
+        <scene sceneID="7el-zt-gLI">
+            <objects>
+                <tableViewController id="Cam-th-oL0" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wib-av-23V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HRA-yh-XoS">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HRA-yh-XoS" id="2px-6m-p11">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Cam-th-oL0" id="wIc-xG-GZK"/>
+                            <outlet property="delegate" destination="Cam-th-oL0" id="ilD-Dt-DUM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="qmT-aJ-UTV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4p-oX-ESB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1016" y="-2165"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="hoz-px-Lnd">
+            <objects>
+                <navigationController id="1co-OW-8Hu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="qTb-a1-Jcj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Apl-41-MDj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Cam-th-oL0" kind="relationship" relationship="rootViewController" id="LYs-Rh-loy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nHQ-fX-nI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1016" y="-1268"/>
+        </scene>
         <!--Domainler-->
         <scene sceneID="en6-Qr-JiA">
             <objects>
@@ -1015,7 +1062,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUz-Jx-PCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248" y="-1145"/>
+            <point key="canvasLocation" x="296" y="-371"/>
         </scene>
         <!--Yeni Domain-->
         <scene sceneID="9ee-ur-G2x">
@@ -1160,7 +1207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resellerCell" id="8Ph-qT-f1V" customClass="ResellerListTableViewCell" customModule="MaestroApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resellerCell" id="8Ph-qT-f1V" customClass="ResellerListTableViewCell" customModule="MaestroApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Ph-qT-f1V" id="uAb-KY-akO">
@@ -1219,6 +1266,7 @@
                                     <outlet property="LblSonlanmaTarihi" destination="Wt6-s7-yHF" id="a4J-1r-UQN"/>
                                     <outlet property="LblStatusImage" destination="2ca-nZ-L72" id="ta8-Lg-FKL"/>
                                     <outlet property="LblUsername" destination="qaZ-V7-lja" id="3St-CY-XFq"/>
+                                    <segue destination="X2R-zp-TzD" kind="show" id="Oz3-V7-Fx3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1228,11 +1276,327 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Bayiler" id="oQ3-DE-Qsr"/>
-                    <navigationItem key="navigationItem" title="Bayiler" id="omC-WX-5Sk"/>
+                    <navigationItem key="navigationItem" title="Bayiler" id="omC-WX-5Sk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cGH-Y7-m2L">
+                            <connections>
+                                <segue destination="g6n-dL-3QV" kind="show" id="ICP-UJ-MxS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Icb-xC-ERG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-857" y="1481"/>
+            <point key="canvasLocation" x="-2484" y="1555"/>
+        </scene>
+        <!--Bayi Parolası Değiştir-->
+        <scene sceneID="aF7-Q4-zlP">
+            <objects>
+                <viewController id="pXf-j3-0k2" customClass="ResellerChangePasswordViewController" customModule="MaestroApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vHb-3i-TZI"/>
+                        <viewControllerLayoutGuide type="bottom" id="0k9-1Y-UKp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EJe-tB-fFE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bayi Yeni Parolası" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Xg-Uv-YZh">
+                                <rect key="frame" x="16" y="72" width="288" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Xg-Uv-YZh" firstAttribute="trailing" secondItem="EJe-tB-fFE" secondAttribute="trailingMargin" id="Ovv-HP-3z8"/>
+                            <constraint firstItem="0Xg-Uv-YZh" firstAttribute="leading" secondItem="EJe-tB-fFE" secondAttribute="leadingMargin" id="ShX-HD-PXI"/>
+                            <constraint firstItem="0Xg-Uv-YZh" firstAttribute="top" secondItem="vHb-3i-TZI" secondAttribute="bottom" constant="8" symbolic="YES" id="jMo-Vo-cir"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bayi Parolası Değiştir" id="nO3-Bm-HiJ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="OsO-WT-IrZ">
+                            <connections>
+                                <action selector="btnChangePassword:" destination="pXf-j3-0k2" id="SrR-WY-LhE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtResellerPassword" destination="0Xg-Uv-YZh" id="UC2-i6-lpk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQI-rd-fZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2484.375" y="3220"/>
+        </scene>
+        <!--Yeni Bayi-->
+        <scene sceneID="sXw-Hc-jUD">
+            <objects>
+                <viewController id="g6n-dL-3QV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SZJ-Cp-W3a"/>
+                        <viewControllerLayoutGuide type="bottom" id="sfg-6d-qfD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X2g-vo-e1C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Yeni Bayi" id="trG-Yi-bgS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eW2-Cd-65L"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22F-10-Uzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1654" y="1555"/>
+        </scene>
+        <!--Bayi IP Adres Yönetimi-->
+        <scene sceneID="Yfw-Gv-DnN">
+            <objects>
+                <tableViewController id="5yr-kr-Dkq" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YcW-dl-ypW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resellerIpAddrCell" rowHeight="88" id="y8V-6V-1Df" customClass="ResellerIpAddrTableViewCell" customModule="MaestroApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y8V-6V-1Df" id="r2k-22-ITX">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBY-eo-OKy">
+                                            <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP Adresi: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1j-wP-xSU">
+                                            <rect key="frame" x="8" y="33" width="75" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Durumu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr9-GT-YPW">
+                                            <rect key="frame" x="8" y="58" width="75" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-wy-7hi">
+                                            <rect key="frame" x="91" y="33" width="221" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbh-82-MGx">
+                                            <rect key="frame" x="91" y="58" width="221" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblIpAddr" destination="kZz-wy-7hi" id="qXJ-NR-Qdb"/>
+                                    <outlet property="lblNicName" destination="lBY-eo-OKy" id="2yb-ts-yr3"/>
+                                    <outlet property="lblStatus" destination="fbh-82-MGx" id="Iqd-6d-KxN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5yr-kr-Dkq" id="vB9-AV-Qao"/>
+                            <outlet property="delegate" destination="5yr-kr-Dkq" id="Diq-zL-3Ia"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Bayi IP Adres Yönetimi" id="lBX-jh-6OU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MKW-4A-cZY"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bwq-Th-Idh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3388.125" y="2383.75"/>
+        </scene>
+        <!--Reseller Detail Table View Controller-->
+        <scene sceneID="1KT-PW-KUD">
+            <objects>
+                <tableViewController id="X2R-zp-TzD" customClass="ResellerDetailTableViewController" customModule="MaestroApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SJJ-Wj-TxD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Bilgiler" id="caL-cQ-Upd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="ZnF-rp-cch">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZnF-rp-cch" id="3mP-bs-ZsM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="İsim Soyisim:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahx-fp-ktP">
+                                                    <rect key="frame" x="8" y="8" width="109" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kullanıcı Adı:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBN-vi-jgF">
+                                                    <rect key="frame" x="8" y="37" width="109" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expiration Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlX-0I-hyV">
+                                                    <rect key="frame" x="8" y="66" width="131" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mail Adresi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tda-wc-lHD">
+                                                    <rect key="frame" x="8" y="95" width="131" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organizasyon:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blv-1m-pAN">
+                                                    <rect key="frame" x="8" y="124" width="131" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXM-HL-uof">
+                                                    <rect key="frame" x="139" y="8" width="173" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFL-bn-lzm">
+                                                    <rect key="frame" x="139" y="37" width="173" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKC-Bi-Ohx">
+                                                    <rect key="frame" x="139" y="66" width="173" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoP-Kw-8Kn">
+                                                    <rect key="frame" x="139" y="95" width="173" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D2-KW-6RD">
+                                                    <rect key="frame" x="139" y="124" width="173" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Özellikler" id="CED-DV-YLZ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="glW-n1-1gO" style="IBUITableViewCellStyleDefault" id="jba-Mn-p92">
+                                        <rect key="frame" x="0.0" y="216" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jba-Mn-p92" id="bZc-cx-jij">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Bayi Şifresini Değiştir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="glW-n1-1gO">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pXf-j3-0k2" kind="show" identifier="resellerPasswordChangeSegue" id="4xx-n2-LNr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="UOe-tV-QIs" style="IBUITableViewCellStyleDefault" id="IHO-jf-FTY">
+                                        <rect key="frame" x="0.0" y="260" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IHO-jf-FTY" id="F5O-iK-IX3">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Domainleri Yönet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UOe-tV-QIs">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gxw-iB-Fu5" kind="show" identifier="resellerDomainSegue" id="eWp-O7-FoN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kp8-Ul-ymx" style="IBUITableViewCellStyleDefault" id="v5u-vy-3yK">
+                                        <rect key="frame" x="0.0" y="304" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v5u-vy-3yK" id="RsI-DI-vX5">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="IP Adreslerini Yönet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kp8-Ul-ymx">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5yr-kr-Dkq" kind="show" identifier="resellerIpAddrSegue" id="rqP-6g-BVr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="X2R-zp-TzD" id="wB9-ml-jtJ"/>
+                            <outlet property="delegate" destination="X2R-zp-TzD" id="rgf-Dw-8cy"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="lblExpirationDate" destination="tKC-Bi-Ohx" id="Jmp-Co-3sG"/>
+                        <outlet property="lblMailAddress" destination="LoP-Kw-8Kn" id="10R-Os-YzG"/>
+                        <outlet property="lblNameLastname" destination="SXM-HL-uof" id="KEq-Gg-6iG"/>
+                        <outlet property="lblOrganization" destination="7D2-KW-6RD" id="4ch-Hp-JXG"/>
+                        <outlet property="lblUserName" destination="EFL-bn-lzm" id="XT6-YO-WJu"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cM1-wc-Tq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2484" y="2384"/>
         </scene>
         <!--Sunucular-->
         <scene sceneID="B8Y-Og-3Sm">
@@ -1848,4 +2212,7 @@
         <image name="overflowshadow" width="420" height="6"/>
         <image name="overflowshadow.png" width="420" height="6"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eWp-O7-FoN"/>
+    </inferredMetricsTieBreakers>
 </document>

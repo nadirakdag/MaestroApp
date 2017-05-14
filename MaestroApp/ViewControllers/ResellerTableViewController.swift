@@ -8,59 +8,48 @@ import UIKit
 class ResellerTableViewController: UITableViewController {
     
     
-    var ResllerList : NSMutableArray=[]
+    var resellerList : NSMutableArray=[]
     var maestro : ResellerManager = ResellerManager()
     var StatusImage: UIImageView?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.contentInset.top = UIApplication.shared.statusBarFrame.height
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        loadResellers()
+    }
     
-
+    func loadResellers(){
         present(AlertViewController.getUIAlertLoding("Bayiler yükleniyor"), animated: true, completion: nil)
-        
         maestro.getResellerList{result in
-            self.ResllerList = result
+            self.resellerList = result
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
-
+            
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return ResllerList.count
+        return resellerList.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resellerCell", for: indexPath) as! ResellerListTableViewCell
         
-        let reseller = ResllerList[(indexPath as NSIndexPath).row] as! ResellerListItemModel
+        let reseller = resellerList[(indexPath as NSIndexPath).row] as! ResellerListItemModel
         
         
         var imageForStatus : UIImage
         
-       if reseller.Status == "1" {
+       if reseller.Status == 1 {
             imageForStatus = UIImage(named:"working")!
         }
         else{
@@ -91,50 +80,100 @@ class ResellerTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
+            self.tableView.dataSource?.tableView?(
+                self.tableView,
+                commit: .delete,
+                forRowAt: indexPath
+            )
+            
+            return
+        })
+        
+        deleteButton.backgroundColor = UIColor.red
+        
+        var statusChangeButtonTitle : String
+        var statusChangeButtonColor : UIColor
+        
+        let reseller = resellerList[(indexPath as NSIndexPath).row] as! ResellerListItemModel
+        if reseller.Status != 1 {
+            statusChangeButtonTitle = "Başlat"
+            statusChangeButtonColor = UIColor.green
+        }
+        else{
+            statusChangeButtonTitle="Durdur"
+            statusChangeButtonColor = UIColor.blue
+        }
+        
+        let statusButton = UITableViewRowAction(style: .default, title: statusChangeButtonTitle, handler: { (action, indexPath) in
+            self.tableView.dataSource?.tableView?(
+                self.tableView,
+                commit: .none,
+                forRowAt: indexPath
+            )
+            
+            return
+        })
+        
+        statusButton.backgroundColor = statusChangeButtonColor
+        return [deleteButton,statusButton]
+    }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let reseller = resellerList[(indexPath as NSIndexPath).row] as! ResellerListItemModel
+        
+        if editingStyle == .delete {
+            
+            self.present(AlertViewController.getUIAlertLoding("\(reseller.FirstName!) \(reseller.LastName!) siliniyor"), animated: true, completion: nil)
+            
+            maestro.deleteReseller(reseller.Username!){
+                result in
+                self.resellerList.remove(reseller)
+                self.dismiss(animated: false, completion: nil)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            
+        } else if editingStyle == .none {
+            
+            self.present(AlertViewController.getUIAlertLoding("\(reseller.FirstName!) \(reseller.LastName!) durumu değiştiriliyor"), animated: true, completion: nil)
+            
+            if reseller.Status == 1 {
+                maestro.stopReseller(reseller.Username!){
+                    result in
+                    self.dismiss(animated: false, completion: nil)
+                    self.loadResellers()
+                }
+            }
+            else {
+                maestro.startReseller(reseller.Username!){
+                    result in
+                    self.dismiss(animated: false, completion: nil)
+                    self.loadResellers()
+                }
+            }
+            
+            
+        }
+    }
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (sender as? ResellerListTableViewCell) != nil {
+            
+            let username: String = (sender as! ResellerListTableViewCell).LblUsername.text!
+            let predicate : NSPredicate = NSPredicate(format: "Username = %@", username)
+            resellerList.filter(using: predicate)
+            let result : ResellerListItemModel = resellerList[0] as! ResellerListItemModel
+            
+            let resellerDetailView = segue.destination as! ResellerDetailTableViewController
+            resellerDetailView.reseller = result
+        }
+//        else{
+//            //let addDatabaseViewController = segue.destination as! AddResellerViewController
+//        }
+    }
+
 }

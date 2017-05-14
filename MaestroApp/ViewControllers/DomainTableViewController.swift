@@ -12,6 +12,8 @@ class DomainTableViewController: UITableViewController {
     var DomainList : NSMutableArray = []
     var maestro: DomainManager = DomainManager()
     var StatusImage: UIImageView?
+    var isReseller : Bool = false
+    var resellerName : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +25,14 @@ class DomainTableViewController: UITableViewController {
     }
     
     func loadDomains(){
-        self.present(AlertViewController.getUIAlertLoding("Domainler Yükleniyor"), animated: true, completion: nil)
-        maestro.getDomainList{ result in
+        
+        let alert = AlertViewController.getUIAlertLoding("Domainler Yükleniyor")
+        self.present(alert, animated: true, completion: nil)
+        
+        maestro.getDomainList(isReseller, resellerUserName: resellerName){ result in
             self.DomainList = result
             self.tableView.reloadData()
-            self.dismiss(animated: false, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -138,7 +143,7 @@ class DomainTableViewController: UITableViewController {
             
             self.present(AlertViewController.getUIAlertLoding("\(domain.Name!) siliniyor"), animated: true, completion: nil)
             
-            maestro.deleteDomain(domain.Name!){
+            maestro.deleteDomain(isReseller,userName: resellerName,dname: domain.Name!){
                 result in
                 self.DomainList.remove(domain)
                 self.dismiss(animated: false, completion: nil)

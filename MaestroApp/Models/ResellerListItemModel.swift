@@ -5,24 +5,24 @@
 
 import SwiftyJSON
 
-class ResellerListItemModel: Initable {
+class ResellerListItemModel: NSObject,Initable {
     var LastName : String?
-    var Email : Int32?
+    var Email : String?
     var Id : Int32?
     var FirstName : String?
     var ApiAccess : Bool?
     var LoginType : Bool?
     var Organization: String?
     var ExpirationDate : Date!
-    var Status: String?
+    var Status: Int32?
     var Username : String?
     
     required init(opt1:JSON) {
         self.LastName = opt1["LastName"].stringValue
-        self.Email = opt1["Email"].int32Value
+        self.Email = opt1["Email"].stringValue
         self.Id = opt1["Id"].int32Value
         self.FirstName = opt1["FirstName"].stringValue
-        self.Status = opt1["Status"].stringValue
+        self.Status = opt1["Status"].int32Value
         self.ExpirationDate = Date(jsonDate: opt1["ExpirationDate"].stringValue)
         self.Username = opt1["Username"].stringValue
         self.ApiAccess = opt1["ApiAccess"].boolValue
