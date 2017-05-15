@@ -3,7 +3,10 @@
 "00E-pF-LrZ.text" = "FTP Management";
 
 /* Class = "UINavigationItem"; title = "FTP Kullanıcısı Ekle"; ObjectID = "20g-qc-edG"; */
-"20g-qc-edG.title" = "FTP Kullanıcısı Ekle";
+"20g-qc-edG.title" = "Add FTP User";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "92v-gV-VbE"; */
+"92v-gV-VbE.text" = "Domain";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "3P3-v2-Bcl"; */
 "3P3-v2-Bcl.text" = "Label";
@@ -24,13 +27,13 @@
 "5Rf-Tb-bFj.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Veritabanı Kullanıcı Şifresi"; ObjectID = "8Fd-va-xQd"; */
-"8Fd-va-xQd.placeholder" = "Veritabanı Kullanıcı Şifresi";
+"8Fd-va-xQd.placeholder" = "Database User Password";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "8Pf-qu-oFx"; */
 "8Pf-qu-oFx.title" = "Title";
 
 /* Class = "UITextField"; placeholder = "Mail Kullanıcı Şifresi"; ObjectID = "AZG-KF-9j8"; */
-"AZG-KF-9j8.placeholder" = "Mail Kullanıcı Şifresi";
+"AZG-KF-9j8.placeholder" = "Mail User Password";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Aey-6J-h6I"; */
 "Aey-6J-h6I.text" = "Label";
@@ -39,10 +42,10 @@
 "BT5-8g-DT2.title" = "Title";
 
 /* Class = "UILabel"; text = "Şifre Değiştir"; ObjectID = "BUw-G1-VRo"; */
-"BUw-G1-VRo.text" = "Şifre Değiştir";
+"BUw-G1-VRo.text" = "Change Password";
 
 /* Class = "UILabel"; text = "Subdomain Yönetimi"; ObjectID = "Biw-rH-QOw"; */
-"Biw-rH-QOw.text" = "Subdomain Yönetimi";
+"Biw-rH-QOw.text" = "Subdomain Management";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "CGY-7K-51y"; */
 "CGY-7K-51y.text" = "Label";
@@ -66,7 +69,7 @@
 "EWC-GG-SuR.text" = "Label";
 
 /* Class = "UISegmentedControl"; EwJ-9i-aCf.segmentTitles[0] = "MS SQL"; ObjectID = "EwJ-9i-aCf"; */
-"EwJ-9i-aCf.segmentTitles[0]" = "MS SQL";
+"EwJ-9i-aCf.segmentTitles[0]" = "MSSQL";
 
 /* Class = "UISegmentedControl"; EwJ-9i-aCf.segmentTitles[1] = "MYSQL "; ObjectID = "EwJ-9i-aCf"; */
 "EwJ-9i-aCf.segmentTitles[1]" = "MYSQL ";
@@ -81,13 +84,13 @@
 "ImU-YK-kC0.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "FTP Kullanıcı Adı"; ObjectID = "JWB-sf-dr7"; */
-"JWB-sf-dr7.placeholder" = "FTP Kullanıcı Adı";
+"JWB-sf-dr7.placeholder" = "FTP Username";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "K03-80-HWt"; */
 "K03-80-HWt.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Yeni Şifre"; ObjectID = "KDF-gT-CRS"; */
-"KDF-gT-CRS.placeholder" = "Yeni Şifre";
+"KDF-gT-CRS.placeholder" = "New Password";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "KKH-kb-ScF"; */
 "KKH-kb-ScF.text" = "Label";
@@ -96,7 +99,7 @@
 "Klr-Bc-I5F.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "FTP Kullanıcı Şifresi"; ObjectID = "Kya-R3-pYq"; */
-"Kya-R3-pYq.placeholder" = "FTP Kullanıcı Şifresi";
+"Kya-R3-pYq.placeholder" = "FTP User Password";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "L2e-pa-ZYg"; */
 "L2e-pa-ZYg.text" = "Label";
@@ -105,13 +108,13 @@
 "LCf-Vi-Lgn.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Alias Yönetimi"; ObjectID = "MF5-Mv-Yce"; */
-"MF5-Mv-Yce.title" = "Alias Yönetimi";
+"MF5-Mv-Yce.title" = "Alias Management";
 
 /* Class = "UILabel"; text = "Alias Yönetimi"; ObjectID = "Ndd-qL-7cE"; */
-"Ndd-qL-7cE.text" = "Alias Yönetimi";
+"Ndd-qL-7cE.text" = "Alias Management";
 
 /* Class = "UITabBarItem"; title = "Sunucular"; ObjectID = "NjH-6O-FM4"; */
-"NjH-6O-FM4.title" = "Sunucular";
+"NjH-6O-FM4.title" = "Servers";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "OUI-F9-68x"; */
 "OUI-F9-68x.text" = "Label";
@@ -120,25 +123,25 @@
 "OuW-BR-Cpo.text" = "Label";
 
 /* Class = "UITableViewSection"; headerTitle = "Bilgiler"; ObjectID = "PDg-ZI-G4l"; */
-"PDg-ZI-G4l.headerTitle" = "Bilgiler";
+"PDg-ZI-G4l.headerTitle" = "Informations";
 
 /* Class = "UITextField"; placeholder = "Mail Adresi"; ObjectID = "PRY-5P-6Pj"; */
-"PRY-5P-6Pj.placeholder" = "Mail Adresi";
+"PRY-5P-6Pj.placeholder" = "Mail Address";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "QZL-yj-lGP"; */
 "QZL-yj-lGP.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Mail Ekle"; ObjectID = "Qqi-7H-0Tn"; */
-"Qqi-7H-0Tn.title" = "Mail Ekle";
+"Qqi-7H-0Tn.title" = "Add Mail Account";
 
 /* Class = "UITabBarItem"; title = "Domainler"; ObjectID = "SNg-zo-Cte"; */
 "SNg-zo-Cte.title" = "Domains";
 
 /* Class = "UITextField"; placeholder = "Veritabanı Adı"; ObjectID = "UJz-VY-0SD"; */
-"UJz-VY-0SD.placeholder" = "Veritabanı Adı";
+"UJz-VY-0SD.placeholder" = "Database Name";
 
 /* Class = "UITabBarItem"; title = "Domainler"; ObjectID = "WUY-o8-7UZ"; */
-"WUY-o8-7UZ.title" = "Domainler";
+"WUY-o8-7UZ.title" = "Domains";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "WYO-Xw-qhi"; */
 "WYO-Xw-qhi.text" = "Label";
@@ -147,7 +150,7 @@
 "Wt6-s7-yHF.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "E-Posta"; ObjectID = "Wuv-B3-e7A"; */
-"Wuv-B3-e7A.placeholder" = "E-Posta";
+"Wuv-B3-e7A.placeholder" = "E-Mail";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "X5B-Gr-MzP"; */
 "X5B-Gr-MzP.text" = "Label";
@@ -156,13 +159,13 @@
 "Y1y-RG-mQw.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Veritabanı Kotası"; ObjectID = "Y5S-tW-XXM"; */
-"Y5S-tW-XXM.placeholder" = "Veritabanı Kotası";
+"Y5S-tW-XXM.placeholder" = "Database Quota";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "YjV-Gv-vOR"; */
 "YjV-Gv-vOR.text" = "Label";
 
 /* Class = "UILabel"; text = "DNS Yönetimi"; ObjectID = "Z2o-qf-M73"; */
-"Z2o-qf-M73.text" = "DNS Yönetimi";
+"Z2o-qf-M73.text" = "DNS Management";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Z6u-41-9ch"; */
 "Z6u-41-9ch.text" = "Label";
@@ -186,7 +189,7 @@
 "c1D-eh-27l.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Alan Adı"; ObjectID = "c1L-QK-oeU"; */
-"c1L-QK-oeU.placeholder" = "Alan Adı";
+"c1L-QK-oeU.placeholder" = "Domain";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "cQf-AX-S0h"; */
 "cQf-AX-S0h.text" = "Label";
@@ -195,7 +198,7 @@
 "cTH-fI-uun.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Yeni Domain"; ObjectID = "cX9-15-lLT"; */
-"cX9-15-lLT.title" = "Yeni Domain";
+"cX9-15-lLT.title" = "Add New Domain";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "d0H-ax-sAd"; */
 "d0H-ax-sAd.text" = "Label";
@@ -207,28 +210,28 @@
 "fqn-4Q-BNq.text" = "Label";
 
 /* Class = "UILabel"; text = "Mailbox Yönetimi"; ObjectID = "gAC-3X-wG8"; */
-"gAC-3X-wG8.text" = "Mailbox Yönetimi";
+"gAC-3X-wG8.text" = "Mailbox Management";
 
 /* Class = "UITableViewSection"; headerTitle = "Özellikler"; ObjectID = "gSF-bb-ehO"; */
-"gSF-bb-ehO.headerTitle" = "Özellikler";
+"gSF-bb-ehO.headerTitle" = "Properties";
 
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "gXj-aS-rHI"; */
-"gXj-aS-rHI.title" = "Kaydet";
+"gXj-aS-rHI.title" = "Save";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "ggL-C1-Kk0"; */
 "ggL-C1-Kk0.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Domain Kullanıcı Şifre Değişimi"; ObjectID = "h15-w2-n5u"; */
-"h15-w2-n5u.title" = "Domain Kullanıcı Şifre Değişimi";
+"h15-w2-n5u.title" = "Change Domain User Password";
 
 /* Class = "UILabel"; text = "Veri Tabanı Yönetimi"; ObjectID = "h9o-4w-J1D"; */
-"h9o-4w-J1D.text" = "Veri Tabanı Yönetimi";
+"h9o-4w-J1D.text" = "Database Management";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "hWd-J9-na6"; */
 "hWd-J9-na6.text" = "Label";
 
 /* Class = "UITabBarItem"; title = "Bayiler"; ObjectID = "iB0-DG-AST"; */
-"iB0-DG-AST.title" = "Bayiler";
+"iB0-DG-AST.title" = "Resellers";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "iQI-v1-Dr0"; */
 "iQI-v1-Dr0.text" = "Label";
@@ -237,16 +240,16 @@
 "iXf-wm-bjo.text" = "Label";
 
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "jYy-TT-pht"; */
-"jYy-TT-pht.title" = "Kaydet";
+"jYy-TT-pht.title" = "Save";
 
 /* Class = "UITextField"; placeholder = "Adınız"; ObjectID = "jpU-CR-Pe0"; */
-"jpU-CR-Pe0.placeholder" = "Adınız";
+"jpU-CR-Pe0.placeholder" = "Name";
 
 /* Class = "UITextField"; placeholder = "Soyadınız"; ObjectID = "jyT-hE-cWI"; */
-"jyT-hE-cWI.placeholder" = "Soyadınız";
+"jyT-hE-cWI.placeholder" = "Surname";
 
 /* Class = "UITextField"; placeholder = "Mail Kotası"; ObjectID = "l3I-UY-gUE"; */
-"l3I-UY-gUE.placeholder" = "Mail Kotası";
+"l3I-UY-gUE.placeholder" = "Mail Quota";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "lMp-Sm-WzA"; */
 "lMp-Sm-WzA.text" = "Label";
@@ -255,7 +258,7 @@
 "lTM-1p-FNq.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Domainler"; ObjectID = "mNp-HW-ioK"; */
-"mNp-HW-ioK.title" = "Domainler";
+"mNp-HW-ioK.title" = "Domains";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "mlA-lC-Nad"; */
 "mlA-lC-Nad.text" = "Label";
@@ -270,13 +273,13 @@
 "o7B-30-rU3.title" = "Kaydet";
 
 /* Class = "UINavigationItem"; title = "Veritabanı Ekle"; ObjectID = "o7p-OZ-UqB"; */
-"o7p-OZ-UqB.title" = "Veritabanı Ekle";
+"o7p-OZ-UqB.title" = "Add Database";
 
 /* Class = "UITabBarItem"; title = "Bayiler"; ObjectID = "oQ3-DE-Qsr"; */
-"oQ3-DE-Qsr.title" = "Bayiler";
+"oQ3-DE-Qsr.title" = "Resellers";
 
 /* Class = "UINavigationItem"; title = "Bayiler"; ObjectID = "omC-WX-5Sk"; */
-"omC-WX-5Sk.title" = "Bayiler";
+"omC-WX-5Sk.title" = "Resellers";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "qZ4-1U-60v"; */
 "qZ4-1U-60v.text" = "Label";
@@ -291,16 +294,16 @@
 "spd-97-h5P.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "FTP Kullanıcı Adı"; ObjectID = "uCM-DI-gd5"; */
-"uCM-DI-gd5.placeholder" = "FTP Kullanıcı Adı";
+"uCM-DI-gd5.placeholder" = "FTP Username";
 
 /* Class = "UITabBarItem"; title = "Sunucular"; ObjectID = "uTN-xV-0O5"; */
-"uTN-xV-0O5.title" = "Sunucular";
+"uTN-xV-0O5.title" = "Servers";
 
 /* Class = "UITextField"; placeholder = "Parola"; ObjectID = "v2J-X7-o5p"; */
-"v2J-X7-o5p.placeholder" = "Parola";
+"v2J-X7-o5p.placeholder" = "Password";
 
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "vK4-n6-RKP"; */
-"vK4-n6-RKP.title" = "Kaydet";
+"vK4-n6-RKP.title" = "Save";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "vca-Yt-kwv"; */
 "vca-Yt-kwv.text" = "Label";
@@ -309,10 +312,10 @@
 "vga-Lf-CpO.text" = "Label";
 
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "wKT-qd-VSZ"; */
-"wKT-qd-VSZ.title" = "Kaydet";
+"wKT-qd-VSZ.title" = "Save";
 
 /* Class = "UITextField"; placeholder = "Veritabanı Kullanıcı Adı"; ObjectID = "yeH-Aj-Tnt"; */
-"yeH-Aj-Tnt.placeholder" = "Veritabanı Kullanıcı Adı";
+"yeH-Aj-Tnt.placeholder" = "Database Username";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "z61-Uv-itZ"; */
 "z61-Uv-itZ.text" = "Label";
@@ -321,4 +324,4 @@
 "zEN-Sd-ZoZ.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Sunucular"; ObjectID = "zTR-b3-gsX"; */
-"zTR-b3-gsX.title" = "Sunucular";
+"zTR-b3-gsX.title" = "Servers";

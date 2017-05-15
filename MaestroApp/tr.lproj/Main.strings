@@ -11,6 +11,9 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "3qy-QV-46i"; */
 "3qy-QV-46i.text" = "Label";
 
+/* Class = "UILabel"; text = "Label"; ObjectID = "92v-gV-VbE"; */
+"92v-gV-VbE.text" = "Alan Adı";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "4QN-Kc-fpr"; */
 "4QN-Kc-fpr.text" = "Label";
 

@@ -16,9 +16,10 @@ class ResellerIpAddrTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadIpAddress()
     }
 
-    func loadDomains(){
+    func loadIpAddress(){
         
         let alert = AlertViewController.getUIAlertLoding("\(resellerUserName) isimli bayi için IP adresleri yükleniyor")
         self.present(alert, animated: true, completion: nil)

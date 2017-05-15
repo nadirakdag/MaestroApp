@@ -605,7 +605,7 @@ class ResellerManager: MaestroAPI {
             "username" : userName as AnyObject
         ]
         
-        getRequestArrays(url, parameters: params) { (result: [ServerResourceItemModel]) -> Void in
+        getRequestArrays(url, parameters: params) { (result: [ResellerIpAddrModel]) -> Void in
             completion(NSMutableArray(array: result))
         }
     }
@@ -634,7 +634,7 @@ class ServerManager : MaestroAPI {
             "format":"json" as AnyObject
         ]
         
-        getRequestArrays(url, parameters: params) { (result: [ServerResourceItemModel]) -> Void in
+        getRequestArrays(url, parameters: params) { (result: [ServerIpAddrModel]) -> Void in
             completion(NSMutableArray(array: result))
         }
     }

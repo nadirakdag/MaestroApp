@@ -21,7 +21,7 @@ class DomainDetailTableViewController: UITableViewController {
     @IBOutlet weak var LblIpAddress: UILabel!
     
     // Static Text
-    @IBOutlet weak var LblAlanAdi: UILabel!
+    
     @IBOutlet weak var LblSonlanmaTarihi: UILabel!
     @IBOutlet weak var LblYetkili: UILabel!
     @IBOutlet weak var LblDiskKullanimi: UILabel!
@@ -51,13 +51,7 @@ class DomainDetailTableViewController: UITableViewController {
 
         domainManager.getHostingDetail(dname!) { (result) in
             
-            
-            
-            self.LblAlanAdi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-            self.LblAlanAdi.text = "Alan Adı"
-            self.LblAlanAdi.font = UIFont(name: "HelveticaNeue", size: 14)
             self.LblDomainName.text = result.Name
-            self.LblDomainName.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
             self.LblSonlanmaTarihi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
             self.LblSonlanmaTarihi.text = "Sonlanma Tarihi"
