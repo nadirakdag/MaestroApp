@@ -2,6 +2,46 @@
 /* Class = "UILabel"; text = "FTP Yönetimi"; ObjectID = "00E-pF-LrZ"; */
 "00E-pF-LrZ.text" = "FTP Management";
 
+"Ka9-lg-uF0.text" = "Api Informations";
+"qtb-NG-Yhb.text" = "Log Out";
+"fZF-Ge-ty2.title" = "Settings";
+
+"xuy-JB-tuK.text" = "Address of MaestroPanel";
+"504-2k-isj.text" = "API Key";
+"S0b-dW-Lk8.title" = "Inf of API";
+"lTM-1p-FNq.text" = "Quota: ";
+"Y1y-RG-mQw.text" = "Usage: ";
+"bIn-aU-acz.text" = "Name: ";
+"3qy-QV-46i.text" = "Value: ";
+"xLS-nr-hCH.text" = "Expiration Date: ";
+"Pxb-jL-4kH.text" = "Owner Name: ";
+"FYM-wO-j6f.text" = "IP Address: ";
+"CWk-8i-FHG.text" = "Disk Usage: ";
+"9V1-Ky-8sG.text" = "Mail Count";
+"c1D-eh-27l.text" = "Owner Name: ";
+"hWd-J9-na6.text" = "Expiration Date: ";
+"Hf5-BM-AJ0.text" = "Home Path: ";
+"iXf-wm-bjo.text" = "Permissions: ";
+"Klr-Bc-I5F.text" = "Quota: ";
+"WYO-Xw-qhi.text" = "Usage: ";
+"Wt6-s7-yHF.text" = "Expiration Date: ";
+"Zs3-5h-0aT.text" = "User Name: ";
+"X5B-Gr-MzP.text" = "Version: ";
+"Cjb-cg-CwF.text" = "Host: ";
+"byx-Qg-1bl.text" = "Host Name: ";
+"DV8-s0-lwk.text" = "Operation System: ";
+"OuW-BR-Cpo.text" = "CPU: ";
+"ne9-Zs-Lvt.text" = "Resources";
+"EWC-GG-SuR.text" = "Operating System: ";
+"4e1-Zx-zTB.text" = "IP Adress: ";
+"Cii-Kp-Tuk.text" = "FTP User: ";
+"SxD-iT-Pa6.title" = "FTP Password Change";
+"Bl8-pn-fFT.title" = "Add DNS Record";
+"Jo5-Ze-sOK.placeholder" = "Record Name";
+"asp-cR-VY3.placeholder" = "Record Value";
+"BZN-i7-xo5.placeholder" = "Priority";
+"saV-2J-Z0h.title" = "Database Users";
+
 /* Class = "UINavigationItem"; title = "FTP Kullanıcısı Ekle"; ObjectID = "20g-qc-edG"; */
 "20g-qc-edG.title" = "Add FTP User";
 

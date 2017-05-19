@@ -15,27 +15,43 @@ class DomainTableViewController: UITableViewController {
     var isReseller : Bool = false
     var resellerName : String = ""
     
+    var alert : UIAlertController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDomains()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadDomains()
+        
+        if Reachability.isConnectedToNetwork() == true {
+            print("network is OK")
+            loadDomains()
+        } else {
+            print("network is not OK")
+            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.",  preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func loadDomains(){
         
-        let alert = AlertViewController.getUIAlertLoding("Domainler Yükleniyor")
-        self.present(alert, animated: true, completion: nil)
+        alert = AlertViewController.getUIAlertLoding("Domainler Yükleniyor")
+        self.present(alert!, animated: true, completion: nil)
         
-        maestro.getDomainList(isReseller, resellerUserName: resellerName){ result in
+        maestro.getDomainList(isReseller, resellerUserName: resellerName, completion: { result in
             self.DomainList = result
             self.tableView.reloadData()
-            alert.dismiss(animated: true, completion: nil)
-        }
+            self.alert?.dismiss(animated: true, completion: nil)
+        }, errcompletion: handleError)
     }
     
+    func handleError(message: String){
+        alert?.dismiss(animated: true, completion: { _ in
+            
+            let infoAlert = AlertViewController.getUIAlertInfo(message)
+            self.present(infoAlert, animated: true, completion: nil)
+        })
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,8 +79,7 @@ class DomainTableViewController: UITableViewController {
         
         if domain.Status == 0 {
             imageForStatus = UIImage(named:"working")!
-        }
-        else{
+        } else{
             imageForStatus = UIImage(named: "stopped")!
         }
         
@@ -74,9 +89,6 @@ class DomainTableViewController: UITableViewController {
         cell.LblDomainName.text = domain.Name
         cell.LblDomainName.font = UIFont(name: "HelveticaNeue", size: 18)
         
-        cell.lblYetkili.text = "Yetkili : "
-        cell.lblYetkili.font = UIFont(name: "HelveticaNeue-light", size: 11)
-        
         cell.LblOwnerName.text = domain.OwnerName
         cell.LblOwnerName.font = UIFont(name: "HelveticaNeue-light", size: 11)
         
@@ -84,9 +96,6 @@ class DomainTableViewController: UITableViewController {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         cell.LblExperationDate.text = dateFormatter.string(from: domain.ExpirationDate as Date)
         cell.LblExperationDate.font = UIFont(name: "HelveticaNeue-light", size: 11)
-        
-        cell.lblSonlanmaTarihi.text = "Sonlanma Tarihi : "
-        cell.lblSonlanmaTarihi.font = UIFont(name: "HelveticaNeue-light", size: 11)
         
         return cell
     }
@@ -129,7 +138,6 @@ class DomainTableViewController: UITableViewController {
         })
         
         statusButton.backgroundColor = statusChangeButtonColor
-//
         return [deleteButton,statusButton]
     }
     

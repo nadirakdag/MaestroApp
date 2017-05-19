@@ -36,22 +36,27 @@ class FTPListTableViewController: UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         
-        ftpManager.getFtpList(dname!){ result in
+        ftpManager.getFtpList(dname!, completion: { result in
             self.ftpUsers = result
             self.tableView.reloadData()
             self.navigationItem.title = "FTP Yönetimi"
             self.dismiss(animated: false, completion: nil)
-
-        }
+        }, errcompletion: handleError)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        ftpManager.getFtpList(dname!){ result in
+        ftpManager.getFtpList(dname!, completion: { result in
             self.ftpUsers = result
             self.tableView.reloadData()
-        }
+        }, errcompletion:  handleError)
     }
 
+    func handleError(message: String){
+        alert.dismiss(animated: true, completion: nil)
+        print(message);
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -85,37 +90,21 @@ class FTPListTableViewController: UITableViewController {
         }
         
         cell.LblStatusImage.image = imageForStatus
-        
-        cell.LblGirisDizini.text = "Giriş Dizini : "
-        cell.LblGirisDizini.font = UIFont(name: "HelveticaNeue", size: 11)
-        
+
         cell.LblHomePath.text = ftpUser.HomePath
         cell.LblHomePath.font = UIFont(name: "HelveticaNeue-light", size: 11)
 
-        cell.LblOkumaYetki.text = "Yetki : "
-        cell.LblOkumaYetki.font = UIFont(name: "HelveticaNeue", size: 11)
-        
-        if (ftpUser.ReadOnly == false)
-        {
+        if (ftpUser.ReadOnly == false) {
             cell.LblReadOnly.text = "Okuma,Yazma"
             cell.LblReadOnly.font = UIFont(name: "HelveticaNeue-light", size: 11)
-        }
-        else
-        {
+        } else {
             cell.LblReadOnly.text = "Okuma"
             cell.LblReadOnly.font = UIFont(name: "HelveticaNeue-light", size: 11)
-        
         }
-        
-        
-
         
         cell.LblUserName.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
         cell.LblUserName.text = ftpUser.UserName
         cell.LblUserName.font = UIFont(name: "HelveticaNeue", size: 18)
-
-        
-        // Configure the cell...
 
         return cell
     }

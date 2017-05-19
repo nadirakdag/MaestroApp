@@ -20,14 +20,6 @@ class DomainDetailTableViewController: UITableViewController {
     @IBOutlet weak var LblEmail: UILabel!
     @IBOutlet weak var LblIpAddress: UILabel!
     
-    // Static Text
-    
-    @IBOutlet weak var LblSonlanmaTarihi: UILabel!
-    @IBOutlet weak var LblYetkili: UILabel!
-    @IBOutlet weak var LblDiskKullanimi: UILabel!
-    @IBOutlet weak var LblEmailSayisi: UILabel!
-    @IBOutlet weak var LblIpAdresi: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,52 +41,37 @@ class DomainDetailTableViewController: UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
 
-        domainManager.getHostingDetail(dname!) { (result) in
+        domainManager.getHostingDetail(dname!, completion:  { (result) in
             
             self.LblDomainName.text = result.Name
 
-            self.LblSonlanmaTarihi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-            self.LblSonlanmaTarihi.text = "Sonlanma Tarihi"
-            self.LblSonlanmaTarihi.font = UIFont(name: "HelveticaNeue", size: 14)
+           
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy"
             self.LblExpirationDate.text = dateFormatter.string(from: result.ExpirationDate)
             self.LblExpirationDate.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
-            self.LblYetkili.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-            self.LblYetkili.text = "Yetkili"
-            self.LblYetkili.font = UIFont(name: "HelveticaNeue", size: 14)
             self.LblOwnerName.text = result.OwnerName
             self.LblOwnerName.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
-            
-            self.LblIpAdresi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-            self.LblIpAdresi.text = "IP Adresi"
-            self.LblIpAdresi.font = UIFont(name: "HelveticaNeue", size: 14)
             self.LblIpAddress.text = result.IpAddress
             self.LblIpAddress.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
-
-            self.LblDiskKullanimi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-            self.LblDiskKullanimi.text = "Disk Kullanımı"
-            self.LblDiskKullanimi.font = UIFont(name: "HelveticaNeue", size: 14)
             self.LblDisk.text = String(result.Disk!) + "%"
             self.LblDisk.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
-            
-            self.LblEmailSayisi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-            self.LblEmailSayisi.text = "E-Posta"
-            self.LblEmailSayisi.font = UIFont(name: "HelveticaNeue", size: 14)
             self.LblEmail.text = String(result.Email!) + " adet"
             self.LblEmail.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
             self.dismiss(animated: false, completion: nil)
-
-            
-        }
-        
-       
+        }, errcompletion: handleError)
     }
+    
+    func handleError(message: String){
+        alert.dismiss(animated: true, completion: nil)
+        print(message);
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

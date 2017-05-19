@@ -12,6 +12,8 @@ class MailTableViewController: UITableViewController {
     var mail:MailListModel?
     var StatusImage: UIImageView?
     
+    var alert : UIAlertController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset.top = UIApplication.shared.statusBarFrame.height
@@ -31,8 +33,10 @@ class MailTableViewController: UITableViewController {
     }
     
     func loadMailBoxes() {
-        self.present(AlertViewController.getUIAlertLoding("Mailboxlar yükleniyor..."), animated: true, completion: nil)
-        mailManager.getMailList(dname!){ result in
+        alert = AlertViewController.getUIAlertLoding("Mailboxlar yükleniyor...")
+        self.present(alert!, animated: true, completion: nil)
+        
+        mailManager.getMailList(dname!, completion: { result in
             self.mail = result
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
@@ -51,9 +55,12 @@ class MailTableViewController: UITableViewController {
                     self.tableView.backgroundView = nil
                 }
             }
-
-            
-        }
+        }, errcompletion: handleError)
+    }
+    
+    func handleError(message: String){
+        alert?.dismiss(animated: true, completion: nil)
+        print(message);
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,23 +104,14 @@ class MailTableViewController: UITableViewController {
         cell.LblName.text = acc.Name! + "@" + self.dname!
         cell.LblName.font = UIFont(name: "HelveticaNeue", size: 18)
 
-        cell.LblKota.text = "Kota : "
-        cell.LblKota.font = UIFont(name: "HelveticaNeue", size: 11)
-        if acc.Quota == -1
-        {
+        if acc.Quota == -1 {
             cell.LblQuota.text = "Sınırsız"
             cell.LblQuota.font = UIFont(name: "HelveticaNeue-light", size: 11)
-        }
-        else
-        {
-            
+        } else {
             cell.LblQuota.text = String(acc.Quota!) + " MB"
             cell.LblQuota.font = UIFont(name: "HelveticaNeue-light", size: 11)
-        
         }
         
-        cell.LblKullanilan.text = "Kullanılan : "
-        cell.LblKullanilan.font = UIFont(name: "HelveticaNeue", size: 11)
         cell.LblUsage.text = String(acc.Usage!) + " MB"
         cell.LblUsage.font = UIFont(name: "HelveticaNeue-light", size: 11)
 

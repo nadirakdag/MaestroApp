@@ -15,8 +15,6 @@ class SubdomainTableViewController: UITableViewController {
     
     let alert = UIAlertController(title: nil, message: "Yükleniyor...", preferredStyle: .alert)
 
-    
-
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -49,9 +47,15 @@ class SubdomainTableViewController: UITableViewController {
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
             }
 
-        } )
+        }, errcompletion: handleError )
     }
-
+    
+    func handleError(message: String){
+        alert.dismiss(animated: true, completion: nil)
+        print(message);
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,21 +81,12 @@ class SubdomainTableViewController: UITableViewController {
         
         let subdomain = subdomainList[(indexPath as NSIndexPath).row] as! SubdomainListItemModel
         
-        
         cell.LblName.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
         cell.LblName.text = subdomain.Name! + "." + self.dname
         cell.LblName.font = UIFont(name: "HelveticaNeue", size: 18)
 
-        cell.LblFtpKullanici.text = "FTP Kullanıcısı : "
-        cell.LblFtpKullanici.font = UIFont(name: "HelveticaNeue", size: 11)
-
-        
         cell.LblFtpUser.text = subdomain.FtpUser
         cell.LblFtpUser.font = UIFont(name: "HelveticaNeue-light", size: 11)
-
-        cell.LblSupport.text = subdomain.Support!
-        
-        // Configure the cell...
 
         return cell
     }

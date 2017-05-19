@@ -12,7 +12,7 @@ class AliasTableViewController: UITableViewController {
     var alias:AliasListItemModel?
     var dname:String = ""
     
-    
+    var alert : UIAlertController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +35,10 @@ class AliasTableViewController: UITableViewController {
     }
 
     func loadAliases() {
-        self.present(AlertViewController.getUIAlertLoding("Aliaslar yükleniyor..."), animated: true, completion: nil)
+        alert = AlertViewController.getUIAlertLoding("Aliaslar yükleniyor...")
+        self.present(alert!, animated: true, completion: nil)
         
-        aliasManager.getAliasList(dname) {result in
+        aliasManager.getAliasList(dname, completion: {result in
             self.aliasList = result
             self.tableView.reloadData()
             
@@ -52,7 +53,13 @@ class AliasTableViewController: UITableViewController {
             }
             
             self.dismiss(animated: false, completion: nil)
-        }
+        }, errcompletion: handleError)
+    }
+    
+    
+    func handleError(message: String){
+        alert?.dismiss(animated: true, completion: nil)
+        print(message);
     }
     
     func AddAlias(sender: UIBarButtonItem){

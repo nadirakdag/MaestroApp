@@ -12,6 +12,7 @@ class DatabaseTableViewController: UITableViewController {
     var dname:String = ""
     var DatabaseImage: UIImageView?
     
+    var alert : UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,8 @@ class DatabaseTableViewController: UITableViewController {
     }
     
     func loadDatabaseRecors(){
-        present(AlertViewController.getUIAlertLoding("Veri Tabanları Yükleniyor"), animated: true, completion: nil)
+        alert = AlertViewController.getUIAlertLoding("Veri Tabanları Yükleniyor")
+        present(alert!, animated: true, completion: nil)
         databaseManager.getDatabaseList(dname, completion: {result in
             self.databaseList = result
             self.tableView.reloadData()
@@ -52,8 +54,14 @@ class DatabaseTableViewController: UITableViewController {
                 }
             }
             
-        })
+        }, errcompletion: handleError)
     }
+    
+    func handleError(message: String){
+        alert?.dismiss(animated: true, completion: nil)
+        print(message);
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,30 +104,14 @@ class DatabaseTableViewController: UITableViewController {
         cell.LblName.font = UIFont(name: "HelveticaNeue", size: 18)
 
 
-        cell.LblLimit.text = "Limit : "
-        cell.LblLimit.font = UIFont(name: "HelveticaNeue", size: 11)
         
-        if (String(describing: database.DiskQuota) == "-1")
-        {
+        if (String(describing: database.DiskQuota) == "-1") {
             cell.LblDiskQuota.text = "Sınırsız"
-            cell.LblDiskQuota.font = UIFont(name: "HelveticaNeue-light", size: 11)
-
-        }
-        else
-        {
+        } else {
             cell.LblDiskQuota.text = String(database.DiskQuota!) + " MB"
-            cell.LblDiskQuota.font = UIFont(name: "HelveticaNeue-light", size: 11)
         }
-        
-
-        cell.LblBoyut.text = "Boyut : "
-        cell.LblBoyut.font = UIFont(name: "HelveticaNeue", size: 11)
 
         cell.LblDiskUsage.text = String(database.DiskUsage!) + " MB"
-        cell.LblDiskUsage.font = UIFont(name: "HelveticaNeue-light", size: 11)
-
-
-        // Configure the cell...
 
         return cell
     }

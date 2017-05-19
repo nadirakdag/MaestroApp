@@ -14,16 +14,6 @@ class ServerDetailTableViewController: UITableViewController {
     @IBOutlet weak var LblOperatingSystem: UILabel!
     @IBOutlet weak var LblCpu: UILabel!
     
-    //Static Text
-    @IBOutlet weak var LblBilgiler: UILabel!
-    @IBOutlet weak var LblKaynaklar: UILabel!
-    
-    @IBOutlet weak var LblVersiyon: UILabel!
-    @IBOutlet weak var LblIpAdresi: UILabel!
-    @IBOutlet weak var LblSunucuAdi: UILabel!
-    @IBOutlet weak var LblIslemci: UILabel!
-    @IBOutlet weak var LblIsletimSistemi: UILabel!
-
     
     var resource : ServerManager = ServerManager()
     var serverDetail : ServerListItemModel?
@@ -36,56 +26,21 @@ class ServerDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = serverDetail?.Name
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        self.LblBilgiler.text = "Bilgiler"
-        self.LblBilgiler.font = UIFont(name: "HelveticaNeue-ultralight", size: 24)
-        
-        
-        self.LblVersiyon.text = "Versiyon"
-        self.LblVersiyon.font = UIFont(name: "HelveticaNeue", size: 14)
-        self.LblVersiyon.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-
         self.LblVersion.text = serverDetail?.Version
         self.LblVersion.font = UIFont(name: "HelveticaNeue-light", size: 14)
-        
-        self.LblIpAdresi.text = "IP veya Host Adı"
-        self.LblIpAdresi.font = UIFont(name: "HelveticaNeue", size: 14)
-        self.LblIpAdresi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
         
         self.LblHost.text = serverDetail?.Host
         self.LblHost.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
-        
-        self.LblSunucuAdi.text = "Sunucu Adı"
-        self.LblSunucuAdi.font = UIFont(name: "HelveticaNeue", size: 14)
-        self.LblSunucuAdi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-        
         self.LblCompName.text = serverDetail?.ComputerName
         self.LblCompName.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
-
-        self.LblIslemci.text = "İşlemci"
-        self.LblIslemci.font = UIFont(name: "HelveticaNeue", size: 14)
-        self.LblIslemci.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
-        
         self.LblCpu.text = serverDetail?.Cpu
         self.LblCpu.font = UIFont(name: "HelveticaNeue-light", size: 12.5)
 
-        self.LblIsletimSistemi.text = "İşletim Sistemi"
-        self.LblIsletimSistemi.font = UIFont(name: "HelveticaNeue", size: 14)
-        self.LblIsletimSistemi.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
         self.LblOperatingSystem.text = serverDetail?.OperatingSystem
         self.LblOperatingSystem.font = UIFont(name: "HelveticaNeue-light", size: 14)
 
-        
-        self.LblKaynaklar.text = "Kaynaklar"
-        self.LblKaynaklar.font = UIFont(name: "HelveticaNeue-ultralight", size: 24)
-        
         alert.view.tintColor = UIColor.black
         let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
         loadingIndicator.hidesWhenStopped = true
@@ -95,14 +50,18 @@ class ServerDetailTableViewController: UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         
-        resource.getServerResources((serverDetail!.Name)!) { (result) in
+        resource.getServerResources((serverDetail!.Name)!, completion:  { (result) in
             self.resourceValues = NSMutableArray(array: result)
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
-
-
-        }
+        }, errcompletion: handleError)
     }
+    
+    func handleError(message: String){
+        alert.dismiss(animated: true, completion: nil)
+        print(message);
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -2,6 +2,45 @@
 /* Class = "UILabel"; text = "FTP Yönetimi"; ObjectID = "00E-pF-LrZ"; */
 "00E-pF-LrZ.text" = "FTP Yönetimi";
 
+"Ka9-lg-uF0.text" = "Api Bilgileri";
+"qtb-NG-Yhb.text" = "Çıkış Yap";
+"fZF-Ge-ty2.title" = "Ayarlar" ;
+"xuy-JB-tuK.text" = "MaestroPanel Adresi";
+"504-2k-isj.text" = "API Key";
+"S0b-dW-Lk8.title" = "API Bilgileri";
+"lTM-1p-FNq.text" = "Limit: ";
+"Y1y-RG-mQw.text" = "Boyut: ";
+"bIn-aU-acz.text" = "İsim: ";
+"3qy-QV-46i.text" = "Host/Değer: ";
+"xLS-nr-hCH.text" = "Sonlanma Tarihi: ";
+"Pxb-jL-4kH.text" = "Yetkili: ";
+"FYM-wO-j6f.text" = "IP Adresi: ";
+"CWk-8i-FHG.text" = "Disk Kullanımı: ";
+"9V1-Ky-8sG.text" = "E-Mail Sayısı: ";
+"c1D-eh-27l.text" = "Yetkili: ";
+"hWd-J9-na6.text" = "Sonlanma Tarihi: ";
+"Hf5-BM-AJ0.text" = "Giriş Dizini: ";
+"iXf-wm-bjo.text" = "İzinler: ";
+"Klr-Bc-I5F.text" = "Kota: ";
+"WYO-Xw-qhi.text" = "Kullanım: ";
+"Wt6-s7-yHF.text" = "Sonlanma Tarihi: ";
+"Zs3-5h-0aT.text" = "Kullanıcı Adı: ";
+"X5B-Gr-MzP.text" = "Versiyon: ";
+"Cjb-cg-CwF.text" = "Host: ";
+"byx-Qg-1bl.text" = "Bil. Adı: ";
+"DV8-s0-lwk.text" = "İşletim Sistemi: ";
+"OuW-BR-Cpo.text" = "İşlemci: ";
+"ne9-Zs-Lvt.text" = "Kaynaklar";
+"EWC-GG-SuR.text" = "İşletim Sistemi: ";
+"4e1-Zx-zTB.text" = "IP Adresi: ";
+"Cii-Kp-Tuk.text" = "FTP Kullanıcısı: ";
+"SxD-iT-Pa6.title" = "FTP Şifre Değişimi";
+"Bl8-pn-fFT.title" = "DNS Kaydı Ekle";
+"Jo5-Ze-sOK.placeholder" = "Kayıt Adı";
+"asp-cR-VY3.placeholder" = "Kayıt Değeri";
+"BZN-i7-xo5.placeholder" = "Öncelik";
+"saV-2J-Z0h.title" = "Veri Tabanı Kullanıcıları";
+
 /* Class = "UINavigationItem"; title = "FTP Kullanıcısı Ekle"; ObjectID = "20g-qc-edG"; */
 "20g-qc-edG.title" = "FTP Kullanıcısı Ekle";
 

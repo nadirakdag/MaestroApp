@@ -14,22 +14,23 @@ class ServerTableViewController: UITableViewController {
     var StatusImage: UIImageView?
     
     let alert = UIAlertController(title: nil, message: "Yükleniyor...", preferredStyle: .alert)
-
-
-    
     let api : ServerManager = ServerManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("yüklendi")
-        //tableView.contentInset.top = UIApplication.shared.statusBarFrame.height
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if Reachability.isConnectedToNetwork() == true {
+            print("network is OK")
+            loadServers()
+        } else {
+            print("network is not OK")
+            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.",  preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+        }
         
+    }
+    
+    func loadServers(){
         alert.view.tintColor = UIColor.black
         let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
         loadingIndicator.hidesWhenStopped = true
@@ -39,13 +40,18 @@ class ServerTableViewController: UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         
-        api.getServerList { response in
+        api.getServerList ( { response in
             self.serverList = response
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
-
-        }
+        }, errcompletion: handleError)
     }
+    
+    func handleError(message: String){
+        alert.dismiss(animated: true, completion: nil)
+        print(message);
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -89,22 +95,12 @@ class ServerTableViewController: UITableViewController {
         cell.LblServerName.text = data.Name
         cell.LblServerName.font = UIFont(name: "HelveticaNeue", size: 18)
 
-        cell.LblIsletimSistemi.text = "İşletim Sistemi : "
-        cell.LblIsletimSistemi.font = UIFont(name: "HelveticaNeue", size: 11)
-        
         cell.LblOperatingSystem.text = data.OperatingSystem
         cell.LblOperatingSystem.font = UIFont(name: "HelveticaNeue-light", size: 11)
-
-        cell.LblIpAdresi.text = "IP Adresi : "
-        cell.LblIpAdresi.font = UIFont(name: "HelveticaNeue", size: 11)
 
         cell.LblHost.text = data.Host
         cell.LblHost.font = UIFont(name: "HelveticaNeue-light", size: 11)
 
-        
-        //cell.LblServerName.text = data.ComputerName
-        //cell.LblServerOperatingSystem.text = data.OperationSystem
-        
         return cell
     }
     

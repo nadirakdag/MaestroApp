@@ -17,7 +17,6 @@ class DNSListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title="DNS Yönetimi"
         reloadDnsRecords()
     }
     
@@ -31,15 +30,20 @@ class DNSListTableViewController: UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         
-        dnsManager.getDNSRecords(dname!){ result in
+        dnsManager.getDNSRecords(dname!, completion: { result in
             
             self.dnsRecors = result.Records
             
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
-        }
+        }, errcompletion: handleError)
     }
 
+    func handleError(message: String){
+        alert.dismiss(animated: true, completion: nil)
+        print(message);
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -109,7 +113,7 @@ class DNSListTableViewController: UITableViewController {
         cell.LblName.text = record.Name
         cell.LblName.font = UIFont(name: "HelveticaNeue-light", size: 11)
 
-//        cell.LblValue.sizeToFit()
+        
         cell.LblValue.text = record.Value
         cell.LblValue.font = UIFont(name: "HelveticaNeue-light", size: 11)
 

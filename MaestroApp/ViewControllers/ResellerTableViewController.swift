@@ -12,20 +12,36 @@ class ResellerTableViewController: UITableViewController {
     var maestro : ResellerManager = ResellerManager()
     var StatusImage: UIImageView?
     
+    var alert : UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadResellers()
+   
+        
+        if Reachability.isConnectedToNetwork() == true {
+            print("network is OK")
+            loadResellers()
+        } else {
+            print("network is not OK")
+            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.",  preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func loadResellers(){
-        present(AlertViewController.getUIAlertLoding("Bayiler yükleniyor"), animated: true, completion: nil)
-        maestro.getResellerList{result in
+        
+        alert = AlertViewController.getUIAlertLoding("Bayiler yükleniyor")
+        present(alert!, animated: true, completion: nil)
+        maestro.getResellerList({result in
             self.resellerList = result
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
-            
-        }
+        }, errcompletion: handleError)
+    }
+    
+    func handleError(message: String){
+        alert?.dismiss(animated: true, completion: nil)
+        print(message);
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,14 +77,8 @@ class ResellerTableViewController: UITableViewController {
         cell.LblNameLastname.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
         cell.LblNameLastname.text = ("\(reseller.FirstName!) \(reseller.LastName!)")
         
-        cell.LblKullaniciAdi.text = "Kullanıcı Adı : "
-        cell.LblKullaniciAdi.font = UIFont(name: "HelveticaNeue", size: 11)
-        
         cell.LblUsername.text = reseller.Username
         cell.LblUsername.font = UIFont(name: "HelveticaNeue-light", size: 11)
-        
-        cell.LblSonlanmaTarihi.text = "Sonlanma Tarihi : "
-        cell.LblSonlanmaTarihi.font = UIFont(name: "HelveticaNeue", size: 11)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"

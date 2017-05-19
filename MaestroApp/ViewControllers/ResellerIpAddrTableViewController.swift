@@ -14,6 +14,8 @@ class ResellerIpAddrTableViewController: UITableViewController {
     let resellerManager : ResellerManager = ResellerManager()
     var ipAddrList : NSMutableArray = []
     
+    var alert : UIAlertController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadIpAddress()
@@ -21,16 +23,21 @@ class ResellerIpAddrTableViewController: UITableViewController {
 
     func loadIpAddress(){
         
-        let alert = AlertViewController.getUIAlertLoding("\(resellerUserName) isimli bayi için IP adresleri yükleniyor")
-        self.present(alert, animated: true, completion: nil)
+         alert = AlertViewController.getUIAlertLoding("\(resellerUserName) isimli bayi için IP adresleri yükleniyor")
+        self.present(alert!, animated: true, completion: nil)
         
-        resellerManager.getIpAddresses(resellerUserName){ result in
+        resellerManager.getIpAddresses(resellerUserName, completion: { result in
             self.ipAddrList = result
             self.tableView.reloadData()
-            alert.dismiss(animated: true, completion: nil)
-        }
+            self.alert?.dismiss(animated: true, completion: nil)
+        }, errcompletion: handleError)
     }
 
+    func handleError(message: String){
+        alert?.dismiss(animated: true, completion: nil)
+        print(message);
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

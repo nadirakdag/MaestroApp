@@ -12,7 +12,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let preferences = UserDefaults.standard
+        let apiKeyObjectKey : String = "apiKey"
+        let apiUrlObjectKey : String = "apiUrl"
+        
+     
+        if preferences.object(forKey: apiKeyObjectKey) != nil &&
+            preferences.object(forKey: apiUrlObjectKey) != nil {
+             self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainView")
+        } else{
+             self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "ApiView")
+        }
+        
+        
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

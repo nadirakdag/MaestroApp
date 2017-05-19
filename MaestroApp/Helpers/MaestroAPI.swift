@@ -24,31 +24,35 @@ class MaestroAPI {
     
     var apiUrl : String  {
         if preferences.object(forKey: apiUrlObjectKey) == nil {
-            return "http://panel.nadirakdag.xyz:9715/Api/v1/"
+            return "panel.nadirakdag.xyz"
         } else {
             return preferences.string(forKey: apiUrlObjectKey)!
         }
     }
     
-    func getRequest(_ url: String, parameters: [String: AnyObject], completion: @escaping (_ result: JSON) -> Void) {
+    func getRequest(_ url: String, parameters: [String: AnyObject], completion: @escaping (_ result: JSON) -> Void, errcompletion: @escaping (_ result: String) -> Void) {
         print(parameters)
         print(url)
+        
+        let _url = "http://\(apiUrl):9715/Api/v1/\(url)"
+        
         let headers: HTTPHeaders = [ "Accept-Language": "tr-tr" ]
-        Alamofire.request(url, method: .get, parameters: parameters, headers: headers)
+        Alamofire.request(_url, method: .get, parameters: parameters, headers: headers)
             .responseJSON { response in
             
-            if let json = response.result.value {
-                let obj : BaseModel = BaseModel(opt1: JSON(json))
-                
-                if obj.ErrorCode == -1 {
-                    
+                if let error = response.result.error {
+                    print("error calling DELETE on /todos/1")
+                    print(error)
+                    errcompletion(error.localizedDescription)
                 }
-                print(json)
-                completion(JSON(json)["Details"])
-            }
-            else {
-                print(response.result.error.debugDescription)
-            }
+                
+                if let json = response.result.value {
+                    print(json)
+                    completion(JSON(json)["Details"])
+                }
+                else {
+                    print(response.result.error.debugDescription)
+                }
             
         }
     }
@@ -56,7 +60,8 @@ class MaestroAPI {
     func deleteRequest(_ url: String, parameters: [String:AnyObject], completion:@escaping (_ result: JSON) -> Void){
         print(url)
         print(parameters)
-        Alamofire.request(url, method: .delete, parameters: parameters).responseJSON{ response in
+         let _url = "http:://\(apiUrl):9715/Api/v1/\(url)"
+        Alamofire.request(_url, method: .delete, parameters: parameters).responseJSON{ response in
             if let json = response.result.value {
                 print(url)
                 print(json)
@@ -67,7 +72,8 @@ class MaestroAPI {
     
     func postRequest(_ url: String, parameters: [String:AnyObject], completion: @escaping (_ result: JSON) -> Void){
         print(parameters)
-        Alamofire.request( url, method: .post,parameters: parameters)
+         let _url = "http:://\(apiUrl):9715/Api/v1/\(url)"
+        Alamofire.request( _url, method: .post,parameters: parameters)
         .responseJSON{ response in
             if let json = response.result.value {
                 print(json)
@@ -77,23 +83,27 @@ class MaestroAPI {
     }
     
     
-    func getRequestArrays<T:Initable>(_ url:String, parameters: [String: AnyObject], completion: @escaping (_ result: [T]) -> Void){
+    func getRequestArrays<T:Initable>(_ url:String, parameters: [String: AnyObject], completion: @escaping (_ result: [T]) -> Void, errcompletion: @escaping (_ result: String) -> Void){
         
-        getRequest(url, parameters: parameters) { (result) -> Void in
+        getRequest(url, parameters: parameters, completion: { (result) -> Void in
             var list = [T]()
             for (_, subjson) in result {
                 list.append(T(opt1: subjson))
             }
             
             completion(list)
-        }
+        }, errcompletion : { (result) -> Void in
+            errcompletion(result)
+        })
     }
     
-    func getRequestObject<T:Initable>(_ url:String, paramaters: [String: AnyObject], completion: @escaping (_ result: T) -> Void){
+    func getRequestObject<T:Initable>(_ url:String, paramaters: [String: AnyObject], completion: @escaping (_ result: T) -> Void, errcompletion: @escaping (_ result: String) -> Void){
         
-        getRequest(url, parameters: paramaters) { (result) -> Void in
+        getRequest(url, parameters: paramaters, completion: {(result) -> Void in
             completion(T(opt1: result))
-        }
+        }, errcompletion : { (result) -> Void in
+            errcompletion(result)
+        })
     }
     
     
@@ -110,44 +120,51 @@ class MaestroAPI {
         }
     }
     
-    func getRequestArrays<T:Initable>(_ url:String, parameters: [String: AnyObject], jsonKey: String, completion: @escaping (_ result: [T]) -> Void){
+    func getRequestArrays<T:Initable>(_ url:String, parameters: [String: AnyObject], jsonKey: String, completion: @escaping (_ result: [T]) -> Void, errcompletion: @escaping (_ result: String) -> Void){
         
-        getRequest(url, parameters: parameters) { (result) -> Void in
+        getRequest(url, parameters: parameters, completion:  { (result) -> Void in
             var list = [T]()
             for (_, subjson) in result[jsonKey] {
                 list.append(T(opt1: subjson))
             }
             
             completion(list)
-        }
+        }, errcompletion : { (result) -> Void in
+            errcompletion(result)
+        })
     }
 }
 
 class DomainManager : MaestroAPI{
-    func getHostingDetail(_ dname: String, completion: @escaping (_ result: DomainListItemModel)-> Void)  {
+    func getHostingDetail(_ dname: String, completion: @escaping (_ result: DomainListItemModel)-> Void, errcompletion: @escaping (_ result: String)-> Void)  {
         
-        let url : String = "\(apiUrl)Domain/GetListItem"
-        getRequestObject(url, paramaters: ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject],completion: completion)
+        let url : String = "Domain/GetListItem"
+        let params : [String: AnyObject] =  [
+            "key": apiKey as AnyObject,
+            "format":"json" as AnyObject,
+            "name": dname as AnyObject
+        ]
+        getRequestObject(url, paramaters: params, completion: completion, errcompletion: errcompletion)
     }
     
-    func getDomainList(_ isReseller: Bool, resellerUserName : String?, completion: @escaping (_ result:NSMutableArray) -> Void){
+    func getDomainList(_ isReseller: Bool, resellerUserName : String?, completion: @escaping (_ result:NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void){
         
-        let url : String = "\(apiUrl)\(isReseller ? "Reseller/GetDomains":"Domain/GetList")"
+        let url : String = "\(isReseller ? "Reseller/GetDomains":"Domain/GetList")"
         let params : [String:AnyObject] = [
             "key": apiKey as AnyObject,
             "format":"json" as AnyObject,
             "username": resellerUserName as AnyObject
         ]
         
-        getRequestArrays(url, parameters: params) { (result: [DomainListItemModel]) -> Void in
+        getRequestArrays(url, parameters: params, completion: { (result: [DomainListItemModel]) -> Void in
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion: errcompletion)
     }
     
     
     func addDomain(_ dname: String, username: String, password: String, activiteDomainUser: Bool, firstName: String, lastName: String, email: String, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)Domain/create?format=json"
+        let url : String = "Domain/create?format=json"
         let parameters : [String:AnyObject] =
             [
                 "key":apiKey as AnyObject,
@@ -169,7 +186,7 @@ class DomainManager : MaestroAPI{
     
     func changePassword(_ dname: String, newPass: String, completion: @escaping (_ result: OperationResult) -> Void){
         
-        let url : String = "\(apiUrl)Domain/Password?format=json"
+        let url : String = "Domain/Password?format=json"
         let parameters : [String: AnyObject] = ["key":apiKey as AnyObject, "name": dname as AnyObject, "newpassword": newPass as AnyObject]
         
         postRequestObject(url, paramters: parameters){ (result:OperationResult) -> Void in
@@ -179,7 +196,7 @@ class DomainManager : MaestroAPI{
     
     func deleteDomain(_ isReseller: Bool, userName: String, dname: String, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)\(isReseller ? "Reseller/DeleteDomain" : "Domain/Delete")"
+        let url : String = "\(isReseller ? "Reseller/DeleteDomain" : "Domain/Delete")"
         
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
@@ -197,7 +214,7 @@ class DomainManager : MaestroAPI{
     
     func startDomain(_ dname: String, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)Domain/start?format=JSON"
+        let url : String = "Domain/start?format=JSON"
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
             "name": dname as AnyObject]
@@ -210,7 +227,7 @@ class DomainManager : MaestroAPI{
     
     func stopDomain(_ dname: String, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)Domain/stop?format=JSON"
+        let url : String = "Domain/stop?format=JSON"
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
             "name": dname as AnyObject]
@@ -223,18 +240,18 @@ class DomainManager : MaestroAPI{
 }
 
 class DatabaseManager : MaestroAPI{
-    func getDatabaseList(_ dname: String, completion: @escaping (_ result:NSMutableArray) -> Void){
+    func getDatabaseList(_ dname: String, completion: @escaping (_ result:NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void){
         
-        let url : String = "\(apiUrl)Domain/GetDatabaseList"
-        getRequestArrays(url, parameters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject]) { (result:
+        let url : String = "Domain/GetDatabaseList"
+        getRequestArrays(url, parameters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject], completion: { (result:
             [DatabaseListItemModel]) -> Void in
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion: errcompletion)
     }
     
     func deleteDatabase(_ dname: String, database: String,dbtype: String, completion: @escaping (_ result: OperationResult) -> Void) {
         
-        let url : String = "\(apiUrl)Domain/DeleteDatabase?format=json"
+        let url : String = "Domain/DeleteDatabase?format=json"
         deleteRequestObject(url, parameters: ["key": apiKey as AnyObject, "name":dname as AnyObject, "dbtype": dbtype as AnyObject,"database":database as AnyObject]){
                 (result: OperationResult) -> Void in
                     completion(result)
@@ -243,7 +260,7 @@ class DatabaseManager : MaestroAPI{
     
     func createDatabase(_ dname: String, dbType: String, database: String, userName: String, password: String, quota: Int, completion: @escaping (_ result: OperationResult) -> Void){
         
-        let url : String = "\(apiUrl)Domain/AddDatabase?format=json"
+        let url : String = "Domain/AddDatabase?format=json"
         let parameters : [String:AnyObject] = ["key": apiKey as AnyObject, "name":dname as AnyObject, "dbtype": dbType as AnyObject,"database":database as AnyObject,"username":userName as AnyObject,"password": password as AnyObject,"quota": quota as AnyObject]
         
         postRequestObject(url, paramters: parameters){
@@ -254,7 +271,7 @@ class DatabaseManager : MaestroAPI{
     
     func addDatabaseUser(_ dname: String, dbType: String, database: String, userName: String, password: String, completion: @escaping (_ result: OperationResult) -> Void){
         
-        let url : String = "\(apiUrl)Domain/AddDatabaseUser?format=json"
+        let url : String = "Domain/AddDatabaseUser?format=json"
         
         let parameters : [String:AnyObject] = [
             "key": apiKey as AnyObject,
@@ -272,7 +289,7 @@ class DatabaseManager : MaestroAPI{
     
     func deleteDatabaseUser(_ dname: String, dbType: String, database: String, userName: String, completion: @escaping (_ result: OperationResult) -> Void){
         
-        let url : String = "\(apiUrl)Domain/DeleteDatabaseUser?format=json"
+        let url : String = "Domain/DeleteDatabaseUser?format=json"
         
         let parameters : [String:AnyObject] = [
             "key": apiKey as AnyObject,
@@ -289,7 +306,7 @@ class DatabaseManager : MaestroAPI{
     
     func changeDatabaseUserPassword(_ dname: String, dbType: String, database: String, userName: String, password: String, completion: @escaping (_ result: OperationResult) -> Void){
         
-        let url : String = "\(apiUrl)Domain/ChangeDatabaseUserPassword?format=json"
+        let url : String = "Domain/ChangeDatabaseUserPassword?format=json"
         
         let parameters : [String:AnyObject] = [
             "key": apiKey as AnyObject,
@@ -308,19 +325,19 @@ class DatabaseManager : MaestroAPI{
 }
 
 class AliasManager : MaestroAPI{
-    func getAliasList(_ dname: String, completion: @escaping (_ result:NSMutableArray) -> Void){
+    func getAliasList(_ dname: String, completion: @escaping (_ result:NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void){
         
-        let url : String = "\(apiUrl)Domain/GetDomainAliases"
-        getRequestArrays(url, parameters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject]) { (result:
+        let url : String = "Domain/GetDomainAliases"
+        getRequestArrays(url, parameters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject], completion: { (result:
             [AliasListItemModel]) -> Void in
             print(result)
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion: errcompletion)
     }
     
     func deleteAlias(_ dname: String, alias: String, completion: @escaping (_ result:OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)Domain/DeleteDomainAlias"
+        let url : String = "Domain/DeleteDomainAlias"
         deleteRequestObject(url, parameters: ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject, "alias":alias as AnyObject]) { (result: OperationResult) -> Void in
             completion(result)
         }
@@ -328,7 +345,7 @@ class AliasManager : MaestroAPI{
     
     func addAlias(_ dname: String, alias: String, completion: @escaping (_ result:OperationResult)-> Void) {
         
-        let url : String = "\(apiUrl)Domain/AddDomainAlias?format=json"
+        let url : String = "Domain/AddDomainAlias?format=json"
         let parameters : [String:AnyObject] = ["key": apiKey as AnyObject, "name": dname as AnyObject, "alias": alias as AnyObject]
 
         postRequestObject(url, paramters: parameters){
@@ -341,18 +358,18 @@ class AliasManager : MaestroAPI{
 
 
 class MailManager : MaestroAPI{
-    func getMailList(_ dname: String, completion: @escaping (_ result:MailListModel) -> Void){
+    func getMailList(_ dname: String, completion: @escaping (_ result:MailListModel) -> Void, errcompletion: @escaping (_ result: String)-> Void){
         
-        let url : String = "\(apiUrl)Domain/GetMailList"
-        getRequestObject(url, paramaters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject]) { (result:
+        let url : String = "Domain/GetMailList"
+        getRequestObject(url, paramaters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject], completion: { (result:
             MailListModel) -> Void in
             completion(result)
-        }
+        }, errcompletion: errcompletion)
     }
     
     func deleteMailbox(_ dname: String, account: String, completion: @escaping (_ result:OperationResult)->Void) {
         
-        let url : String = "\(apiUrl)Domain/DeleteMailbox?format=json"
+        let url : String = "Domain/DeleteMailbox?format=json"
         postRequestObject(url, paramters: ["key": apiKey as AnyObject,  "name": dname as AnyObject, "account": account as AnyObject]){
             (result:OperationResult) -> Void in
             completion(result)
@@ -361,7 +378,7 @@ class MailManager : MaestroAPI{
     
     func addMailbox(_ dname: String, account: String, password: String, quota: Int, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url: String = "\(apiUrl)Domain/AddMailBox?format=json"
+        let url: String = "Domain/AddMailBox?format=json"
         
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
@@ -381,7 +398,7 @@ class MailManager : MaestroAPI{
     
     func changeQuota(_ dname: String, account: String, quota: Int, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url: String = "\(apiUrl)Domain/ChangeMailBoxQuota?format=json"
+        let url: String = "Domain/ChangeMailBoxQuota?format=json"
         
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
@@ -399,7 +416,7 @@ class MailManager : MaestroAPI{
     
     func changePassword(_ dname: String, account: String, password: String,  completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url: String = "\(apiUrl)Domain/ChangeMailBoxPassword?format=json"
+        let url: String = "Domain/ChangeMailBoxPassword?format=json"
         
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
@@ -418,18 +435,18 @@ class MailManager : MaestroAPI{
 
 
 class SubdomainManager : MaestroAPI{
-    func getSubdomainList(_ dname: String, completion: @escaping (_ result:NSMutableArray) -> Void){
+    func getSubdomainList(_ dname: String, completion: @escaping (_ result:NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void){
         
-        let url : String = "\(apiUrl)Domain/GetSubDomains"
-        getRequestArrays(url, parameters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject]) { (result:
+        let url : String = "Domain/GetSubDomains"
+        getRequestArrays(url, parameters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject], completion: { (result:
             [SubdomainListItemModel]) -> Void in
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion: errcompletion)
     }
     
     func deleteSubdomain(_ dname: String, subdomain: String, completion: @escaping (_ result:OperationResult) -> Void){
         
-        let url : String = "\(apiUrl)Domain/DeleteSubDomain"
+        let url : String = "Domain/DeleteSubDomain"
         deleteRequestObject(url, parameters: ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject, "subdomain": subdomain as AnyObject]){
             (result: OperationResult) -> Void in
                 completion(result)
@@ -438,7 +455,7 @@ class SubdomainManager : MaestroAPI{
     
     func addSubDomain(_ dname: String, subDomain: String, ftpUser: String, completion: @escaping (_ result:OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)Domain/AddSubDomain?format=json"
+        let url : String = "Domain/AddSubDomain?format=json"
         let parameters : [String:AnyObject] = ["name":dname as AnyObject, "subdomain":subDomain as AnyObject,"ftpuser":ftpUser as AnyObject,"key":apiKey as AnyObject]
         
         postRequestObject(url, paramters: parameters){
@@ -449,18 +466,24 @@ class SubdomainManager : MaestroAPI{
 }
 
 class FtpManager : MaestroAPI{
-    func getFtpList(_ dname: String, completion: @escaping (_ result:NSMutableArray) -> Void){
+    func getFtpList(_ dname: String, completion: @escaping (_ result:NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void){
         
-        let url : String = "\(apiUrl)Domain/GetFtpAccounts"
-        getRequestArrays(url, parameters : ["key": apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject], jsonKey: "Users") { (result:
+        let url : String = "Domain/GetFtpAccounts"
+        let params : [String: AnyObject] = [
+            "key": apiKey as AnyObject,
+            "format":"json" as AnyObject,
+            "name": dname as AnyObject
+        ]
+        
+        getRequestArrays(url, parameters : params, completion: { (result:
             [FtpListItemModel]) -> Void in
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion: errcompletion)
     }
     
     func deleteFtpAccount(_ dname: String, account: String, completion: @escaping (_ result:OperationResult) -> Void){
         
-        let url : String = "\(apiUrl)Domain/DeleteFtpAccount?format=json"
+        let url : String = "Domain/DeleteFtpAccount?format=json"
         postRequestObject(url, paramters: ["key": apiKey as AnyObject, "name": dname as AnyObject, "account": account as AnyObject]){
             (result: OperationResult) -> Void in
             completion(result)
@@ -469,7 +492,7 @@ class FtpManager : MaestroAPI{
     
     func addFtpAccount(_ dname: String, account: String, password: String, readOnly: Bool, completion: @escaping (_ result: OperationResult)->Void){
         
-        let url : String = "\(apiUrl)Domain/AddFtpAccount?format=json"
+        let url : String = "Domain/AddFtpAccount?format=json"
         let parameters: [String:AnyObject] = ["key":apiKey as AnyObject, "name":dname as AnyObject, "account":account as AnyObject,"password":password as AnyObject,"homePath":"\\" as AnyObject,"ronly":String(readOnly) as AnyObject]
         
         postRequestObject(url, paramters: parameters){ (result: OperationResult) in
@@ -480,7 +503,7 @@ class FtpManager : MaestroAPI{
     
     func ChangePasswordOfFtpAccount(_ dname: String, account: String, password: String, completion: @escaping (_ result: OperationResult)->Void){
         
-        let url : String = "\(apiUrl)Domain/ChangeFtpPassword?format=json"
+        let url : String = "Domain/ChangeFtpPassword?format=json"
         let parameters: [String:AnyObject] = [
             "key":apiKey as AnyObject,
             "name":dname as AnyObject,
@@ -497,28 +520,43 @@ class FtpManager : MaestroAPI{
 }
 
 class DNSManager: MaestroAPI {
-    func getDNSRecords(_ dname: String, completion: @escaping (_ result: DNSRecordsModel) -> Void){
+    func getDNSRecords(_ dname: String, completion: @escaping (_ result: DNSRecordsModel) -> Void, errcompletion: @escaping (_ result: String)-> Void){
         
-        let url : String = "\(apiUrl)Domain/GetDnsRecords"
-        getRequestObject(url, paramaters: ["key":apiKey as AnyObject, "format":"json" as AnyObject, "name": dname as AnyObject]){
+        let url : String = "Domain/GetDnsRecords"
+        let params : [String: AnyObject] = [
+            "key":apiKey as AnyObject,
+            "format":"json" as AnyObject,
+            "name": dname as AnyObject
+        ]
+        
+        getRequestObject(url, paramaters: params, completion: {
             (result: DNSRecordsModel) -> Void in
             completion(result)
-        }
+        }, errcompletion: errcompletion)
         
     }
     
     func deleteDNSRecord(_ dname: String, rectype: String, recname: String, recvalue: String, priority: Int64, completion: @escaping (_ result: OperationResult)->Void){
         
-        let url : String = "\(apiUrl)Domain/DeleteDnsRecord?format=json"
-        postRequestObject(url, paramters: ["key":apiKey as AnyObject, "name": dname as AnyObject,"rec_type":rectype as AnyObject,"rec_name":recname as AnyObject,"rec_value":recvalue as AnyObject,"priority":Int(priority) as AnyObject]){
+        let url : String = "Domain/DeleteDnsRecord?format=json"
+        let params : [String: AnyObject] = [
+            "key":apiKey as AnyObject,
+            "name": dname as AnyObject,
+            "rec_type":rectype as AnyObject,
+            "rec_name":recname as AnyObject,
+            "rec_value":recvalue as AnyObject,
+            "priority":Int(priority) as AnyObject
+        ]
+        
+        postRequestObject(url, paramters: params, completion: {
             (result: OperationResult) -> Void in
             completion(result)
-        }
+        })
     }
     
     func addDnsRecord(_ dname: String, rectype: String, recname: String, recvalue: String, priority: Int64, completion: @escaping (_ result: OperationResult)->Void){
         
-        let url : String = "\(apiUrl)Domain/AddDnsRecord?format=json"
+        let url : String = "Domain/AddDnsRecord?format=json"
         
         let parameters : [String:AnyObject] = [
         "key":apiKey as AnyObject,
@@ -536,16 +574,23 @@ class DNSManager: MaestroAPI {
 }
 
 class ResellerManager: MaestroAPI {
-    func getResellerList(_ completion: @escaping (_ result: NSMutableArray) -> Void){
-        let url : String = "\(apiUrl)Reseller/GetResellers"
-        getRequestArrays(url, parameters: ["key": apiKey as AnyObject, "format":"json" as AnyObject]){
-            (result: [ResellerListItemModel]) in completion(NSMutableArray(array: result))
-        }
+    func getResellerList(_ completion: @escaping (_ result: NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void){
+        
+        let url : String = "Reseller/GetResellers"
+        let params : [String: AnyObject] = [
+            "key": apiKey as AnyObject,
+            "format":"json" as AnyObject
+        ]
+        
+        getRequestArrays(url, parameters: params, completion: {
+            (result: [ResellerListItemModel] ) in
+            completion(NSMutableArray(array: result))
+        }, errcompletion : errcompletion)
     }
     
     func changePassword(_ username: String, newPass: String, completion: @escaping (_ result: OperationResult) -> Void){
         
-        let url : String = "\(apiUrl)Reseller/Password?format=json"
+        let url : String = "Reseller/Password?format=json"
         let parameters : [String: AnyObject] = [
             "key":apiKey as AnyObject,
             "username": username as AnyObject,
@@ -559,7 +604,7 @@ class ResellerManager: MaestroAPI {
     
     func deleteReseller(_ username: String, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)Reseller/Delete?format=JSON"
+        let url : String = "Reseller/Delete?format=JSON"
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
             "username": username as AnyObject
@@ -573,7 +618,7 @@ class ResellerManager: MaestroAPI {
     
     func startReseller(_ username: String, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)Reseller/start?format=JSON"
+        let url : String = "Reseller/start?format=JSON"
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
             "username": username as AnyObject]
@@ -586,7 +631,7 @@ class ResellerManager: MaestroAPI {
     
     func stopReseller(_ dname: String, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url : String = "\(apiUrl)Reseller/stop?format=JSON"
+        let url : String = "Reseller/stop?format=JSON"
         let parameters : [String:AnyObject] = [
             "key":apiKey as AnyObject,
             "username": dname as AnyObject]
@@ -597,50 +642,63 @@ class ResellerManager: MaestroAPI {
         }
     }
     
-    func getIpAddresses(_ userName: String, completion: @escaping (_ result: NSMutableArray) -> Void) {
-        let url : String = "\(apiUrl)/Reseller/GetIPAddrList"
+    func getIpAddresses(_ userName: String, completion: @escaping (_ result: NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void) {
+        let url : String = "/Reseller/GetIPAddrList"
         let params : [String:AnyObject] = [
             "key": apiKey as AnyObject,
             "format":"json" as AnyObject,
             "username" : userName as AnyObject
         ]
         
-        getRequestArrays(url, parameters: params) { (result: [ResellerIpAddrModel]) -> Void in
+        getRequestArrays(url, parameters: params, completion:  { (result: [ResellerIpAddrModel]) -> Void in
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion:errcompletion)
     }
 }
 class ServerManager : MaestroAPI {
     
-    func getServerList(_ completion: @escaping (_ result: NSMutableArray) -> Void) {
+    func getServerList(_ completion: @escaping (_ result: NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void) {
         
-        let url : String = "\(apiUrl)/Server/GetServerList"
-        getRequestArrays(url, parameters: ["key": apiKey as AnyObject, "format":"json" as AnyObject]) { (result: [ServerListItemModel]) in
+        let url : String = "/Server/GetServerList"
+        let params : [String: AnyObject] = [
+            "key": apiKey as AnyObject,
+            "format":"json" as AnyObject
+        ]
+        
+        getRequestArrays(url, parameters: params, completion: { (result: [ServerListItemModel]) in
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion: errcompletion)
     }
     
-    func getServerResources(_ serverName: String,completion: @escaping (_ result: NSMutableArray) -> Void) {
-        let url : String = "\(apiUrl)/Server/GetResources"
-        getRequestArrays(url, parameters: ["key": apiKey as AnyObject, "format":"json" as AnyObject, "servername": serverName as AnyObject]) { (result: [ServerResourceItemModel]) -> Void in
+    func getServerResources(_ serverName: String,completion: @escaping (_ result: NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void) {
+        
+        let url : String = "/Server/GetResources"
+        let params : [String: AnyObject] = [
+            "key": apiKey as AnyObject,
+            "format":"json" as AnyObject,
+            "servername": serverName as AnyObject
+        ]
+        
+        getRequestArrays(url, parameters: params, completion: { (result: [ServerResourceItemModel]) -> Void in
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion: errcompletion)
     }
     
-    func getIpAddresses(_ completion: @escaping (_ result: NSMutableArray) -> Void) {
-        let url : String = "\(apiUrl)/Server/GetIpAddrList"
+    func getIpAddresses(_ completion: @escaping (_ result: NSMutableArray) -> Void, errcompletion: @escaping (_ result: String)-> Void) {
+        
+        let url : String = "/Server/GetIpAddrList"
         let params : [String:AnyObject] = [
             "key": apiKey as AnyObject,
             "format":"json" as AnyObject
         ]
         
-        getRequestArrays(url, parameters: params) { (result: [ServerIpAddrModel]) -> Void in
+        getRequestArrays(url, parameters: params, completion:  { (result: [ServerIpAddrModel]) -> Void in
             completion(NSMutableArray(array: result))
-        }
+        }, errcompletion: errcompletion)
     }
     
     func addIpAddrres(_ serverName: String,nicName : String, ipAddr: String, subNet:String, isShared:Bool, isDedicated:Bool, isExclusive:Bool, completion: @escaping (_ result: OperationResult) -> Void) {
-        let url : String = "\(apiUrl)/Server/AddIpAddr"
+        let url : String = "/Server/AddIpAddr"
         let params : [String:AnyObject] = [
             "key": apiKey as AnyObject,
             "format":"json" as AnyObject,
@@ -659,7 +717,7 @@ class ServerManager : MaestroAPI {
     }
     
     func deleteIpAddr(_ serverName: String, nicName : String, ipAddr: String, completion: @escaping (_ result: OperationResult) -> Void) {
-        let url : String = "\(apiUrl)/Server/DeleteIpAddr"
+        let url : String = "/Server/DeleteIpAddr"
         let params : [String:AnyObject] = [
             "key": apiKey as AnyObject,
             "format":"json" as AnyObject,

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1419CCF31ECF07140025FB22 /* ValueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1419CCF21ECF07140025FB22 /* ValueDelegate.swift */; };
+		1419CCF51ECF1ED30025FB22 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1419CCF41ECF1ED30025FB22 /* SettingsTableViewController.swift */; };
 		142CD1D01E69662900CA935D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142CD1CE1E69662900CA935D /* Main.storyboard */; };
 		1444C96A1EC8A1EF009EDFC4 /* ServerIpAddrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444C9691EC8A1EF009EDFC4 /* ServerIpAddrModel.swift */; };
 		1444C96C1EC8A2DE009EDFC4 /* ResellerIpAddrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444C96B1EC8A2DE009EDFC4 /* ResellerIpAddrModel.swift */; };
@@ -22,6 +24,10 @@
 		148550F41EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148550F31EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift */; };
 		148FF3281E910C5900292334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148FF3271E910C5900292334 /* Assets.xcassets */; };
 		148FF3381E91185D00292334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 148FF33A1E91185D00292334 /* Localizable.strings */; };
+		14CEEF991ECED7AC0067A415 /* ApiInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CEEF981ECED7AC0067A415 /* ApiInfoViewController.swift */; };
+		14CEEF9B1ECEE78B0067A415 /* QrScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CEEF9A1ECEE78B0067A415 /* QrScannerViewController.swift */; };
+		14E198F11ECF875A0092E640 /* AddSubdomainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E198F01ECF875A0092E640 /* AddSubdomainViewController.swift */; };
+		14ECE7111ECECB540091DE89 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ECE7101ECECB540091DE89 /* Reachability.swift */; };
 		14F4399E1E68E13000F36686 /* MaestroAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399B1E68E13000F36686 /* MaestroAPI.swift */; };
 		14F4399F1E68E13000F36686 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399C1E68E13000F36686 /* NSDate.swift */; };
 		14F439AE1E68E13A00F36686 /* AliasListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439A21E68E13A00F36686 /* AliasListItemModel.swift */; };
@@ -50,7 +56,6 @@
 		14F439E71E68E14D00F36686 /* AddDomainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D31E68E14C00F36686 /* AddDomainViewController.swift */; };
 		14F439E81E68E14D00F36686 /* AddFtpUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */; };
 		14F439E91E68E14D00F36686 /* AddMailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */; };
-		14F439EA1E68E14D00F36686 /* AddSubdomainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D61E68E14C00F36686 /* AddSubdomainViewController.swift */; };
 		14F439EB1E68E14D00F36686 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D71E68E14C00F36686 /* AlertViewController.swift */; };
 		14F439EC1E68E14D00F36686 /* AliasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D81E68E14C00F36686 /* AliasTableViewController.swift */; };
 		14F439ED1E68E14D00F36686 /* ChangeDomainPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439D91E68E14C00F36686 /* ChangeDomainPasswordViewController.swift */; };
@@ -75,6 +80,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1419CCF21ECF07140025FB22 /* ValueDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueDelegate.swift; sourceTree = "<group>"; };
+		1419CCF41ECF1ED30025FB22 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		1444C9691EC8A1EF009EDFC4 /* ServerIpAddrModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerIpAddrModel.swift; sourceTree = "<group>"; };
 		1444C96B1EC8A2DE009EDFC4 /* ResellerIpAddrModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResellerIpAddrModel.swift; sourceTree = "<group>"; };
 		1444C96D1EC8BE62009EDFC4 /* ResellerIpAddrTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResellerIpAddrTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +101,10 @@
 		148FF3391E91185D00292334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		148FF33B1E91186500292334 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		148FF33D1E91188100292334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		14CEEF981ECED7AC0067A415 /* ApiInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiInfoViewController.swift; sourceTree = "<group>"; };
+		14CEEF9A1ECEE78B0067A415 /* QrScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrScannerViewController.swift; sourceTree = "<group>"; };
+		14E198F01ECF875A0092E640 /* AddSubdomainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubdomainViewController.swift; sourceTree = "<group>"; };
+		14ECE7101ECECB540091DE89 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		14F4399B1E68E13000F36686 /* MaestroAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaestroAPI.swift; sourceTree = "<group>"; };
 		14F4399C1E68E13000F36686 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		14F439A21E68E13A00F36686 /* AliasListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasListItemModel.swift; sourceTree = "<group>"; };
@@ -122,7 +133,6 @@
 		14F439D31E68E14C00F36686 /* AddDomainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDomainViewController.swift; sourceTree = "<group>"; };
 		14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFtpUserViewController.swift; sourceTree = "<group>"; };
 		14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMailboxViewController.swift; sourceTree = "<group>"; };
-		14F439D61E68E14C00F36686 /* AddSubdomainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubdomainViewController.swift; sourceTree = "<group>"; };
 		14F439D71E68E14C00F36686 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		14F439D81E68E14C00F36686 /* AliasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasTableViewController.swift; sourceTree = "<group>"; };
 		14F439D91E68E14C00F36686 /* ChangeDomainPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeDomainPasswordViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +180,8 @@
 			children = (
 				14F4399B1E68E13000F36686 /* MaestroAPI.swift */,
 				14F4399C1E68E13000F36686 /* NSDate.swift */,
+				14ECE7101ECECB540091DE89 /* Reachability.swift */,
+				1419CCF21ECF07140025FB22 /* ValueDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -226,11 +238,11 @@
 		14F439D01E68E14C00F36686 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				14E198F01ECF875A0092E640 /* AddSubdomainViewController.swift */,
 				14F439D11E68E14C00F36686 /* AddDatabaseViewController.swift */,
 				14F439D31E68E14C00F36686 /* AddDomainViewController.swift */,
 				14F439D41E68E14C00F36686 /* AddFtpUserViewController.swift */,
 				14F439D51E68E14C00F36686 /* AddMailboxViewController.swift */,
-				14F439D61E68E14C00F36686 /* AddSubdomainViewController.swift */,
 				14F439D71E68E14C00F36686 /* AlertViewController.swift */,
 				14F439D81E68E14C00F36686 /* AliasTableViewController.swift */,
 				14F439D91E68E14C00F36686 /* ChangeDomainPasswordViewController.swift */,
@@ -252,6 +264,9 @@
 				146489941EC86A9A00D9E6F6 /* ResellerDetailTableViewController.swift */,
 				146489961EC86D4A00D9E6F6 /* ResellerChangePasswordViewController.swift */,
 				1444C9711EC8BF70009EDFC4 /* ResellerIpAddrTableViewController.swift */,
+				14CEEF981ECED7AC0067A415 /* ApiInfoViewController.swift */,
+				14CEEF9A1ECEE78B0067A415 /* QrScannerViewController.swift */,
+				1419CCF41ECF1ED30025FB22 /* SettingsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -366,7 +381,7 @@
 				TargetAttributes = {
 					4E77E7D21C79FF380047A018 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 89KSFNVRMP;
+						DevelopmentTeam = 6E2YS3TKXQ;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -437,7 +452,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B5344CFCCFB9D688774623F3 /* [CP] Embed Pods Frameworks */ = {
@@ -463,13 +478,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1444C9701EC8BE85009EDFC4 /* ServerIpAddrTableViewCell.swift in Sources */,
+				14CEEF991ECED7AC0067A415 /* ApiInfoViewController.swift in Sources */,
 				14F439F21E68E14D00F36686 /* FTPListTableViewController.swift in Sources */,
+				14ECE7111ECECB540091DE89 /* Reachability.swift in Sources */,
 				1449C6CB1EBC8B6100BBD825 /* DbUserListItem.swift in Sources */,
 				14F439B11E68E13A00F36686 /* DNSRecordsModel.swift in Sources */,
 				14F439ED1E68E14D00F36686 /* ChangeDomainPasswordViewController.swift in Sources */,
 				14F439AF1E68E13A00F36686 /* BaseModel.swift in Sources */,
 				14F439F11E68E14D00F36686 /* DomainTableViewController.swift in Sources */,
 				1449C6C81EBC875C00BBD825 /* AddDbUserViewController.swift in Sources */,
+				1419CCF31ECF07140025FB22 /* ValueDelegate.swift in Sources */,
 				14F439B21E68E13A00F36686 /* DomainListItemModel.swift in Sources */,
 				14F439AE1E68E13A00F36686 /* AliasListItemModel.swift in Sources */,
 				14F439CE1E68E14100F36686 /* ServerListTableViewCell.swift in Sources */,
@@ -481,8 +499,9 @@
 				1449C6C61EBC787200BBD825 /* DatabaseUserTableViewController.swift in Sources */,
 				14F439B51E68E13A00F36686 /* OperationResult.swift in Sources */,
 				14F439C81E68E14100F36686 /* DNSListTableViewCell.swift in Sources */,
-				14F439EA1E68E14D00F36686 /* AddSubdomainViewController.swift in Sources */,
+				14E198F11ECF875A0092E640 /* AddSubdomainViewController.swift in Sources */,
 				14F439B91E68E13A00F36686 /* SubdomainListItemModel.swift in Sources */,
+				1419CCF51ECF1ED30025FB22 /* SettingsTableViewController.swift in Sources */,
 				14F4399E1E68E13000F36686 /* MaestroAPI.swift in Sources */,
 				14F439CB1E68E14100F36686 /* MailListTableViewCell.swift in Sources */,
 				14F439C71E68E14100F36686 /* DatabaseListTableViewCell.swift in Sources */,
@@ -515,6 +534,7 @@
 				14F439B81E68E13A00F36686 /* ServerResourceItemModel.swift in Sources */,
 				4E77E7D71C79FF380047A018 /* AppDelegate.swift in Sources */,
 				14F439F31E68E14D00F36686 /* MailTableViewController.swift in Sources */,
+				14CEEF9B1ECEE78B0067A415 /* QrScannerViewController.swift in Sources */,
 				14F439EF1E68E14D00F36686 /* DNSListTableViewController.swift in Sources */,
 				1444C96A1EC8A1EF009EDFC4 /* ServerIpAddrModel.swift in Sources */,
 				14F439B41E68E13A00F36686 /* MailListModel.swift in Sources */,
@@ -651,10 +671,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 89KSFNVRMP;
+				DEVELOPMENT_TEAM = 6E2YS3TKXQ;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = MaestroApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nadirakdag.MaestroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -671,10 +691,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 89KSFNVRMP;
+				DEVELOPMENT_TEAM = 6E2YS3TKXQ;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = MaestroApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nadirakdag.MaestroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
