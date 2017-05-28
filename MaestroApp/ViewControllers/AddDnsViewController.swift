@@ -1,11 +1,3 @@
-//
-//  AddDnsViewController.swift
-//  MaestroApp
-//
-//  Created by Nadir on 04/05/17.
-//  Copyright © 2017 nadir akdag. All rights reserved.
-//
-
 import UIKit
 
 class AddDnsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
@@ -57,11 +49,10 @@ class AddDnsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func saveDnsRecord(_ sender: Any) {
-         self.present(AlertViewController.getUIAlertLoding("Yeni DNS Kaydı Oluşturuluyor"), animated: true, completion:nil)
+         self.present(AlertViewController.getUIAlertLoding("AddingNewDNSRecord"), animated: true, completion:nil)
         
         var priority : Int64 = 0
         if txtDnsRecordPriority.text == nil {
@@ -69,6 +60,7 @@ class AddDnsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         }
         
        dnsManager.addDnsRecord(dname!, rectype: pickerSelectedData, recname: txtDnsRecordName.text!, recvalue: txtDnsRecordValue.text!, priority: priority, completion: handleAddDnsResult)
+        
     }
 
     func handleAddDnsResult(_ result: OperationResult){
@@ -78,6 +70,7 @@ class AddDnsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         }
         else {
             self.dismiss(animated: false, completion: nil)
+            self.navigationController!.popViewController(animated: true)
         }
 
     }
@@ -90,34 +83,18 @@ class AddDnsViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         return pickerData.count
     }
     
-    // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
     
-    // Catpure the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         pickerSelectedData = pickerData[row]
-        
         if pickerSelectedData == "MX" {
             txtDnsRecordPriority.isEnabled = true
         }
         else {
             txtDnsRecordPriority.isEnabled = false
         }
-        
     }
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

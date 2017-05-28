@@ -1,8 +1,3 @@
-//
-//  ResellerTableViewController.swift
-//  MaestroPanel
-//
-
 import UIKit
 
 class ResellerTableViewController: UITableViewController {
@@ -19,18 +14,18 @@ class ResellerTableViewController: UITableViewController {
    
         
         if Reachability.isConnectedToNetwork() == true {
-            print("network is OK")
             loadResellers()
         } else {
-            print("network is not OK")
-            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.",  preferredStyle: .alert)
+            let alertTitle : String = NSLocalizedString("NetworkInfoTitle", comment: "")
+            let alertMessage : String = NSLocalizedString("NetworkInfoMessage", comment: "")
+            let alert = UIAlertController(title: alertTitle, message: alertMessage ,  preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
         }
     }
     
     func loadResellers(){
         
-        alert = AlertViewController.getUIAlertLoding("Bayiler yükleniyor")
+        alert = AlertViewController.getUIAlertLoding("LoadingResellers")
         present(alert!, animated: true, completion: nil)
         maestro.getResellerList({result in
             self.resellerList = result
@@ -92,7 +87,8 @@ class ResellerTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
+        let deleteActionTitle : String = NSLocalizedString("Delete", comment: "")
+        let deleteButton = UITableViewRowAction(style: .default, title: deleteActionTitle, handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commit: .delete,
@@ -109,11 +105,11 @@ class ResellerTableViewController: UITableViewController {
         
         let reseller = resellerList[(indexPath as NSIndexPath).row] as! ResellerListItemModel
         if reseller.Status != 1 {
-            statusChangeButtonTitle = "Başlat"
+            statusChangeButtonTitle = NSLocalizedString("Start", comment: "")
             statusChangeButtonColor = UIColor.green
         }
         else{
-            statusChangeButtonTitle="Durdur"
+            statusChangeButtonTitle = NSLocalizedString("Stop", comment: "")
             statusChangeButtonColor = UIColor.blue
         }
         
@@ -137,7 +133,7 @@ class ResellerTableViewController: UITableViewController {
         
         if editingStyle == .delete {
             
-            self.present(AlertViewController.getUIAlertLoding("\(reseller.FirstName!) \(reseller.LastName!) siliniyor"), animated: true, completion: nil)
+            self.present(AlertViewController.getUIAlertLoding("DeleteingReseller"), animated: true, completion: nil)
             
             maestro.deleteReseller(reseller.Username!){
                 result in
@@ -148,7 +144,7 @@ class ResellerTableViewController: UITableViewController {
             
         } else if editingStyle == .none {
             
-            self.present(AlertViewController.getUIAlertLoding("\(reseller.FirstName!) \(reseller.LastName!) durumu değiştiriliyor"), animated: true, completion: nil)
+            self.present(AlertViewController.getUIAlertLoding("ChangingStatusOfReseller"), animated: true, completion: nil)
             
             if reseller.Status == 1 {
                 maestro.stopReseller(reseller.Username!){
@@ -181,9 +177,6 @@ class ResellerTableViewController: UITableViewController {
             let resellerDetailView = segue.destination as! ResellerDetailTableViewController
             resellerDetailView.reseller = result
         }
-//        else{
-//            //let addDatabaseViewController = segue.destination as! AddResellerViewController
-//        }
     }
 
 }

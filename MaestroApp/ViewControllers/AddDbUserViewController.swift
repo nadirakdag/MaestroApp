@@ -1,11 +1,3 @@
-//
-//  AddDbUserViewController.swift
-//  MaestroApp
-//
-//  Created by Nadir on 05/05/17.
-//  Copyright © 2017 nadir akdag. All rights reserved.
-//
-
 import UIKit
 
 class AddDbUserViewController: UIViewController {
@@ -24,7 +16,7 @@ class AddDbUserViewController: UIViewController {
     
     
     @IBAction func addDbUser(_ sender: Any) {
-        self.present(AlertViewController.getUIAlertLoding("Yeni Veri Tabanı Kullanıcısı ekleniyor..."), animated: true, completion: nil)
+        self.present(AlertViewController.getUIAlertLoding("AddingNewDatabaseUser"), animated: true, completion: nil)
         
         dbManager.addDatabaseUser(dname!, dbType: dbType!, database: dbName!, userName: txtDbUserName.text!, password: txtDbUserPassword.text!, completion: handleAddCompletion)
     }
@@ -58,18 +50,5 @@ class AddDbUserViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

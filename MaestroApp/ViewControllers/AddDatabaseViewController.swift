@@ -1,8 +1,3 @@
-//
-//  AddDatabaseViewController.swift
-//  MaestroPanel
-//
-
 import UIKit
 
 class AddDatabaseViewController: UIViewController {
@@ -18,7 +13,8 @@ class AddDatabaseViewController: UIViewController {
     
     
     @IBAction func saveDatabase(_ sender: AnyObject) {
-        self.present(AlertViewController.getUIAlertLoding("Yeni Veri Tabanı ekleniyor..."), animated: true, completion: nil)
+       
+        self.present(AlertViewController.getUIAlertLoding("AddingNewDatabase"), animated: true, completion: nil)
         
         let dbtype : String
         if (BtnDbType.selectedSegmentIndex == 0){
@@ -45,24 +41,9 @@ class AddDatabaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

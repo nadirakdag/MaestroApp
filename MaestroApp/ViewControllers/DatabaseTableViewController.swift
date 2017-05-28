@@ -1,8 +1,3 @@
-//
-//  DatabaseTableViewController.swift
-//  MaestroPanel
-//
-
 import UIKit
 
 class DatabaseTableViewController: UITableViewController {
@@ -16,14 +11,6 @@ class DatabaseTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Veri Tabanı Yönetimi"
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
         loadDatabaseRecors()
     }
     
@@ -32,7 +19,7 @@ class DatabaseTableViewController: UITableViewController {
     }
     
     func loadDatabaseRecors(){
-        alert = AlertViewController.getUIAlertLoding("Veri Tabanları Yükleniyor")
+        alert = AlertViewController.getUIAlertLoding("LoadingDatabaseList")
         present(alert!, animated: true, completion: nil)
         databaseManager.getDatabaseList(dname, completion: {result in
             self.databaseList = result
@@ -42,7 +29,7 @@ class DatabaseTableViewController: UITableViewController {
             if result.count == 0
             {
                 let info : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
-                info.text = "Henüz bir veritabanı ekli değil."
+                info.text = NSLocalizedString("NoDatabase", comment: "")
                 info.textColor = UIColor.black
                 info.textAlignment = NSTextAlignment.center
                 self.tableView.backgroundView = info
@@ -65,18 +52,14 @@ class DatabaseTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return databaseList.count
     }
 
@@ -106,7 +89,7 @@ class DatabaseTableViewController: UITableViewController {
 
         
         if (String(describing: database.DiskQuota) == "-1") {
-            cell.LblDiskQuota.text = "Sınırsız"
+            cell.LblDiskQuota.text = NSLocalizedString("Unlimited", comment: "")
         } else {
             cell.LblDiskQuota.text = String(database.DiskQuota!) + " MB"
         }
@@ -118,7 +101,9 @@ class DatabaseTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
+        
+        let deleteActionTitle : String = NSLocalizedString("Delete", comment: "")
+        let deleteButton = UITableViewRowAction(style: .default, title: deleteActionTitle, handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commit: .delete,
@@ -134,12 +119,11 @@ class DatabaseTableViewController: UITableViewController {
     }
 
     
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
             let database = databaseList[(indexPath as NSIndexPath).row] as! DatabaseListItemModel
-            self.present(AlertViewController.getUIAlertLoding("Veri tabanı siliniyor..."), animated: true, completion: nil)
+            self.present(AlertViewController.getUIAlertLoding("DeletingDatabase"), animated: true, completion: nil)
             
             let dbType : String
             
@@ -156,31 +140,9 @@ class DatabaseTableViewController: UITableViewController {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
  
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (sender as? DatabaseListTableViewCell) != nil{
@@ -202,6 +164,4 @@ class DatabaseTableViewController: UITableViewController {
             addDatabaseViewController.dname = dname
         }
     }
-    
-
 }

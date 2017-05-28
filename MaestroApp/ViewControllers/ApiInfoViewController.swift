@@ -1,11 +1,3 @@
-//
-//  ApiInfoViewController.swift
-//  MaestroApp
-//
-//  Created by Nadir on 19/05/17.
-//  Copyright © 2017 nadir akdag. All rights reserved.
-//
-
 import UIKit
 
 class ApiInfoViewController: UIViewController, DataDelivery {
@@ -58,19 +50,16 @@ class ApiInfoViewController: UIViewController, DataDelivery {
     @IBAction func btnSave(_ sender: Any) {
         preferences.set(txtApiKey.text, forKey: apiKeyObjectKey)
         preferences.set(txtApiHost.text, forKey: apiUrlObjectKey)
+        
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainView")
+        present(controller, animated: true, completion: nil)
     }    
     
     func ReciveData(message: String) {
         txtApiKey.text = message
     }
     
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         let nav = segue.destination as! QrScannerViewController
         nav.dataDelivery = self
     }

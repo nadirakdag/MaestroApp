@@ -69,7 +69,6 @@
 		14F439F51E68E14D00F36686 /* ServerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E11E68E14D00F36686 /* ServerDetailTableViewController.swift */; };
 		14F439F61E68E14D00F36686 /* ServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E21E68E14D00F36686 /* ServerTableViewController.swift */; };
 		14F439F71E68E14D00F36686 /* SubdomainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E31E68E14D00F36686 /* SubdomainTableViewController.swift */; };
-		14F439F81E68E14D00F36686 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439E41E68E14D00F36686 /* ViewController.swift */; };
 		4E77E7D71C79FF380047A018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77E7D61C79FF380047A018 /* AppDelegate.swift */; };
 		4E77E7E11C79FF380047A018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E77E7DF1C79FF380047A018 /* LaunchScreen.storyboard */; };
 		A09E06120EAE82C0DF2C5A34 /* Pods_MaestroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8DAA92AB1634A11979B452 /* Pods_MaestroApp.framework */; };
@@ -146,7 +145,6 @@
 		14F439E11E68E14D00F36686 /* ServerDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerDetailTableViewController.swift; sourceTree = "<group>"; };
 		14F439E21E68E14D00F36686 /* ServerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTableViewController.swift; sourceTree = "<group>"; };
 		14F439E31E68E14D00F36686 /* SubdomainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubdomainTableViewController.swift; sourceTree = "<group>"; };
-		14F439E41E68E14D00F36686 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1E0E548FF40DD44399CE78E0 /* Pods-MaestroApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaestroApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaestroApp/Pods-MaestroApp.release.xcconfig"; sourceTree = "<group>"; };
 		2B8DAA92AB1634A11979B452 /* Pods_MaestroApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaestroApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F75001653735B867C192A66 /* Pods-MaestroPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaestroPanel.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaestroPanel/Pods-MaestroPanel.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				14F439E11E68E14D00F36686 /* ServerDetailTableViewController.swift */,
 				14F439E21E68E14D00F36686 /* ServerTableViewController.swift */,
 				14F439E31E68E14D00F36686 /* SubdomainTableViewController.swift */,
-				14F439E41E68E14D00F36686 /* ViewController.swift */,
 				148550F31EB75C50002BC692 /* FTPUserPasswordChangeViewController.swift */,
 				1449C6C31EBBC37900BBD825 /* AddDnsViewController.swift */,
 				1449C6C51EBC787200BBD825 /* DatabaseUserTableViewController.swift */,
@@ -518,7 +515,6 @@
 				1444C96E1EC8BE62009EDFC4 /* ResellerIpAddrTableViewCell.swift in Sources */,
 				1444C9721EC8BF70009EDFC4 /* ResellerIpAddrTableViewController.swift in Sources */,
 				14F439F71E68E14D00F36686 /* SubdomainTableViewController.swift in Sources */,
-				14F439F81E68E14D00F36686 /* ViewController.swift in Sources */,
 				14F439B01E68E13A00F36686 /* DatabaseListItemModel.swift in Sources */,
 				14F439F51E68E14D00F36686 /* ServerDetailTableViewController.swift in Sources */,
 				14F439E71E68E14D00F36686 /* AddDomainViewController.swift in Sources */,
@@ -676,7 +672,7 @@
 				INFOPLIST_FILE = MaestroApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nadirakdag.MaestroApp;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.nadirakdag.MaestroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -696,7 +692,7 @@
 				INFOPLIST_FILE = MaestroApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nadirakdag.MaestroApp;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.nadirakdag.MaestroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;

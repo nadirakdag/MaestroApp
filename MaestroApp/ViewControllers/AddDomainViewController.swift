@@ -1,8 +1,3 @@
-//
-//  AddDomainViewController.swift
-//  MaestroPanel
-//
-
 import UIKit
 
 class AddDomainViewController: UIViewController {
@@ -16,9 +11,12 @@ class AddDomainViewController: UIViewController {
     
     let domainManager : DomainManager = DomainManager()
     
+    var isReseller : Bool = false
+    var resellerName : String?
+    
     @IBAction func saveDomain(_ sender: UIBarButtonItem) {
-        self.present(AlertViewController.getUIAlertLoding("Yeni Domain Oluşturuluyor"), animated: true, completion:nil)
-        domainManager.addDomain(LblDname.text!, username: LblFtpUserName.text!, password: LblPassword.text!, activiteDomainUser: true, firstName: LblName.text!, lastName: LblSurname.text!, email: LblMail.text!, completion: handleAddDomainCompletion)
+        self.present(AlertViewController.getUIAlertLoding("AddingNewDomain"), animated: true, completion:nil)
+        domainManager.addDomain(LblDname.text!, username: LblFtpUserName.text!, password: LblPassword.text!, activiteDomainUser: true, firstName: LblName.text!, lastName: LblSurname.text!, email: LblMail.text!, isReseller: isReseller, resellerName: resellerName!, completion: handleAddDomainCompletion)
     }
     
     func handleAddDomainCompletion(_ result: OperationResult){
@@ -34,29 +32,10 @@ class AddDomainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
- 
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

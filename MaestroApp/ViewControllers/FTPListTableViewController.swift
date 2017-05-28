@@ -1,8 +1,3 @@
-//
-//  FTPListTableViewController.swift
-//  MaestroPanel
-//
-
 import UIKit
 
 class FTPListTableViewController: UITableViewController {
@@ -13,33 +8,16 @@ class FTPListTableViewController: UITableViewController {
     
     var ftpUsers : NSMutableArray = []
     
-    let alert = UIAlertController(title: nil, message: "Yükleniyor...", preferredStyle: .alert)
+    let alert = AlertViewController.getUIAlertLoding("LoadingFTPAccounts")
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset.top = UIApplication.shared.statusBarFrame.height
-
-        self.navigationItem.title = "FTP Yönetimi"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        alert.view.tintColor = UIColor.black
-        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        loadingIndicator.startAnimating();
-        
-        alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
-        
         ftpManager.getFtpList(dname!, completion: { result in
             self.ftpUsers = result
             self.tableView.reloadData()
-            self.navigationItem.title = "FTP Yönetimi"
             self.dismiss(animated: false, completion: nil)
         }, errcompletion: handleError)
     }
@@ -59,18 +37,13 @@ class FTPListTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return ftpUsers.count
     }
 
@@ -95,10 +68,10 @@ class FTPListTableViewController: UITableViewController {
         cell.LblHomePath.font = UIFont(name: "HelveticaNeue-light", size: 11)
 
         if (ftpUser.ReadOnly == false) {
-            cell.LblReadOnly.text = "Okuma,Yazma"
+            cell.LblReadOnly.text = NSLocalizedString("ReadAndWrite", comment: "")
             cell.LblReadOnly.font = UIFont(name: "HelveticaNeue-light", size: 11)
         } else {
-            cell.LblReadOnly.text = "Okuma"
+            cell.LblReadOnly.text = NSLocalizedString("Read", comment: "")
             cell.LblReadOnly.font = UIFont(name: "HelveticaNeue-light", size: 11)
         }
         
@@ -117,17 +90,13 @@ class FTPListTableViewController: UITableViewController {
                 commit: .delete,
                 forRowAt: indexPath
             )
-            
             return
         })
-        
         deleteButton.backgroundColor = UIColor.red
-        
         return [deleteButton]
     }
 
     
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
@@ -139,33 +108,9 @@ class FTPListTableViewController: UITableViewController {
                 self.dismiss(animated: false, completion: nil)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
-            
-            
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
- 
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (sender as? FTPListTableViewCell) != nil{
             let ftpUserPasswordChangeView = segue.destination as! FTPUserPasswordChangeViewController

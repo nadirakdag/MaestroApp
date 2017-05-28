@@ -1,8 +1,3 @@
-//
-//  DNSListTableViewController.swift
-//  MaestroPanel
-//
-
 import UIKit
 
 class DNSListTableViewController: UITableViewController {
@@ -13,27 +8,17 @@ class DNSListTableViewController: UITableViewController {
     var dnsRecors : NSMutableArray = []
     var TypeImage: UIImageView?
     
-    let alert = UIAlertController(title: nil, message: "Yükleniyor...", preferredStyle: .alert)
-    
+    let alert = AlertViewController.getUIAlertLoding("LoadingDNSRecords")
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         reloadDnsRecords()
     }
     
     func reloadDnsRecords(){
-        alert.view.tintColor = UIColor.black
-        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        loadingIndicator.startAnimating();
-        
-        alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
-        
         dnsManager.getDNSRecords(dname!, completion: { result in
-            
             self.dnsRecors = result.Records
-            
             self.tableView.reloadData()
             self.dismiss(animated: false, completion: nil)
         }, errcompletion: handleError)
@@ -46,18 +31,13 @@ class DNSListTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return dnsRecors.count
     }
 
@@ -121,15 +101,6 @@ class DNSListTableViewController: UITableViewController {
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
@@ -146,7 +117,6 @@ class DNSListTableViewController: UITableViewController {
         return [deleteButton]
     }
     
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
          present(alert, animated: true, completion: nil)
@@ -160,38 +130,9 @@ class DNSListTableViewController: UITableViewController {
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 self.dismiss(animated: false, completion: nil)
             }
-
-            
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    
-
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
         let addSubdomainViewController = segue.destination as! AddDnsViewController
         addSubdomainViewController.dname = dname
     }

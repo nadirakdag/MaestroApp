@@ -5,3 +5,57 @@
   Created by Nadir on 02/04/17.
   Copyright © 2017 nadir akdag. All rights reserved.
 */
+
+
+"AddingNewDatabase" = "Yeni veri tabanı ekleniyor";
+"AddingNewDatabaseUser" = "Yeni veri tabanı kullanıcısı ekleniyor.";
+"AddingNewDNSRecord" = "Yeni DNS kaydı ekleniyor";
+"AddingNewDomain" = "Domain oluşturuluyor";
+"AddingNewFTPUser" = "Yeni FTP kullanıcısı oluşturuluyor";
+"AddingNewMailbox" = "Yeni E-Posta adresi oluşturuluyor";
+"LoadingAliases" = "Aliaslar yükleniyor";
+"NoAlias" = "Henüz alias eklemiş değilsiniz";
+"AddAlias" = "Yeni Alias Ekle";
+"AddAliasMessage" = "Eklenecek Alias adını giriniz";
+"Add" = "Ekle";
+"Cancel" = "İptal";
+"Delete" = "Sil";
+"Start" = "Başlat";
+"Stop" = "Durdur";
+"EmptyAlias" = "Alias alanı boş geçilemez";
+"AddingNewAlias" = "Yeni Alias ekleniyor";
+"ChangeDomainPassword" = "Domain kullanıcı parolası değiştiriliyor";
+"LoadingDatabaseList" = "Veri Tabanı listesi yükleniyor";
+"NoDatabase" = "Henüz veri tabanı eklemiş değilsiniz";
+"Unlimited" = "Sınırsız";
+"DeletingDatabase" = "Veri tabanı siliniyor";
+"DeletingDatabaseUser" = "Veri tabanı kullanıcı siliniyor";
+"NetworkInfoTitle" = "No Internet Connection";
+"NetworkInfoMessage" = "Lütfen internete bağlı olduğunuzdan emin olunuz";
+"LoadingDomains" = "Domainler yükleniyor";
+"ChangingDomainStatus" = "Domainin durumu değiştiriliyor";
+"DeletingDomain" = "Domain siliniyor";
+"ChangingFTPUserPassword" = "FTP Kullanıcı parolası değiştiriliyor";
+"LoadingMailboxes" = "E-Posta adresleri yükleniyor";
+"NoMailbox" = "Henüz e-posta adresi eklemiş değilsiniz";
+"DeletingMailbox" = "E-Posta adresi siliniyor";
+"ChangeResellerPassword" = "Bayi parolası değiştiriliyor";
+"LoadingResellers" = "Bayiler yükleniyor";
+"DeleteingReseller" = "Bayi hesabı siliniyor";
+"ChangingStatusOfReseller" = "Bayi hesabının durumu değiştiriliyor";
+"DeletingSubdomain" = "Subdomain siliniyor";
+"NoSubdomain" = "Henüz subdomain eklemiş değilsiniz";
+"LoadingDNSRecords" = "DNS Kayıtları yükleniyor";
+"LoadingDomainDetail" = "Domain detayı yükleniyor";
+"LoadingFTPAccounts" = "FTP Hesapları yükleniyor";
+"Read" = "Okuma";
+"ReadAndWrite" = "Okuma, Yazma";
+"LoadingIpAddresses" = "IP Adresleri yükleniyor";
+"SharedIP" = "Paylaşımlı IP";
+"DedicatedIP" = "Adanmış IP";
+"SystemIP" = "Sistem için Özel IP";
+"LoadingServerDetail" = "Sunucu detay bilgileri yükleniyor";
+"LoadingServerList" = "Sunucular yükleniyor";
+"LoadingSubdomains" = "Subdomainler yükleniyor";
+"Unit" = " adet";
+"Information" = "Bilgi";

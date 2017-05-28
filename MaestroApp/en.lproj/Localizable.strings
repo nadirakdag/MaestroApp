@@ -5,3 +5,56 @@
   Created by Nadir on 02/04/17.
   Copyright © 2017 nadir akdag. All rights reserved.
 */
+
+"AddingNewDatabase" = "Adding new database";
+"AddingNewDatabaseUser" = "Adding new databasd user.";
+"AddingNewDNSRecord" = "Adding new DNS record";
+"AddingNewDomain" = "Creating domain";
+"AddingNewFTPUser" = "Adding new FTP user";
+"AddingNewMailbox" = "Adding new Mailbox";
+"LoadingAliases" = "Loading Aliases";
+"NoAlias" = "You have not added an alias yet";
+"AddAlias" = "Add New Alias";
+"AddAliasMessage" = "Enter the alias name to add";
+"Add" = "Add";
+"Cancel" = "Cancel";
+"Delete" = "Delete";
+"Start" = "Start";
+"Stop" = "Stop";
+"EmptyAlias" = "Alias can not be empty";
+"AddingNewAlias" = "Adding new Alias";
+"ChangeDomainPassword" = "Changing domain user password";
+"LoadingDatabaseList" = "Loading database list";
+"NoDatabase" = "You have not added a database yet";
+"Unlimited" = "Unlimited";
+"DeletingDatabase" = "Deleting database";
+"DeletingDatabaseUser" = "Deleting database user";
+"NetworkInfoTitle" = "No internet connection";
+"NetworkInfoMessage" = "Make sure your device is connected to the internet.";
+"LoadingDomains" = "Loading Domains";
+"ChangingDomainStatus" = "Changing status of domain";
+"DeletingDomain" = "Deleting domain";
+"ChangingFTPUserPassword" = "Change FTP user password";
+"LoadingMailboxes" = "Loading MailBoxes";
+"NoMailbox" = "You have not added a mailbox yet";
+"DeletingMailbox" = "Deleting Mailbox";
+"ChangeResellerPassword" = "Changing Reseller password";
+"LoadingResellers" = "Loading Resellers";
+"DeleteingReseller" = "Deleting Reseller account";
+"ChangingStatusOfReseller" = "Changing Reseller status";
+"DeletingSubdomain" = "Deleting Subdomain";
+"NoSubdomain" = "You have not added a subdomain yet";
+"LoadingDNSRecords" = "Loading DNS Records";
+"LoadingDomainDetail" = "Loading domain detail";
+"LoadingFTPAccounts" = "Loading FTP Accounts";
+"Read" = "Read";
+"ReadAndWrite" = "Read, Write";
+"LoadingIpAddresses" = "Loading IP Addresses";
+"SharedIP" = "Shared IP";
+"DedicatedIP" = "Dedicated IP";
+"SystemIP" = "Exclusive IP";
+"LoadingServerDetail" = "Loading Server Detail";
+"LoadingServerList" = "Loading Server List";
+"LoadingSubdomains" = "Loading Subdomains";
+"Unit" = " ";
+"Information" = "Information";

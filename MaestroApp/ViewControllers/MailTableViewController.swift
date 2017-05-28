@@ -1,8 +1,3 @@
-//
-//  MailTableViewController.swift
-//  MaestroPanel
-//
-
 import UIKit
 
 class MailTableViewController: UITableViewController {
@@ -16,15 +11,6 @@ class MailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset.top = UIApplication.shared.statusBarFrame.height
-
-        self.navigationItem.title = "Mailbox Yönetimi"
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         loadMailBoxes()
     }
     
@@ -32,8 +18,9 @@ class MailTableViewController: UITableViewController {
         loadMailBoxes()
     }
     
+    
     func loadMailBoxes() {
-        alert = AlertViewController.getUIAlertLoding("Mailboxlar yükleniyor...")
+        alert = AlertViewController.getUIAlertLoding("LoadingMailboxes")
         self.present(alert!, animated: true, completion: nil)
         
         mailManager.getMailList(dname!, completion: { result in
@@ -44,7 +31,7 @@ class MailTableViewController: UITableViewController {
             if self.mail?.Accounts.count == 0
             {
                 let info : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
-                info.text = "Henüz bir kayıt bulunmuyor."
+                info.text = NSLocalizedString("NoMailbox", comment: "")
                 info.textColor = UIColor.black
                 info.textAlignment = NSTextAlignment.center
                 self.tableView.backgroundView = info
@@ -65,18 +52,13 @@ class MailTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if mail != nil {
             return mail!.Accounts.count
         }
@@ -105,7 +87,7 @@ class MailTableViewController: UITableViewController {
         cell.LblName.font = UIFont(name: "HelveticaNeue", size: 18)
 
         if acc.Quota == -1 {
-            cell.LblQuota.text = "Sınırsız"
+            cell.LblQuota.text = NSLocalizedString("Unlimited", comment: "")
             cell.LblQuota.font = UIFont(name: "HelveticaNeue-light", size: 11)
         } else {
             cell.LblQuota.text = String(acc.Quota!) + " MB"
@@ -120,7 +102,9 @@ class MailTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
+        
+        let deleteActionTitle : String = NSLocalizedString("Delete", comment: "")
+        let deleteButton = UITableViewRowAction(style: .default, title: deleteActionTitle, handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commit: .delete,
@@ -136,12 +120,11 @@ class MailTableViewController: UITableViewController {
     }
 
     
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
             
-            self.present(AlertViewController.getUIAlertLoding("Mailbox siliniyor"), animated: true, completion: nil)
+            self.present(AlertViewController.getUIAlertLoding("DeletingMailbox"), animated: true, completion: nil)
             
             let mailbox = mail?.Accounts[(indexPath as NSIndexPath).row] as! AccountListItem
             
@@ -151,39 +134,12 @@ class MailTableViewController: UITableViewController {
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 self.dismiss(animated: false, completion: nil)
             }
-
-            
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
  
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         let addMailboxViewController = segue.destination  as! AddMailboxViewController
         addMailboxViewController.dname=dname!
     }
-    
-
 }

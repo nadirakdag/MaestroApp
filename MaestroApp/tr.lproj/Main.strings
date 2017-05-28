@@ -1,7 +1,6 @@
 
 /* Class = "UILabel"; text = "FTP Yönetimi"; ObjectID = "00E-pF-LrZ"; */
 "00E-pF-LrZ.text" = "FTP Yönetimi";
-
 "Ka9-lg-uF0.text" = "Api Bilgileri";
 "qtb-NG-Yhb.text" = "Çıkış Yap";
 "fZF-Ge-ty2.title" = "Ayarlar" ;
@@ -40,30 +39,18 @@
 "asp-cR-VY3.placeholder" = "Kayıt Değeri";
 "BZN-i7-xo5.placeholder" = "Öncelik";
 "saV-2J-Z0h.title" = "Veri Tabanı Kullanıcıları";
+"coG-0j-ndq.title" = "Yeni Domain Ekle";
+"yMJ-by-Wwl.title" = "DNS Yönetimi";
+"Zu7-kO-IXi.text" = "İsim";
+"hdP-C0-Qiw.text" = "Yazma İzni";
+"qmT-aJ-UTV.title" = "Ayarlar";
+
 
 /* Class = "UINavigationItem"; title = "FTP Kullanıcısı Ekle"; ObjectID = "20g-qc-edG"; */
 "20g-qc-edG.title" = "FTP Kullanıcısı Ekle";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "3P3-v2-Bcl"; */
-"3P3-v2-Bcl.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "3qy-QV-46i"; */
-"3qy-QV-46i.text" = "Label";
-
 /* Class = "UILabel"; text = "Label"; ObjectID = "92v-gV-VbE"; */
 "92v-gV-VbE.text" = "Alan Adı";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "4QN-Kc-fpr"; */
-"4QN-Kc-fpr.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "4e1-Zx-zTB"; */
-"4e1-Zx-zTB.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "4lE-he-sEa"; */
-"4lE-he-sEa.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "5Rf-Tb-bFj"; */
-"5Rf-Tb-bFj.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Veritabanı Kullanıcı Şifresi"; ObjectID = "8Fd-va-xQd"; */
 "8Fd-va-xQd.placeholder" = "Veritabanı Kullanıcı Şifresi";
@@ -74,9 +61,6 @@
 /* Class = "UITextField"; placeholder = "Mail Kullanıcı Şifresi"; ObjectID = "AZG-KF-9j8"; */
 "AZG-KF-9j8.placeholder" = "Mail Kullanıcı Şifresi";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "Aey-6J-h6I"; */
-"Aey-6J-h6I.text" = "Label";
-
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "BT5-8g-DT2"; */
 "BT5-8g-DT2.title" = "Title";
 
@@ -86,65 +70,20 @@
 /* Class = "UILabel"; text = "Subdomain Yönetimi"; ObjectID = "Biw-rH-QOw"; */
 "Biw-rH-QOw.text" = "Subdomain Yönetimi";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "CGY-7K-51y"; */
-"CGY-7K-51y.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Cii-Kp-Tuk"; */
-"Cii-Kp-Tuk.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Cjb-cg-CwF"; */
-"Cjb-cg-CwF.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "DBM-rh-9Si"; */
-"DBM-rh-9Si.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "DV8-s0-lwk"; */
-"DV8-s0-lwk.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "E0v-f1-009"; */
-"E0v-f1-009.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "EWC-GG-SuR"; */
-"EWC-GG-SuR.text" = "Label";
-
 /* Class = "UISegmentedControl"; EwJ-9i-aCf.segmentTitles[0] = "MS SQL"; ObjectID = "EwJ-9i-aCf"; */
 "EwJ-9i-aCf.segmentTitles[0]" = "MS SQL";
 
 /* Class = "UISegmentedControl"; EwJ-9i-aCf.segmentTitles[1] = "MYSQL "; ObjectID = "EwJ-9i-aCf"; */
 "EwJ-9i-aCf.segmentTitles[1]" = "MYSQL ";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "Hf5-BM-AJ0"; */
-"Hf5-BM-AJ0.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Hpq-g1-h4I"; */
-"Hpq-g1-h4I.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "ImU-YK-kC0"; */
-"ImU-YK-kC0.text" = "Label";
-
 /* Class = "UITextField"; placeholder = "FTP Kullanıcı Adı"; ObjectID = "JWB-sf-dr7"; */
 "JWB-sf-dr7.placeholder" = "FTP Kullanıcı Adı";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "K03-80-HWt"; */
-"K03-80-HWt.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Yeni Şifre"; ObjectID = "KDF-gT-CRS"; */
 "KDF-gT-CRS.placeholder" = "Yeni Şifre";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "KKH-kb-ScF"; */
-"KKH-kb-ScF.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Klr-Bc-I5F"; */
-"Klr-Bc-I5F.text" = "Label";
-
 /* Class = "UITextField"; placeholder = "FTP Kullanıcı Şifresi"; ObjectID = "Kya-R3-pYq"; */
 "Kya-R3-pYq.placeholder" = "FTP Kullanıcı Şifresi";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "L2e-pa-ZYg"; */
-"L2e-pa-ZYg.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "LCf-Vi-Lgn"; */
-"LCf-Vi-Lgn.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Alias Yönetimi"; ObjectID = "MF5-Mv-Yce"; */
 "MF5-Mv-Yce.title" = "Alias Yönetimi";
@@ -155,20 +94,11 @@
 /* Class = "UITabBarItem"; title = "Sunucular"; ObjectID = "NjH-6O-FM4"; */
 "NjH-6O-FM4.title" = "Sunucular";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "OUI-F9-68x"; */
-"OUI-F9-68x.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "OuW-BR-Cpo"; */
-"OuW-BR-Cpo.text" = "Label";
-
 /* Class = "UITableViewSection"; headerTitle = "Bilgiler"; ObjectID = "PDg-ZI-G4l"; */
 "PDg-ZI-G4l.headerTitle" = "Bilgiler";
 
 /* Class = "UITextField"; placeholder = "Mail Adresi"; ObjectID = "PRY-5P-6Pj"; */
 "PRY-5P-6Pj.placeholder" = "Mail Adresi";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "QZL-yj-lGP"; */
-"QZL-yj-lGP.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Mail Ekle"; ObjectID = "Qqi-7H-0Tn"; */
 "Qqi-7H-0Tn.title" = "Mail Ekle";
@@ -182,71 +112,23 @@
 /* Class = "UITabBarItem"; title = "Domainler"; ObjectID = "WUY-o8-7UZ"; */
 "WUY-o8-7UZ.title" = "Domainler";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "WYO-Xw-qhi"; */
-"WYO-Xw-qhi.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Wt6-s7-yHF"; */
-"Wt6-s7-yHF.text" = "Label";
-
 /* Class = "UITextField"; placeholder = "E-Posta"; ObjectID = "Wuv-B3-e7A"; */
 "Wuv-B3-e7A.placeholder" = "E-Posta";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "X5B-Gr-MzP"; */
-"X5B-Gr-MzP.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Y1y-RG-mQw"; */
-"Y1y-RG-mQw.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Veritabanı Kotası"; ObjectID = "Y5S-tW-XXM"; */
 "Y5S-tW-XXM.placeholder" = "Veritabanı Kotası";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "YjV-Gv-vOR"; */
-"YjV-Gv-vOR.text" = "Label";
-
 /* Class = "UILabel"; text = "DNS Yönetimi"; ObjectID = "Z2o-qf-M73"; */
 "Z2o-qf-M73.text" = "DNS Yönetimi";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Z6u-41-9ch"; */
-"Z6u-41-9ch.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Zep-32-TpJ"; */
-"Zep-32-TpJ.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Zs3-5h-0aT"; */
-"Zs3-5h-0aT.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "Zu7-kO-IXi"; */
-"Zu7-kO-IXi.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "bIn-aU-acz"; */
-"bIn-aU-acz.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "byx-Qg-1bl"; */
-"byx-Qg-1bl.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "c1D-eh-27l"; */
-"c1D-eh-27l.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Alan Adı"; ObjectID = "c1L-QK-oeU"; */
 "c1L-QK-oeU.placeholder" = "Alan Adı";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "cQf-AX-S0h"; */
-"cQf-AX-S0h.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "cTH-fI-uun"; */
-"cTH-fI-uun.text" = "Label";
-
 /* Class = "UINavigationItem"; title = "Yeni Domain"; ObjectID = "cX9-15-lLT"; */
 "cX9-15-lLT.title" = "Yeni Domain";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "d0H-ax-sAd"; */
-"d0H-ax-sAd.text" = "Label";
-
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "eKl-TS-md2"; */
 "eKl-TS-md2.title" = "Title";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "fqn-4Q-BNq"; */
-"fqn-4Q-BNq.text" = "Label";
 
 /* Class = "UILabel"; text = "Mailbox Yönetimi"; ObjectID = "gAC-3X-wG8"; */
 "gAC-3X-wG8.text" = "Mailbox Yönetimi";
@@ -257,26 +139,14 @@
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "gXj-aS-rHI"; */
 "gXj-aS-rHI.title" = "Kaydet";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "ggL-C1-Kk0"; */
-"ggL-C1-Kk0.text" = "Label";
-
 /* Class = "UINavigationItem"; title = "Domain Kullanıcı Şifre Değişimi"; ObjectID = "h15-w2-n5u"; */
 "h15-w2-n5u.title" = "Domain Kullanıcı Şifre Değişimi";
 
 /* Class = "UILabel"; text = "Veri Tabanı Yönetimi"; ObjectID = "h9o-4w-J1D"; */
 "h9o-4w-J1D.text" = "Veri Tabanı Yönetimi";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "hWd-J9-na6"; */
-"hWd-J9-na6.text" = "Label";
-
 /* Class = "UITabBarItem"; title = "Bayiler"; ObjectID = "iB0-DG-AST"; */
 "iB0-DG-AST.title" = "Bayiler";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "iQI-v1-Dr0"; */
-"iQI-v1-Dr0.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "iXf-wm-bjo"; */
-"iXf-wm-bjo.text" = "Label";
 
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "jYy-TT-pht"; */
 "jYy-TT-pht.title" = "Kaydet";
@@ -290,23 +160,8 @@
 /* Class = "UITextField"; placeholder = "Mail Kotası"; ObjectID = "l3I-UY-gUE"; */
 "l3I-UY-gUE.placeholder" = "Mail Kotası";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "lMp-Sm-WzA"; */
-"lMp-Sm-WzA.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "lTM-1p-FNq"; */
-"lTM-1p-FNq.text" = "Label";
-
 /* Class = "UINavigationItem"; title = "Domainler"; ObjectID = "mNp-HW-ioK"; */
 "mNp-HW-ioK.title" = "Domainler";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "mlA-lC-Nad"; */
-"mlA-lC-Nad.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "ne9-Zs-Lvt"; */
-"ne9-Zs-Lvt.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "nzQ-WR-EHG"; */
-"nzQ-WR-EHG.text" = "Label";
 
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "o7B-30-rU3"; */
 "o7B-30-rU3.title" = "Kaydet";
@@ -320,18 +175,6 @@
 /* Class = "UINavigationItem"; title = "Bayiler"; ObjectID = "omC-WX-5Sk"; */
 "omC-WX-5Sk.title" = "Bayiler";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "qZ4-1U-60v"; */
-"qZ4-1U-60v.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "qaZ-V7-lja"; */
-"qaZ-V7-lja.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "r7p-cP-RU9"; */
-"r7p-cP-RU9.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "spd-97-h5P"; */
-"spd-97-h5P.text" = "Label";
-
 /* Class = "UITextField"; placeholder = "FTP Kullanıcı Adı"; ObjectID = "uCM-DI-gd5"; */
 "uCM-DI-gd5.placeholder" = "FTP Kullanıcı Adı";
 
@@ -344,23 +187,11 @@
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "vK4-n6-RKP"; */
 "vK4-n6-RKP.title" = "Kaydet";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "vca-Yt-kwv"; */
-"vca-Yt-kwv.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "vga-Lf-CpO"; */
-"vga-Lf-CpO.text" = "Label";
-
 /* Class = "UIBarButtonItem"; title = "Kaydet"; ObjectID = "wKT-qd-VSZ"; */
 "wKT-qd-VSZ.title" = "Kaydet";
 
 /* Class = "UITextField"; placeholder = "Veritabanı Kullanıcı Adı"; ObjectID = "yeH-Aj-Tnt"; */
 "yeH-Aj-Tnt.placeholder" = "Veritabanı Kullanıcı Adı";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "z61-Uv-itZ"; */
-"z61-Uv-itZ.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "zEN-Sd-ZoZ"; */
-"zEN-Sd-ZoZ.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Sunucular"; ObjectID = "zTR-b3-gsX"; */
 "zTR-b3-gsX.title" = "Sunucular";

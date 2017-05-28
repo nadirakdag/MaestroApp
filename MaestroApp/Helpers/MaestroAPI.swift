@@ -15,19 +15,11 @@ class MaestroAPI {
     let preferences = UserDefaults.standard
     
     var apiKey : String {
-        if preferences.object(forKey: apiKeyObjectKey) == nil {
-            return "1_e547c39d90024967b3098379872a527c"
-        } else {
-            return preferences.string(forKey: apiKeyObjectKey)!
-        }
+        return preferences.string(forKey: apiKeyObjectKey)!
     }
     
     var apiUrl : String  {
-        if preferences.object(forKey: apiUrlObjectKey) == nil {
-            return "panel.nadirakdag.xyz"
-        } else {
-            return preferences.string(forKey: apiUrlObjectKey)!
-        }
+       return preferences.string(forKey: apiUrlObjectKey)!
     }
     
     func getRequest(_ url: String, parameters: [String: AnyObject], completion: @escaping (_ result: JSON) -> Void, errcompletion: @escaping (_ result: String) -> Void) {
@@ -60,7 +52,7 @@ class MaestroAPI {
     func deleteRequest(_ url: String, parameters: [String:AnyObject], completion:@escaping (_ result: JSON) -> Void){
         print(url)
         print(parameters)
-         let _url = "http:://\(apiUrl):9715/Api/v1/\(url)"
+         let _url = "http://\(apiUrl):9715/Api/v1/\(url)"
         Alamofire.request(_url, method: .delete, parameters: parameters).responseJSON{ response in
             if let json = response.result.value {
                 print(url)
@@ -71,8 +63,10 @@ class MaestroAPI {
     }
     
     func postRequest(_ url: String, parameters: [String:AnyObject], completion: @escaping (_ result: JSON) -> Void){
+        let _url = "http://\(apiUrl):9715/Api/v1/\(url)"
+        print(_url)
         print(parameters)
-         let _url = "http:://\(apiUrl):9715/Api/v1/\(url)"
+        
         Alamofire.request( _url, method: .post,parameters: parameters)
         .responseJSON{ response in
             if let json = response.result.value {
@@ -115,7 +109,10 @@ class MaestroAPI {
     }
     
     func postRequestObject<T:Initable>(_ url: String, paramters: [String: AnyObject], completion: @escaping (_ result: T) -> Void) {
+        print(url)
+        print(paramters)
         postRequest(url,parameters: paramters){ (result) -> Void in
+            print(result)
             completion(T(opt1: result))
         }
     }
@@ -162,22 +159,38 @@ class DomainManager : MaestroAPI{
     }
     
     
-    func addDomain(_ dname: String, username: String, password: String, activiteDomainUser: Bool, firstName: String, lastName: String, email: String, completion: @escaping (_ result: OperationResult)-> Void){
+    func addDomain(_ dname: String, username: String, password: String, activiteDomainUser: Bool, firstName: String, lastName: String, email: String, isReseller: Bool, resellerName: String, completion: @escaping (_ result: OperationResult)-> Void){
         
-        let url : String = "Domain/create?format=json"
-        let parameters : [String:AnyObject] =
-            [
-                "key":apiKey as AnyObject,
-                "name": dname as AnyObject,
-                "planAlias": "default" as AnyObject,
-                "username": username as AnyObject,
-                "password":password as AnyObject,
-                "activedomainuser":(activiteDomainUser as Bool) as AnyObject,
-                "firstname": firstName as AnyObject,
-                "lastname": lastName as AnyObject,
-                "email": email as AnyObject
-        ]
-    
+        var url : String
+        var parameters : [String:AnyObject]
+        
+        if isReseller{
+            url = "reseller/AddDomain?format=json"
+            parameters = [ "key":apiKey as AnyObject,
+                           "domainName": dname as AnyObject,
+                           "planAlias": "testbayi" as AnyObject,
+                           "domainUsername": username as AnyObject,
+                           "domainPassword":password as AnyObject,
+                           "activedomainuser":(activiteDomainUser as Bool) as AnyObject,
+                           "firstname": firstName as AnyObject,
+                           "lastname": lastName as AnyObject,
+                           "email": email as AnyObject,
+                           "username": resellerName as AnyObject
+            ]
+
+        } else {
+            url = "Domain/create?format=json"
+            parameters = [ "key":apiKey as AnyObject,
+                           "name": dname as AnyObject,
+                           "planAlias": "default" as AnyObject,
+                           "username": username as AnyObject,
+                           "password":password as AnyObject,
+                           "activedomainuser":(activiteDomainUser as Bool) as AnyObject,
+                           "firstname": firstName as AnyObject,
+                           "lastname": lastName as AnyObject,
+                           "email": email as AnyObject
+            ]
+        }
         postRequestObject(url, paramters: parameters){
             (result: OperationResult) -> Void in
             completion(result)
