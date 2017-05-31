@@ -12,10 +12,10 @@ class AddFtpUserViewController: UIViewController {
     
     @IBAction func saveFtpUser(_ sender: AnyObject) {
         
-        let readOnly : Bool = SwchReadOnly.isOn
+        let readWrite : Bool = SwchReadOnly.isOn
         
         self.present(AlertViewController.getUIAlertLoding("AddingNewFTPUser"), animated: true, completion: nil)
-        ftpManager.addFtpAccount(dname!, account: TxtFtpUsername.text!, password: TxtFtpPassword.text!, readOnly: readOnly,completion: handleAddCompletion);
+        ftpManager.addFtpAccount(dname!, account: TxtFtpUsername.text!, password: TxtFtpPassword.text!, readOnly: readWrite,completion: handleAddCompletion);
     }
     
     func handleAddCompletion(_ result: OperationResult){

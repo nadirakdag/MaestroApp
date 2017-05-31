@@ -1,8 +1,3 @@
-//
-//  AliasListItemModel.swift
-//  MaestroPanel
-//
-
 import Foundation
 import SwiftyJSON
 

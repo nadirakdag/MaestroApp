@@ -51,6 +51,8 @@ class ResellerIpAddrTableViewController: UITableViewController {
         let ipAddr = ipAddrList[index] as! ResellerIpAddrModel
         
         cell.lblNicName.text = ipAddr.Nic!
+        cell.lblNicName.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
+        
         cell.lblIpAddr.text = ipAddr.IpAddr!
         
         if ipAddr.isDedicated! {

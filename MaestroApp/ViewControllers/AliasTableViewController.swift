@@ -11,11 +11,16 @@ class AliasTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadAliases()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        navigationItem.rightBarButtonItem  = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(AddAlias(sender:))
+        )
+        
         loadAliases()
     }
 
@@ -27,6 +32,8 @@ class AliasTableViewController: UITableViewController {
             self.aliasList = result
             self.tableView.reloadData()
             
+            self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
             if result.count == 0
             {
                 let info : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
@@ -107,13 +114,13 @@ class AliasTableViewController: UITableViewController {
             
         cell.LblName.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
         cell.LblName.text = alias.Name
-        cell.LblName.font = UIFont(name: "HelveticaNeue", size: 18)
         return cell
     }
     
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
+        let deleteActionButton = NSLocalizedString("Delete", comment: "")
+        let deleteButton = UITableViewRowAction(style: .default, title: deleteActionButton, handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commit: .delete,
@@ -133,12 +140,13 @@ class AliasTableViewController: UITableViewController {
         if editingStyle == .delete {
             
             let alias = aliasList[(indexPath as NSIndexPath).row] as! AliasListItemModel
-            self.present(AlertViewController.getUIAlertLoding("Alias siliniyor"), animated: true, completion: nil)
+            alert = AlertViewController.getUIAlertLoding("DeletingAlias")
+            self.present(alert!, animated: true, completion: nil)
             
             aliasManager.deleteAlias(dname, alias: alias.Name!){
                 result in
                 self.aliasList.remove(alias)
-                self.dismiss(animated: false, completion: nil)
+                self.alert?.dismiss(animated: false, completion: nil)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }

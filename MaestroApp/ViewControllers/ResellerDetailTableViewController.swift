@@ -14,6 +14,7 @@ class ResellerDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = reseller?.Username
         lblNameLastname.text = "\((reseller?.FirstName)!) \((reseller?.LastName)!)"
         lblUserName.text = reseller?.Username
         lblOrganization.text = reseller?.Organization

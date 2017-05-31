@@ -6,32 +6,36 @@ class FTPListTableViewController: UITableViewController {
     let ftpManager : FtpManager = FtpManager()
     var StatusImage: UIImageView?
     
-    var ftpUsers : NSMutableArray = []
+    var ftpUsers : [FtpUserItemModel] = []
     
-    let alert = AlertViewController.getUIAlertLoding("LoadingFTPAccounts")
+    var alert : UIAlertController?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        present(alert, animated: true, completion: nil)
-        ftpManager.getFtpList(dname!, completion: { result in
-            self.ftpUsers = result
-            self.tableView.reloadData()
-            self.dismiss(animated: false, completion: nil)
-        }, errcompletion: handleError)
+//        tableView.contentInset.top = UIApplication.shared.statusBarFrame.height
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        ftpManager.getFtpList(dname!, completion: { result in
-            self.ftpUsers = result
-            self.tableView.reloadData()
-        }, errcompletion:  handleError)
+        loadFtpAccounts()
     }
 
+    func loadFtpAccounts(){
+        alert = AlertViewController.getUIAlertLoding("LoadingFTPAccounts")
+        self.present(alert!, animated: true, completion: nil)
+        
+        ftpManager.getFtpList(dname!, completion: { result in
+            self.ftpUsers = result.Users
+            self.tableView.reloadData()
+            self.alert?.dismiss(animated: true, completion: nil)
+        }, errcompletion:  handleError)
+    }
+    
     func handleError(message: String){
-        alert.dismiss(animated: true, completion: nil)
-        print(message);
+        alert?.dismiss(animated: true, completion: { _ in
+            let infoAlert = AlertViewController.getUIAlertInfo(message)
+            self.present(infoAlert, animated: true, completion: nil)
+        })
     }
     
     
@@ -51,7 +55,7 @@ class FTPListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ftpUserCell", for: indexPath) as! FTPListTableViewCell
 
-        let ftpUser = ftpUsers[(indexPath as NSIndexPath).row] as! FtpListItemModel
+        let ftpUser = ftpUsers[(indexPath as NSIndexPath).row]
         
         var imageForStatus : UIImage
         
@@ -65,26 +69,23 @@ class FTPListTableViewController: UITableViewController {
         cell.LblStatusImage.image = imageForStatus
 
         cell.LblHomePath.text = ftpUser.HomePath
-        cell.LblHomePath.font = UIFont(name: "HelveticaNeue-light", size: 11)
-
         if (ftpUser.ReadOnly == false) {
             cell.LblReadOnly.text = NSLocalizedString("ReadAndWrite", comment: "")
-            cell.LblReadOnly.font = UIFont(name: "HelveticaNeue-light", size: 11)
         } else {
             cell.LblReadOnly.text = NSLocalizedString("Read", comment: "")
-            cell.LblReadOnly.font = UIFont(name: "HelveticaNeue-light", size: 11)
         }
         
         cell.LblUserName.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
         cell.LblUserName.text = ftpUser.UserName
-        cell.LblUserName.font = UIFont(name: "HelveticaNeue", size: 18)
 
         return cell
     }
     
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
+        
+        let deletActionTitle : String = NSLocalizedString("Delete", comment: "")
+        let deleteButton = UITableViewRowAction(style: .default, title: deletActionTitle, handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commit: .delete,
@@ -100,11 +101,12 @@ class FTPListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            let ftpUser = ftpUsers[(indexPath as NSIndexPath).row] as! FtpListItemModel
-            self.present(AlertViewController.getUIAlertLoding("FTP hesabı siliniyor..."), animated: true, completion: nil)
+            let ftpUser = ftpUsers[(indexPath as NSIndexPath).row]
+            let alert = AlertViewController.getUIAlertLoding("DeletingFtpUser")
+            self.present(alert, animated: true, completion: nil)
 
             ftpManager.deleteFtpAccount(dname!, account: ftpUser.UserName!){ result in
-                self.ftpUsers.remove(ftpUser)
+                self.ftpUsers.remove(at: (indexPath as NSIndexPath).row)
                 self.dismiss(animated: false, completion: nil)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }

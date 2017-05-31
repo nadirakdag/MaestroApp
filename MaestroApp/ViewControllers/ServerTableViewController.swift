@@ -19,6 +19,7 @@ class ServerTableViewController: UITableViewController {
             let alertTitle : String = NSLocalizedString("NetworkInfoTitle", comment: "")
             let alertMessage : String = NSLocalizedString("NetworkInfoMessage", comment: "")
             let alert = UIAlertController(title: alertTitle, message: alertMessage,  preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }

@@ -102,7 +102,8 @@ class DNSListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
+        let deleteActionButton = NSLocalizedString("Delete", comment: "")
+        let deleteButton = UITableViewRowAction(style: .default, title: deleteActionButton, handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commit: .delete,

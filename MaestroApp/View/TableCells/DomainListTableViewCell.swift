@@ -12,8 +12,5 @@ class DomainListTableViewCell: UITableViewCell {
     @IBOutlet weak var LblOwnerName: UILabel!
     @IBOutlet weak var LblExperationDate: UILabel!
 
-    // Status Image
     @IBOutlet weak var LblStatusImage: UIImageView!
-
-    
 }

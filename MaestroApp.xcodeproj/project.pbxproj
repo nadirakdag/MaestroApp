@@ -27,6 +27,16 @@
 		14CEEF991ECED7AC0067A415 /* ApiInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CEEF981ECED7AC0067A415 /* ApiInfoViewController.swift */; };
 		14CEEF9B1ECEE78B0067A415 /* QrScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CEEF9A1ECEE78B0067A415 /* QrScannerViewController.swift */; };
 		14E198F11ECF875A0092E640 /* AddSubdomainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E198F01ECF875A0092E640 /* AddSubdomainViewController.swift */; };
+		14EC75401EDBFAF2000AAE5D /* AddResellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC753F1EDBFAF2000AAE5D /* AddResellerViewController.swift */; };
+		14EC75441EDBFBE5000AAE5D /* DomainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC75431EDBFBE5000AAE5D /* DomainManager.swift */; };
+		14EC75461EDBFC38000AAE5D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC75451EDBFC38000AAE5D /* DatabaseManager.swift */; };
+		14EC75481EDBFC5B000AAE5D /* AliasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC75471EDBFC5B000AAE5D /* AliasManager.swift */; };
+		14EC754A1EDBFC86000AAE5D /* MailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC75491EDBFC86000AAE5D /* MailManager.swift */; };
+		14EC754C1EDBFCB8000AAE5D /* SubdomainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC754B1EDBFCB8000AAE5D /* SubdomainManager.swift */; };
+		14EC754E1EDBFCD8000AAE5D /* FtpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC754D1EDBFCD8000AAE5D /* FtpManager.swift */; };
+		14EC75501EDBFD01000AAE5D /* DnsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC754F1EDBFD01000AAE5D /* DnsManager.swift */; };
+		14EC75521EDBFD21000AAE5D /* ResellerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC75511EDBFD21000AAE5D /* ResellerManager.swift */; };
+		14EC75541EDBFD4A000AAE5D /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC75531EDBFD4A000AAE5D /* ServerManager.swift */; };
 		14ECE7111ECECB540091DE89 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ECE7101ECECB540091DE89 /* Reachability.swift */; };
 		14F4399E1E68E13000F36686 /* MaestroAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399B1E68E13000F36686 /* MaestroAPI.swift */; };
 		14F4399F1E68E13000F36686 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4399C1E68E13000F36686 /* NSDate.swift */; };
@@ -103,6 +113,16 @@
 		14CEEF981ECED7AC0067A415 /* ApiInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiInfoViewController.swift; sourceTree = "<group>"; };
 		14CEEF9A1ECEE78B0067A415 /* QrScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrScannerViewController.swift; sourceTree = "<group>"; };
 		14E198F01ECF875A0092E640 /* AddSubdomainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubdomainViewController.swift; sourceTree = "<group>"; };
+		14EC753F1EDBFAF2000AAE5D /* AddResellerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddResellerViewController.swift; sourceTree = "<group>"; };
+		14EC75431EDBFBE5000AAE5D /* DomainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainManager.swift; sourceTree = "<group>"; };
+		14EC75451EDBFC38000AAE5D /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		14EC75471EDBFC5B000AAE5D /* AliasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasManager.swift; sourceTree = "<group>"; };
+		14EC75491EDBFC86000AAE5D /* MailManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailManager.swift; sourceTree = "<group>"; };
+		14EC754B1EDBFCB8000AAE5D /* SubdomainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubdomainManager.swift; sourceTree = "<group>"; };
+		14EC754D1EDBFCD8000AAE5D /* FtpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FtpManager.swift; sourceTree = "<group>"; };
+		14EC754F1EDBFD01000AAE5D /* DnsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DnsManager.swift; sourceTree = "<group>"; };
+		14EC75511EDBFD21000AAE5D /* ResellerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResellerManager.swift; sourceTree = "<group>"; };
+		14EC75531EDBFD4A000AAE5D /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		14ECE7101ECECB540091DE89 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		14F4399B1E68E13000F36686 /* MaestroAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaestroAPI.swift; sourceTree = "<group>"; };
 		14F4399C1E68E13000F36686 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
@@ -173,9 +193,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14EC75421EDBFBD7000AAE5D /* MaestroManager */ = {
+			isa = PBXGroup;
+			children = (
+				14EC75431EDBFBE5000AAE5D /* DomainManager.swift */,
+				14EC75451EDBFC38000AAE5D /* DatabaseManager.swift */,
+				14EC75471EDBFC5B000AAE5D /* AliasManager.swift */,
+				14EC75491EDBFC86000AAE5D /* MailManager.swift */,
+				14EC754B1EDBFCB8000AAE5D /* SubdomainManager.swift */,
+				14EC754D1EDBFCD8000AAE5D /* FtpManager.swift */,
+				14EC754F1EDBFD01000AAE5D /* DnsManager.swift */,
+				14EC75511EDBFD21000AAE5D /* ResellerManager.swift */,
+				14EC75531EDBFD4A000AAE5D /* ServerManager.swift */,
+			);
+			path = MaestroManager;
+			sourceTree = "<group>";
+		};
 		14F4399A1E68E13000F36686 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				14EC75421EDBFBD7000AAE5D /* MaestroManager */,
 				14F4399B1E68E13000F36686 /* MaestroAPI.swift */,
 				14F4399C1E68E13000F36686 /* NSDate.swift */,
 				14ECE7101ECECB540091DE89 /* Reachability.swift */,
@@ -264,6 +301,7 @@
 				14CEEF981ECED7AC0067A415 /* ApiInfoViewController.swift */,
 				14CEEF9A1ECEE78B0067A415 /* QrScannerViewController.swift */,
 				1419CCF41ECF1ED30025FB22 /* SettingsTableViewController.swift */,
+				14EC753F1EDBFAF2000AAE5D /* AddResellerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -492,6 +530,7 @@
 				14F439CD1E68E14100F36686 /* ResourceListItemTableCell.swift in Sources */,
 				14F439EB1E68E14D00F36686 /* AlertViewController.swift in Sources */,
 				14F439F41E68E14D00F36686 /* ResellerTableViewController.swift in Sources */,
+				14EC75481EDBFC5B000AAE5D /* AliasManager.swift in Sources */,
 				14F439CA1E68E14100F36686 /* FTPListTableViewCell.swift in Sources */,
 				1449C6C61EBC787200BBD825 /* DatabaseUserTableViewController.swift in Sources */,
 				14F439B51E68E13A00F36686 /* OperationResult.swift in Sources */,
@@ -499,11 +538,13 @@
 				14E198F11ECF875A0092E640 /* AddSubdomainViewController.swift in Sources */,
 				14F439B91E68E13A00F36686 /* SubdomainListItemModel.swift in Sources */,
 				1419CCF51ECF1ED30025FB22 /* SettingsTableViewController.swift in Sources */,
+				14EC75521EDBFD21000AAE5D /* ResellerManager.swift in Sources */,
 				14F4399E1E68E13000F36686 /* MaestroAPI.swift in Sources */,
 				14F439CB1E68E14100F36686 /* MailListTableViewCell.swift in Sources */,
 				14F439C71E68E14100F36686 /* DatabaseListTableViewCell.swift in Sources */,
 				14F4399F1E68E13000F36686 /* NSDate.swift in Sources */,
 				14F439B71E68E13A00F36686 /* ServerListItemModel.swift in Sources */,
+				14EC75501EDBFD01000AAE5D /* DnsManager.swift in Sources */,
 				1449C6C41EBBC37900BBD825 /* AddDnsViewController.swift in Sources */,
 				14F439E51E68E14D00F36686 /* AddDatabaseViewController.swift in Sources */,
 				14F439E81E68E14D00F36686 /* AddFtpUserViewController.swift in Sources */,
@@ -513,8 +554,10 @@
 				14F439CC1E68E14100F36686 /* ResellerListTableViewCell.swift in Sources */,
 				14F439CF1E68E14100F36686 /* SubdomainListTableViewCell.swift in Sources */,
 				1444C96E1EC8BE62009EDFC4 /* ResellerIpAddrTableViewCell.swift in Sources */,
+				14EC754E1EDBFCD8000AAE5D /* FtpManager.swift in Sources */,
 				1444C9721EC8BF70009EDFC4 /* ResellerIpAddrTableViewController.swift in Sources */,
 				14F439F71E68E14D00F36686 /* SubdomainTableViewController.swift in Sources */,
+				14EC75441EDBFBE5000AAE5D /* DomainManager.swift in Sources */,
 				14F439B01E68E13A00F36686 /* DatabaseListItemModel.swift in Sources */,
 				14F439F51E68E14D00F36686 /* ServerDetailTableViewController.swift in Sources */,
 				14F439E71E68E14D00F36686 /* AddDomainViewController.swift in Sources */,
@@ -524,16 +567,21 @@
 				14F439C91E68E14100F36686 /* DomainListTableViewCell.swift in Sources */,
 				14F439EC1E68E14D00F36686 /* AliasTableViewController.swift in Sources */,
 				146489971EC86D4A00D9E6F6 /* ResellerChangePasswordViewController.swift in Sources */,
+				14EC754C1EDBFCB8000AAE5D /* SubdomainManager.swift in Sources */,
 				146489951EC86A9A00D9E6F6 /* ResellerDetailTableViewController.swift in Sources */,
 				14F439F61E68E14D00F36686 /* ServerTableViewController.swift in Sources */,
+				14EC75401EDBFAF2000AAE5D /* AddResellerViewController.swift in Sources */,
 				14F439E91E68E14D00F36686 /* AddMailboxViewController.swift in Sources */,
+				14EC75541EDBFD4A000AAE5D /* ServerManager.swift in Sources */,
 				14F439B81E68E13A00F36686 /* ServerResourceItemModel.swift in Sources */,
 				4E77E7D71C79FF380047A018 /* AppDelegate.swift in Sources */,
 				14F439F31E68E14D00F36686 /* MailTableViewController.swift in Sources */,
 				14CEEF9B1ECEE78B0067A415 /* QrScannerViewController.swift in Sources */,
+				14EC754A1EDBFC86000AAE5D /* MailManager.swift in Sources */,
 				14F439EF1E68E14D00F36686 /* DNSListTableViewController.swift in Sources */,
 				1444C96A1EC8A1EF009EDFC4 /* ServerIpAddrModel.swift in Sources */,
 				14F439B41E68E13A00F36686 /* MailListModel.swift in Sources */,
+				14EC75461EDBFC38000AAE5D /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

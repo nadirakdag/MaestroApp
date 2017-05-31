@@ -58,3 +58,6 @@
 "LoadingSubdomains" = "Loading Subdomains";
 "Unit" = " ";
 "Information" = "Information";
+"AddingNewResellerAccount" = "Creating new reseller account";
+"DeletingFtpUser" = "Deleting FTP User";
+"DeletingAlias" = "Deleting Alias";

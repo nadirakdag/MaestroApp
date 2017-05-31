@@ -22,6 +22,7 @@ class DomainTableViewController: UITableViewController {
             let alertTitle : String = NSLocalizedString("NetworkInfoTitle", comment: "")
             let alertMessage : String = NSLocalizedString("NetworkInfoMessage", comment: "")
             let alert = UIAlertController(title: alertTitle, message: alertMessage,  preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -40,7 +41,6 @@ class DomainTableViewController: UITableViewController {
     
     func handleError(message: String){
         alert?.dismiss(animated: true, completion: { _ in
-            
             let infoAlert = AlertViewController.getUIAlertInfo(message)
             self.present(infoAlert, animated: true, completion: nil)
         })
@@ -89,7 +89,8 @@ class DomainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
        
-        let deleteButton = UITableViewRowAction(style: .default, title: "Sil", handler: { (action, indexPath) in
+        let deleteActionButton = NSLocalizedString("Delete", comment: "")
+        let deleteButton = UITableViewRowAction(style: .default, title: deleteActionButton, handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commit: .delete,
@@ -155,8 +156,7 @@ class DomainTableViewController: UITableViewController {
                 }
             }
             else {
-                maestro.startDomain(domain.Name!){
-                    result in
+                maestro.startDomain(domain.Name!){result in
                     self.dismiss(animated: false, completion: nil)
                     self.loadDomains()
                 }

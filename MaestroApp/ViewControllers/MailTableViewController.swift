@@ -84,19 +84,14 @@ class MailTableViewController: UITableViewController {
         
         cell.LblName.textColor = UIColor(red:0.17, green:0.6, blue:0.72, alpha:1.0)
         cell.LblName.text = acc.Name! + "@" + self.dname!
-        cell.LblName.font = UIFont(name: "HelveticaNeue", size: 18)
 
         if acc.Quota == -1 {
             cell.LblQuota.text = NSLocalizedString("Unlimited", comment: "")
-            cell.LblQuota.font = UIFont(name: "HelveticaNeue-light", size: 11)
         } else {
             cell.LblQuota.text = String(acc.Quota!) + " MB"
-            cell.LblQuota.font = UIFont(name: "HelveticaNeue-light", size: 11)
         }
         
         cell.LblUsage.text = String(acc.Usage!) + " MB"
-        cell.LblUsage.font = UIFont(name: "HelveticaNeue-light", size: 11)
-
         return cell
     }
     
@@ -110,12 +105,10 @@ class MailTableViewController: UITableViewController {
                 commit: .delete,
                 forRowAt: indexPath
             )
-            
             return
         })
         
         deleteButton.backgroundColor = UIColor.red
-        
         return [deleteButton]
     }
 

@@ -44,7 +44,35 @@
 "Zu7-kO-IXi.text" = "İsim";
 "hdP-C0-Qiw.text" = "Yazma İzni";
 "qmT-aJ-UTV.title" = "Ayarlar";
-
+"qZ4-1U-60v.text" = "Özellikler";
+"r7p-cP-RU9.text" = "Kullanılan: ";
+"4QN-Kc-fpr.text" = "Toplam: ";
+"cQf-AX-S0h.text"="Kaynak: ";
+"caL-cQ-Upd.headerTitle" = "Bilgiler";
+"CED-DV-YLZ.headerTitle" = "Özellikler";
+"nO3-Bm-HiJ.title" = "Bayi Parolası Değiştir";
+"0Xg-Uv-YZh.placeholder" = "Yeni Parola";
+"lBX-jh-6OU.title" = "Bayi IP Adres Yönetimi";
+"X1j-wP-xSU.text" = "IP Adresi: ";
+"Dr9-GT-YPW.text" = "Durumu: ";
+"kp8-Ul-ymx.text" = "IP Adreslerini Yönet";
+"ahx-fp-ktP.text" = "İsim Soyisim: ";
+"LBN-vi-jgF.text" = "Kullanıcı Adı: ";
+"wlX-0I-hyV.text" = "Sonlanma Tarihi: ";
+"Tda-wc-lHD.text" = "E-Posta Adresi: ";
+"blv-1m-pAN.text" = "Organizasyon: ";
+"glW-n1-1gO.text" = "Bayi Kullanıcı Parolasını Değiştir";
+"UOe-tV-QIs.text" = "Domainleri Yönet";
+"RsI-DI-vX5.text" = "IP Adreslerini Yönet";
+"Eau-gJ-aHQ.placeholder" = "Kullanıcı Adı";
+"jpc-iL-n2x.placeholder" = "Parola";
+"kmT-Ns-zrL.placeholder" = "Bayi Plan Alias";
+"0pv-ap-Fkx.placeholder" = "İsim";
+"OOb-U0-LSc.placeholder" = "Soyisim";
+"tge-wA-pp1.placeholder" = "E-Posta Adresi";
+"iLT-Cb-UES.placeholder" = "Organizasyon";
+"jHD-Yw-y6U.placeholder" = "Yeni Şifre";
+"trG-Yi-bgS.title" = "Yeni Bayi";
 
 /* Class = "UINavigationItem"; title = "FTP Kullanıcısı Ekle"; ObjectID = "20g-qc-edG"; */
 "20g-qc-edG.title" = "FTP Kullanıcısı Ekle";
@@ -56,13 +84,13 @@
 "8Fd-va-xQd.placeholder" = "Veritabanı Kullanıcı Şifresi";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "8Pf-qu-oFx"; */
-"8Pf-qu-oFx.title" = "Title";
+"8Pf-qu-oFx.title" = "Veri tabanı Yönetimi";
 
 /* Class = "UITextField"; placeholder = "Mail Kullanıcı Şifresi"; ObjectID = "AZG-KF-9j8"; */
 "AZG-KF-9j8.placeholder" = "Mail Kullanıcı Şifresi";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "BT5-8g-DT2"; */
-"BT5-8g-DT2.title" = "Title";
+"BT5-8g-DT2.title" = "E-Posta Yönetimi";
 
 /* Class = "UILabel"; text = "Şifre Değiştir"; ObjectID = "BUw-G1-VRo"; */
 "BUw-G1-VRo.text" = "Şifre Değiştir";
@@ -128,7 +156,7 @@
 "cX9-15-lLT.title" = "Yeni Domain";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "eKl-TS-md2"; */
-"eKl-TS-md2.title" = "Title";
+"eKl-TS-md2.title" = "FTP Yönetimi";
 
 /* Class = "UILabel"; text = "Mailbox Yönetimi"; ObjectID = "gAC-3X-wG8"; */
 "gAC-3X-wG8.text" = "Mailbox Yönetimi";

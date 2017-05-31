@@ -11,32 +11,38 @@ class ResellerTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if Reachability.isConnectedToNetwork() == true {
             loadResellers()
         } else {
             let alertTitle : String = NSLocalizedString("NetworkInfoTitle", comment: "")
             let alertMessage : String = NSLocalizedString("NetworkInfoMessage", comment: "")
             let alert = UIAlertController(title: alertTitle, message: alertMessage ,  preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+
     }
     
     func loadResellers(){
-        
         alert = AlertViewController.getUIAlertLoding("LoadingResellers")
         present(alert!, animated: true, completion: nil)
         maestro.getResellerList({result in
             self.resellerList = result
             self.tableView.reloadData()
-            self.dismiss(animated: false, completion: nil)
+            self.alert?.dismiss(animated: true, completion: nil)
         }, errcompletion: handleError)
+        
     }
     
+    
     func handleError(message: String){
-        alert?.dismiss(animated: true, completion: nil)
-        print(message);
+        alert?.dismiss(animated: true, completion: { _ in
+            let infoAlert = AlertViewController.getUIAlertInfo(message)
+            self.present(infoAlert, animated: true, completion: nil)
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -169,11 +175,12 @@ class ResellerTableViewController: UITableViewController {
         
         if (sender as? ResellerListTableViewCell) != nil {
             
+            print(resellerList.count)
             let username: String = (sender as! ResellerListTableViewCell).LblUsername.text!
             let predicate : NSPredicate = NSPredicate(format: "Username = %@", username)
             resellerList.filter(using: predicate)
             let result : ResellerListItemModel = resellerList[0] as! ResellerListItemModel
-            
+            print(resellerList.count)
             let resellerDetailView = segue.destination as! ResellerDetailTableViewController
             resellerDetailView.reseller = result
         }

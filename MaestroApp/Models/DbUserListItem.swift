@@ -1,11 +1,3 @@
-//
-//  DbUserListItem.swift
-//  MaestroApp
-//
-//  Created by Nadir on 05/05/17.
-//  Copyright © 2017 nadir akdag. All rights reserved.
-//
-
 import SwiftyJSON
 
 class DbUserListItemModel: NSObject,Initable {
